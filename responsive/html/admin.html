@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&P Produce Admin</title>
+    <link rel="stylesheet" href="../styles/styleAdmin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    <script src="../scripts/scriptAdmin.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="#header" class="logo">P&P Produce Admin</a>
+        <button class="log-out">Log out</button>
+    </nav>
+    <div class="product-tab">
+        <div class="head-product-tab">
+            <div>
+                <h3>Products</h3>
+                <h3 id="num-product">9</h3>
+            </div>
+            <button>+ New Product</button>
+        </div>
+        <div class="display-product">
+            <div class="select-filter-product">
+                <div>
+                    <label for="collection_select_product">Collection</label>
+                    <select name="collection_select_product" id="colection_select_product">
+                        <option value="all-product">All products</option>
+                        <option value="best-sell">Best sellers</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="filter_select_product">Filter by</label>
+                    <select name="filter_select_product" id="filter_select_product">
+                        <option value="all-product">All</option>
+                        <option value="in-stock">In stock</option>
+                        <option value="out-stock">Out of stock</option>
+                        <option value="show">Visibility show</option>
+                        <option value="hide">Visibility hide</option>
+                    </select>
+                </div>
+                <div class="search-tab">
+                    <div class="icon-search"></div>
+                    <input id="search_product" type="text" class="search" placeholder="Search">
+                </div>
+            </div>
+            <table class="table-display-product">
+                <colgroup>
+                    <col style="width:22%">
+                    <col style="width:22%">
+                    <col style="width:18%">
+                    <col style="width:22%">
+                    <col style="width:16%">
+                </colgroup>
+                <thead>
+                    <tr class="table-topics">
+                        <th></th>
+                        <th>NAME</th>
+                        <th>PRICE</th>
+                        <th>INVENTORY</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="body_table_product">
+                    <tr>
+                        <td>
+                            <img class="table-img-product"
+                                src="https://static.wixstatic.com/media/e9cd45_5733c955f336440fae920a5496704d95~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_85/e9cd45_5733c955f336440fae920a5496704d95~mv2.webp"
+                                alt="">
+                        </td>
+                        <td>Drumstrick</td>
+                        <td>50.00 Baht</td>
+                        <td>100</td>
+                        <td class="action-edit-product">
+                            <div class="visibility"></div>
+                            <div class="duplicate"></div>
+                            <div class="delete"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="table-img-product"
+                                src="https://static.wixstatic.com/media/e9cd45_5733c955f336440fae920a5496704d95~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_85/e9cd45_5733c955f336440fae920a5496704d95~mv2.webp"
+                                alt="">
+                        </td>
+                        <td>Drumstrick</td>
+                        <td>50.00 Baht</td>
+                        <td>100</td>
+                        <td class="action-edit-product">
+                            <div class="visibility"></div>
+                            <div class="duplicate"></div>
+                            <div class="delete"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="table-img-product"
+                                src="https://static.wixstatic.com/media/e9cd45_5733c955f336440fae920a5496704d95~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_85/e9cd45_5733c955f336440fae920a5496704d95~mv2.webp"
+                                alt="">
+                        </td>
+                        <td>Drumstrick</td>
+                        <td>50.00 Baht</td>
+                        <td>0</td>
+                        <td class="action-edit-product">
+                            <div class="visibility"></div>
+                            <div class="duplicate"></div>
+                            <div class="delete"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="table-img-product"
+                                src="https://static.wixstatic.com/media/e9cd45_5733c955f336440fae920a5496704d95~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_85/e9cd45_5733c955f336440fae920a5496704d95~mv2.webp"
+                                alt="">
+                        </td>
+                        <td>Drumstrick</td>
+                        <td>50.00 Baht</td>
+                        <td>100</td>
+                        <td class="action-edit-product">
+                            <div class="visibility"></div>
+                            <div class="duplicate"></div>
+                            <div class="delete"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="orders-tab">
+        <div class="head-orders-tab">
+            <div>
+                <h3>Orders</h3>
+            </div>
+        </div>
+        <div class="display-orders">
+            <div class="select-filter-orders">
+                <div>
+                    <label for="filter_select_order">Filter by</label>
+                    <select name="filter_select_order" id="filter_select_order">
+                        <option value="all-order">All</option>
+                        <option value="cf-order">Confirmed</option>
+                        <option value="cc-order">Cencel</option>
+                        <option value="uc-order">Unconfirmed</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="status_select_order">Status</label>
+                    <select name="status_select_order" id="status_select_order">
+                        <option value="all-order">All</option>
+                        <option value="sended-order">Sended</option>
+                        <option value="unsend-order">Unsend</option>
+                    </select>
+                </div>
+                <div class="search-tab">
+                    <div class="icon-search"></div>
+                    <input id="search_order" type="text" class="search" placeholder="Search">
+                </div>
+            </div>
+            <table class="table-display-order">
+                <colgroup>
+                    <col style="width:16%">
+                    <col style="width:16%">
+                    <col style="width:16%">
+                    <col style="width:16%">
+                    <col style="width:16%">
+                    <col style="width:16%">
+                    <col style="width:4%">
+                </colgroup>
+                <thead>
+                    <tr class="table-topics">
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Date</th>
+                        <th>Confirm</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jan Jan</td>
+                        <td>email1@mail.com</td>
+                        <td>0987654321</td>
+                        <td>18:30 16/09/2020</td>
+                        <td>Unconfirmed</td>
+                        <td>-</td>
+                        <td class="detail-order">
+                            <div class="detail"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nan Nan</td>
+                        <td>email2@mail.com</td>
+                        <td>0987654322</td>
+                        <td>18:29 16/09/2020</td>
+                        <td>Confirmed</td>
+                        <td>Waiting for send</td>
+                        <td class="detail-order">
+                            <div class="detail"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cat Cat</td>
+                        <td>email3@mail.com</td>
+                        <td>0987654323</td>
+                        <td>18:28 16/09/2020</td>
+                        <td>Cancel</td>
+                        <td>-</td>
+                        <td class="detail-order">
+                            <div class="detail"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
