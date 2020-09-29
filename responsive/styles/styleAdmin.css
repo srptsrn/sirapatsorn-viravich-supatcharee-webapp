@@ -23,14 +23,46 @@ nav {
     height: 68px;
     z-index: 20;
 }
-nav > .logo {
+nav > div {
+    display: flex;
+    align-items: center;
+}
+nav .logo {
     color: #0639c1;
     font-size: 36px;
     text-decoration: none;
     font-weight: bold;
 }
+nav .type-admin-page {
+    background-color: #d3d3d3;
+    font-family: 'Libre Baskerville', serif;
+    height: 36px;
+    /* width: 120px; */
+    border: 0;
+    border-radius: 18px;
+    box-shadow: inset 0 0 4px #888;
+    margin: 44px;
+}
+.type-admin-page > button {
+    background-color: transparent;
+    font-family: 'Libre Baskerville', serif;
+    height: 36px;
+    width: 120px;
+    border: 0;
+    /* box-shadow: 0 0 4px #888; */
+}
+nav .select-admin-nav {
+    background-color: #fdfdfd;
+    font-family: 'Libre Baskerville', serif;
+    height: 36px;
+    width: 120px;
+    border: 0;
+    border-radius: 18px;
+    box-shadow: 0 0 4px #888;
+    /* margin: 32px; */
+}
 nav > .log-out {
-    background-color: #f2f2f2;
+    background-color: #e4e4e4;
     font-family: 'Libre Baskerville', serif;
     height: 36px;
     width: 80px;
@@ -140,9 +172,9 @@ nav > .log-out {
     margin: 20px;
     background-size: cover;
 }
-.table-display-product .visibility {
+/* .table-display-product .visibility {
     background-image: url('https://www.flaticon.com/svg/static/icons/svg/565/565655.svg');
-}
+} */
 .table-display-product .duplicate {
     background-image: url('https://www.flaticon.com/svg/static/icons/svg/1477/1477084.svg');
 }
@@ -154,10 +186,15 @@ nav > .log-out {
 }
 
 .orders-tab {
-    margin: 20px 30px 20px 40px;
+    margin: 70px 30px 20px 40px;
 }
 .head-orders-tab {
-    padding: 12px 0;
+    padding: 18px 0;
+    display: flex;
+    align-items: center;
+}
+.head-orders-tab h3 {
+    margin: 0;
 }
 .table-display-order > tbody > tr:hover {
     cursor: pointer;
