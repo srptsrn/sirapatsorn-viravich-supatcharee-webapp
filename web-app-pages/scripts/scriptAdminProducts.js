@@ -9,7 +9,7 @@ const dataProduct = {
     img:
       "https://static.wixstatic.com/media/e9cd45_5733c955f336440fae920a5496704d95~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_85/e9cd45_5733c955f336440fae920a5496704d95~mv2.webp",
     name: "Chicken1",
-    price: 50.0,
+    price: 500.0,
     inventory: 100,
     visibility: 0,
   },
