@@ -62,10 +62,12 @@ h4 {
 
 .h1 {
     color: darkblue;
+    font-size: 25px;
 }
 
-.h4 {
+.h2 {
     color: darkblue;
+    font-size: 20px;
 }
 
 .p1 {
@@ -78,6 +80,9 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    /* border: 1px solid green; */
+    /* padding: 50px 200px 20px 200px; */
 }
 
 .ourStore {
@@ -93,6 +98,7 @@ h4 {
     /* float: left;
     width: 33.33%;
     padding: 20px 0px 0px 0px; */
+    padding: 32px 0px 20px 10px;
     margin: auto;
     display: inline-block;
     /* justify-content: left;
@@ -110,10 +116,11 @@ h4 {
     bottom: 130px;
     width: 300px; */
     /* float: left;
-    width: 33.33%;
-    padding: 20px 0px 20px 0px; */
+    width: 33.33%;*/
+    padding: 20px 0px 20px 70px;
     margin: auto;
     display: inline-block;
+    position: absolute;
     /* justify-content: center;
     align-items: center; */
 }
@@ -129,8 +136,8 @@ h4 {
     bottom: 130px;
     width: 300px; */
     /* float: right;
-    width: 32.9%;
-    padding: 20px 0px 20px 0px; */
+    /* width: 32.9%; */
+    padding: 20px 0px 20px 0px;
     margin: auto;
     display: inline-block;
     /* justify-content: right;
@@ -142,15 +149,18 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* border: 1px solid green; */
+    position: relative;
 }
 
 .input {
     float: left;
     width: 25%;
     /* padding: 15px; */
-    padding: 100px 50px 100px 50px;
+    padding: 100px 50px 30px 50px;
     display: table-column;
     border-color: 1px solid green;
+    position: static;
 }
 
 input[type=text]:focus {
