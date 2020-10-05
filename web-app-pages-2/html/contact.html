@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> P&P Produce Contact </title>
-    <link href="styles/styleContact.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../styles/styleContact.css">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
@@ -15,94 +15,68 @@
         <a href="#header" class="logo"> P&P Produce </a>
     </nav>
 
-    <div class="contactUs">
-        <img src="images/chicken.jpg" alt="chicken">
+    <div class="head-contact">
         <div>
-            <h2 class="contactCenter"> Contact Us </h2>
+            <h2 class="contact-center"> Contact Us </h2>
         </div>
     </div>
 
     <div class="main">
-        <div class="ourStore">
-            <h3 class="h1"> Our Store </h3>
-            <p class="p1"> P&P Produce.Co.,Ltd. </br>
-                Road Don Han, Mueang Khon Kaen District, </br>
-                Khon Kaen 40260 </p>
+        <div class="our-store">
+            <h3>Our Store</h3>
+            <p>P&P Produce.Co.,Ltd.</br>
+                Road Don Han, Mueang Khon Kaen District,</br>
+                Khon Kaen 40260</p>
         </div>
 
-        <div class="customService">
-            <h3 class="h1"> Customer Service </h3>
-            <p class="p1"> Tel: 080 998 9424 </br>
-                Email: pp.produce.p@gmail.com </p>
+        <div class="custom-service">
+            <h3>Customer Service</h3>
+            <p>Tel: 080 998 9424</br>
+                Email: pp.produce.p@gmail.com</p>
         </div>
 
-        <div class="openingHour">
-            <h3 class="h1"> Opening Hours </h3>
-            <p class="p1"> Mon - Fri: 8am - 8pm </br>
-                Saturday: 9am - 7pm </p>
-        </div>
-    </div>
-
-
-    <div class="mainInput">
-        <div class="input col1">
-            <label for="firstName"> First Name </label> </br>
-            <input name="firstName" type="text"></br>
-            </br>
-
-            <label for="email"> Email </label> </br>
-            <input name="email" type="text"></br>
-        </div>
-
-        <div class="input col2">
-            <label for="lastName"> Last Name </label> </br>
-            <input name="lastName" type="text"></br>
-            </br>
-
-            <label for="subJect"> Subject </label> </br>
-            <input name="subJect" type="text"></br>
-
+        <div class="opening-hour">
+            <h3>Opening Hours</h3>
+            <p>Mon - Fri: 8am - 8pm</br>
+                Saturday: 9am - 7pm</p>
         </div>
     </div>
 
+    <form class="form-contact">
+        <div>
+            <div>
+                <label for="firstName">First Name</label>
+                <input name="firstName" type="text" id="firstName">
+                <label for="email">Email<span>*</span></label>
+                <input name="email" type="email" id="email">
+            </div>
 
-    <div class="mainText">
+            <div>
+                <label for="lastName">Last Name</label>
+                <input name="lastName" type="text" id="lastName">
+                <label for="subJect">Subject</label>
+                <input name="subJect" type="text" id="subJect">
+            </div>
+        </div>
+
         <textarea id="textArea" name="textArea" rows="10" cols="70"> Type your message here... </textarea>
-        </br>
-    </div>
+        <button type="submit">Summit</button>
+    </form>
 
-    <div class="mainButton">
-        <button class="button summit"> Summit </button>
-    </div>
-    </br>
-    </br>
-
-    <div class="mainInfo">
-        <h4 class="h2"> P&P Product </h4>
-
-
-        <p class="p1"> info@my-domain.com 123-456-7890
-
+    <div class="info">
+        <h4>P&P Product</h4>
+        <p>info@my-domain.com 123-456-7890
             </br>
-
             500 Terry Francois Street San Francisco, CA 94158
         </p>
-        </br>
+
+        <div class="iconLink">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+        </div>
     </div>
-
-    <div class="iconLink">
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="#" class="fa fa-twitter"></a>
-        <a href="#" class="fa fa-instagram"></a>
-    </div>
-
-
-
-    </div>
-
-
 
 </body>
-
 
 </html>
