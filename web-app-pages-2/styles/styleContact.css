@@ -1,315 +1,161 @@
 body {
-    background-color: white;
-    margin: 0;
-    font-family: 'Libre Baskerville', serif;
+  background-color: white;
+  margin: 0;
+  font-family: "Libre Baskerville", serif;
+  padding: 0 80px 0 80px;
+  color: rgb(71, 71, 71);
 }
-
+input,
+button {
+  font-family: "Libre Baskerville", serif;
+}
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
 nav {
-    background-color: rgb(255, 156, 8);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 68px;
-    z-index: 20;
+  background-color: rgb(255, 156, 8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 68px;
+  z-index: 20;
 }
-
-.logo {
-    color: #0639c1;
-    font-size: 36px;
-    text-decoration: none;
-    font-weight: bold;
+nav .logo {
+  color: #0639c1;
+  font-size: 36px;
+  text-decoration: none;
+  font-weight: bold;
 }
-
-img {
-    width: 80%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.head-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 68px 0 20px 0;
+  color: white;
+  font-size: 50px;
+  height: 75vh;
+  background-image: url("/images/chicken.jpg");
+  background-size: cover;
+  background-position: center;
 }
-
-.contactUs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 50px;
-    /* border: 1px solid green; */
-    position: relative;
-    text-align: center;
-    color: white;
-    font-size: 50px;
-}
-
-.contactCenter {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-p,
-h2,
-h3,
-h4 {
-    text-align: center;
-}
-
-.h1 {
-    color: darkblue;
-}
-
-.h4 {
-    color: darkblue;
-}
-
-.p1 {
-    font-family: 'light Libre Baskerville', serif;
-    font-size: 17px;
-}
-
 .main {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px 0 40px;
+  margin-bottom: 100px;
 }
-
-.ourStore {
-    /* margin: auto;
-    position: absolute;
-    align-items: center;
-    /* width: 50%; */
-    /* padding: 10px; 
-    left: 280px;
-    bottom: 111px;
-    width: 300px;*/
-    /* border: 1px solid green; */
-    /* float: left;
-    width: 33.33%;
-    padding: 20px 0px 0px 0px; */
-    margin: auto;
-    display: inline-block;
-    /* justify-content: left;
-    align-items: center; */
+.main > div {
+  width: 30%;
+  text-align: center;
 }
-
-.customService {
-    /* margin: auto;
-    position: absolute;
-    align-items: center;
-    width: 50%; */
-    /* border: 1px solid green; */
-    /* padding: 10px;
-    left: 600px;
-    bottom: 130px;
-    width: 300px; */
-    /* float: left;
-    width: 33.33%;
-    padding: 20px 0px 20px 0px; */
-    margin: auto;
-    display: inline-block;
-    /* justify-content: center;
-    align-items: center; */
+.main > div > h3 {
+  color: #0639c1;
 }
-
-.openingHour {
-    /* margin: auto;
-    position: absolute;
-    align-items: center;
-    width: 50%; */
-    /* border: 1px solid green; */
-    /* padding: 10px;
-    right: 280px;
-    bottom: 130px;
-    width: 300px; */
-    /* float: right;
-    width: 32.9%;
-    padding: 20px 0px 20px 0px; */
-    margin: auto;
-    display: inline-block;
-    /* justify-content: right;
-    align-items: center; */
+.form-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16% 0 16%;
+  margin-bottom: 80px;
 }
-
-.mainInput {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.form-contact > div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
-
-.input {
-    float: left;
-    width: 25%;
-    /* padding: 15px; */
-    padding: 100px 50px 100px 50px;
-    display: table-column;
-    border-color: 1px solid green;
+.form-contact > div > div {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
 }
-
-input[type=text]:focus {
-    border: 3px solid #555;
+.form-contact input {
+  font-weight: 100%;
+  padding: 4px;
+  margin: 10px 0 30px 0;
+  border: 0;
+  border-bottom: 1.4px solid rgb(161, 161, 161);
 }
-
-
-/* .inputrow:after {
-    content: "";
-    display: table;
-    clear: both;
-} */
-
-input[type=text] {
-    /* position: absolute;
-    align-items: center;
-    padding: 15px 0 0;
-    margin-top: auto;
-    width: 50%;
-    border: 1px solid green;
-    outline: none;
-    flex-direction: column;
-    justify-content: center; */
-    /* left: 600px;
-    bottom: 0px;
-    width: 300px; */
-    width: 100%;
-    padding: 12px 20px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: none;
-    border-top: 1px solid white;
-    border-bottom: 1px solid black;
+.form-contact input:focus,
+.form-contact input:hover,
+.form-contact textarea:focus,
+.form-contact textarea:hover {
+  border-bottom: 1.4px solid black;
 }
-
-.mainText {
-    margin: auto;
-    display: contents;
-    justify-content: center;
-    align-items: center;
+.form-contact input:invalid {
+  border-bottom: 1.4px solid red;
 }
-
-textarea {
-    border-bottom: 2px solid black;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
-    border-top: 1px solid white;
-    width: 55%;
-    display: block;
-    resize: none;
-    margin: auto;
-    /* display: contents; */
-    justify-content: center;
-    align-items: center;
+.form-contact span {
+  color: red;
 }
-
-
-/* .mainButton {
-    margin: auto;
-    display: contents;
-    justify-content: center;
-    align-items: center;
-} */
-
-
-/* .button {
-    background-color: rgb(255, 156, 8);
-    border: none;
-    color: white;
-    padding: 15px 32px;
+.form-contact textarea {
+  border: 0;
+  border-bottom: 1.4px solid rgb(161, 161, 161);
+  width: 100%;
+  resize: none;
+  font-family: "Libre Baskerville", serif;
+}
+.form-contact button {
+  width: 100%;
+  border: 0;
+  background-color: black;
+  color: white;
+  height: 40px;
+  margin: 24px;
+  opacity: 1;
+  transition: 0.25s;
+}
+.form-contact button:hover {
+  opacity: 0.7;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 3px dashed black;
+}
+.info > h3 {
+    color: #0639c1;
+}
+.info > p {
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    opacity: 1;
-    transition: 0.35s;
-} */
-
-
-/* .button:hover {
-    opacity: 0.8;
-} */
-
-.mainButton {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 0 10px 0;
 }
-
-.button {
-    background-color: rgb(255, 156, 8);
-    border: none;
-    color: white;
-    border-color: white;
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    width: 55%;
-    opacity: 0.6;
-    transition: 0.4s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.summit {
-    background-color: white;
-    color: white;
-    background-color: rgb(255, 156, 8);
-}
-
-.summit:hover {
-    background-color: rgb(255, 156, 8);
-    color: white;
-    opacity: 1;
-}
-
-
-/* .summit {
-    width: 40%;
-} */
-
-.iconLink {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 20px;
-    text-align: center;
-    text-decoration: none;
-    margin: 20px 2px;
-    border-radius: 50%;
-    font-family: sans-serif;
+  padding: 20px;
+  font-size: 30px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 20px 2px;
+  border-radius: 50%;
+  font-family: sans-serif;
 }
-
 .fa:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
-
 .fa-facebook {
-    background: #3B5998;
-    color: white;
+  background: #3b5998;
+  color: white;
 }
-
 .fa-twitter {
-    background: #55ACEE;
-    color: white;
+  background: #55acee;
+  color: white;
 }
-
 .fa-instagram {
-    background: #125688;
-    color: white;
+  background: #125688;
+  color: white;
 }
