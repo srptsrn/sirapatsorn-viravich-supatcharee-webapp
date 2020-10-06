@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/%7BGithub-repo-name%7D/static/css/main.523f09c5.chunk.css",
-    "main.js": "/%7BGithub-repo-name%7D/static/js/main.c10e9ca9.chunk.js",
-    "main.js.map": "/%7BGithub-repo-name%7D/static/js/main.c10e9ca9.chunk.js.map",
-    "runtime-main.js": "/%7BGithub-repo-name%7D/static/js/runtime-main.f7af3e77.js",
-    "runtime-main.js.map": "/%7BGithub-repo-name%7D/static/js/runtime-main.f7af3e77.js.map",
-    "static/js/2.dac390d1.chunk.js": "/%7BGithub-repo-name%7D/static/js/2.dac390d1.chunk.js",
-    "static/js/2.dac390d1.chunk.js.map": "/%7BGithub-repo-name%7D/static/js/2.dac390d1.chunk.js.map",
-    "index.html": "/%7BGithub-repo-name%7D/index.html",
-    "precache-manifest.240ed66910d0087545b3991ad33bcb69.js": "/%7BGithub-repo-name%7D/precache-manifest.240ed66910d0087545b3991ad33bcb69.js",
-    "service-worker.js": "/%7BGithub-repo-name%7D/service-worker.js",
-    "static/css/main.523f09c5.chunk.css.map": "/%7BGithub-repo-name%7D/static/css/main.523f09c5.chunk.css.map",
-    "static/js/2.dac390d1.chunk.js.LICENSE.txt": "/%7BGithub-repo-name%7D/static/js/2.dac390d1.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/%7BGithub-repo-name%7D/static/media/logo.ee7cd8ed.svg"
+    "main.css": "/sirapatsorn-viravich-supatcharee-webapp/static/css/main.523f09c5.chunk.css",
+    "main.js": "/sirapatsorn-viravich-supatcharee-webapp/static/js/main.6b718ffa.chunk.js",
+    "main.js.map": "/sirapatsorn-viravich-supatcharee-webapp/static/js/main.6b718ffa.chunk.js.map",
+    "runtime-main.js": "/sirapatsorn-viravich-supatcharee-webapp/static/js/runtime-main.3c01e977.js",
+    "runtime-main.js.map": "/sirapatsorn-viravich-supatcharee-webapp/static/js/runtime-main.3c01e977.js.map",
+    "static/js/2.dac390d1.chunk.js": "/sirapatsorn-viravich-supatcharee-webapp/static/js/2.dac390d1.chunk.js",
+    "static/js/2.dac390d1.chunk.js.map": "/sirapatsorn-viravich-supatcharee-webapp/static/js/2.dac390d1.chunk.js.map",
+    "index.html": "/sirapatsorn-viravich-supatcharee-webapp/index.html",
+    "precache-manifest.16373eb35b91d989df66a08019968399.js": "/sirapatsorn-viravich-supatcharee-webapp/precache-manifest.16373eb35b91d989df66a08019968399.js",
+    "service-worker.js": "/sirapatsorn-viravich-supatcharee-webapp/service-worker.js",
+    "static/css/main.523f09c5.chunk.css.map": "/sirapatsorn-viravich-supatcharee-webapp/static/css/main.523f09c5.chunk.css.map",
+    "static/js/2.dac390d1.chunk.js.LICENSE.txt": "/sirapatsorn-viravich-supatcharee-webapp/static/js/2.dac390d1.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/sirapatsorn-viravich-supatcharee-webapp/static/media/logo.ee7cd8ed.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f7af3e77.js",
+    "static/js/runtime-main.3c01e977.js",
     "static/js/2.dac390d1.chunk.js",
     "static/css/main.523f09c5.chunk.css",
-    "static/js/main.c10e9ca9.chunk.js"
+    "static/js/main.6b718ffa.chunk.js"
   ]
 }
