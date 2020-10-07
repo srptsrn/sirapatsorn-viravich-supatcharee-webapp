@@ -1,14 +1,9 @@
-body {
+.app-contact {
     background-color: white;
     margin: 0;
     font-family: "Libre Baskerville", serif;
     padding: 0 80px 0 80px;
     color: rgb(71, 71, 71);
-  }
-  
-  input,
-  button {
-    font-family: "Libre Baskerville", serif;
   }
   
   .main p {
@@ -1121,9 +1116,9 @@ body {
   }
   
   @media only screen and (max-width: 331px) {
-    nav > .logo {
+    /* nav > .logo {
       font-size: 31px;
-    }
+    } */
     .head-contact {
       height: auto;
       background-size: cover;
@@ -1194,9 +1189,9 @@ body {
   }
   
   @media only screen and (max-width: 321px) {
-    nav > .logo {
+    /* nav > .logo {
       font-size: 33px;
-    }
+    } */
     .head-contact {
       height: auto;
       background-size: cover;
@@ -1267,9 +1262,9 @@ body {
   }
   
   @media only screen and (max-width: 309px) {
-    nav > .logo {
+    /* nav > .logo {
       font-size: 30px;
-    }
+    } */
     .head-contact {
       height: auto;
       background-size: cover;

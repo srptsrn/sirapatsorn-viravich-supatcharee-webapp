@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import history from './history';
 import AdminOrders from "./pages/AdminOrders.js";
 import AdminProducts from "./pages/AdminProducts.js";
 import Contact from "./pages/Contact.js";
-
+import Home from "./pages/Home.js";
 function App() {
   return (
     <Router>
@@ -28,7 +29,5 @@ function App() {
     </Router>
   );
 }
-function Home() {
-  return <h2>Home</h2>;
-}
+
 export default App;

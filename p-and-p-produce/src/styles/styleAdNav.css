@@ -1,0 +1,183 @@
+nav {
+  background-color: rgb(255, 156, 8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 68px;
+  z-index: 100;
+}
+
+nav > div {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo-admin {
+  color: #0639c1;
+  font-size: 36px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav .type-admin-page {
+  background-color: #d3d3d3;
+  font-family: "Libre Baskerville", serif;
+  height: 36px;
+  border: 0;
+  border-radius: 18px;
+  box-shadow: inset 0 0 4px #888;
+  margin: 44px;
+}
+
+.type-admin-page button {
+  background-color: transparent;
+  font-family: "Libre Baskerville", serif;
+  height: 36px;
+  width: 120px;
+  border: 0;
+}
+
+nav .select-admin-nav {
+  background-color: #fdfdfd;
+  font-family: "Libre Baskerville", serif;
+  height: 36px;
+  width: 120px;
+  border: 0;
+  border-radius: 18px;
+  box-shadow: 0 0 4px #888;
+}
+
+nav > a > .log-out {
+  background-color: #e4e4e4;
+  font-family: "Libre Baskerville", serif;
+  height: 36px;
+  width: 80px;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 0 4px #888;
+}
+
+nav .menu-admin-nav {
+  display: none;
+}
+
+.sidenav {
+  height: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 171, 44);
+  overflow-x: hidden;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.sidenav a {
+  padding: 16px 16px 16px 32px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: rgb(240, 240, 240);
+  display: block;
+  transition: 0.3s;
+  border-bottom: 1px solid rgb(255, 196, 108);
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-width: 1070px) {
+  nav .logo-admin {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 883px) {
+  nav .logo-admin {
+    font-size: 28px;
+  }
+  nav .type-admin-page {
+    height: 30px;
+    width: 223px;
+  }
+  .type-admin-page button {
+    height: 30px;
+    font-size: 12px;
+    width: 109px;
+    margin: 0;
+  }
+  nav .select-admin-nav {
+    height: 30px;
+  }
+  nav > a > .log-out {
+    height: 30px;
+    width: 74px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  nav .logo-admin {
+    font-size: 24px;
+  }
+  nav .type-admin-page {
+    display: none;
+  }
+  .type-admin-page button {
+    display: none;
+  }
+  nav .select-admin-nav {
+    display: none;
+  }
+  nav > a > .log-out {
+    display: none;
+  }
+  nav .menu-admin-nav {
+    display: block;
+    background-image: url("https://www.flaticon.com/svg/static/icons/svg/2099/2099153.svg");
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 443px) {
+  nav {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 394px) {
+  nav .logo-admin {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 355px) {
+  nav .logo-admin {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 310px) {
+  nav .logo-admin {
+    font-size: 14px;
+  }
+}
