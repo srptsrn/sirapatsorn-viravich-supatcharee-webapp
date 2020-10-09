@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/styleContact.css";
 import NavBar from '../components/NavBar.js';
+import Footer from '../components/Footer.js';
 
 function Contact() {
   return (
@@ -48,19 +49,7 @@ function Contact() {
             <textarea id="textArea" name="textArea" rows="10" cols="70"> Type your message here... </textarea>
             <button type="submit">Summit</button>
         </form>
-
-        <div className="info">
-            <h4>P&amp;P Product</h4>
-            <p>info@my-domain.com 123-456-7890
-            <br/>
-                500 Terry Francois Street San Francisco, CA 94158
-            </p>
-            <div className="iconLink">
-                <a href="#" className="fa fa-facebook"></a>
-                <a href="#" className="fa fa-twitter"></a>
-                <a href="#" className="fa fa-instagram"></a>
-            </div>
-        </div>
+        <Footer></Footer>
     </div>
     );
 }

@@ -3,7 +3,7 @@ import React from "react";
 import "../styles/styleNav.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-class AdminNavigationBar extends React.Component {
+class NavigationBar extends React.Component {
   render() {
     const { bestSellers, allProducts, about, contact } = this.props;
     return (
@@ -59,9 +59,12 @@ class AdminNavigationBar extends React.Component {
             Contact
           </Link>
         </div>
+        <a className="messenger-nav" href="https://www.facebook.com/PP-Produce-115054696537678" target="_blank">
+          <div></div>
+        </a>
       </div>
     );
   }
 }
 
-export default AdminNavigationBar;
+export default NavigationBar;

@@ -1,0 +1,43 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 3px dashed black;
+  padding: 8px;
+}
+
+.info > h3 {
+  color: #0639c1;
+}
+
+.info > p {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.icon-link {
+  display: flex;
+}
+
+.fa {
+  width: 30px;
+  height: 30px;
+  margin: 16px;
+}
+
+.fa:hover {
+  opacity: 0.8;
+}
+.fa-facebook {
+    background-image: url('https://www.flaticon.com/svg/static/icons/svg/889/889102.svg');
+  }
+  .fa-messenger {
+    background-image: url('https://www.flaticon.com/svg/static/icons/svg/889/889101.svg');
+  }
+  .fa-email {
+    background-image: url('https://www.flaticon.com/svg/static/icons/svg/321/321817.svg');
+  }
+  .fa-phone {
+    background-image: url('https://www.flaticon.com/svg/static/icons/svg/890/890547.svg');
+  }

@@ -67,6 +67,25 @@
   justify-content: center;
   align-items: center;
 }
+.messenger-nav {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  box-shadow: 0 0 8px #888;
+}
+.messenger-nav > div {
+  background-image: url("https://www.flaticon.com/svg/static/icons/svg/889/889101.svg");
+  width: 30px;
+  height: 30px;
+}
 
 @media screen and (max-width: 1175px) {
   .menu-nav > a {
@@ -136,16 +155,28 @@
   }
 }
 @media screen and (max-width: 834px) {
-    .menu-nav > a {
-        margin: 6px;
-      }
-      .menu-nav > div {
-        margin: 2px;
-      }
+  .menu-nav > a {
+    margin: 6px;
   }
+  .menu-nav > div {
+    margin: 2px;
+  }
+}
 
 @media screen and (max-width: 786px) {
   nav .menu-nav {
     display: none;
+  }
+}
+@media screen and (max-width: 413px) {
+  .messenger-nav {
+    width: 50px;
+    height: 50px;
+    right: 20px;
+    bottom: 20px;
+  }
+  .messenger-nav > div {
+    width: 26px;
+    height: 26px;
   }
 }
