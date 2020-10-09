@@ -11,41 +11,16 @@
 </head>
 
 <body>
-    <!-- ####Comment####
-    - การตั้งชื่อ 
-    --  ห้ามตั้งชื่อที่เหมือนกับ tag เช่น <p class="p"></p> หรือ <h3 class="h1"></h3> ห้าม!!! เพราะจะทำให้เกิดการสับสนได้
-    --  ชื่อ class ควรตั้งชื่อแบบมีขีด เช่น head-contact, contact-center, our-store
-    --  ชื่อ id ควรตั้งชื่อแบบตัวอย่าง เช่น headContact, contact_center, ourStore 
-
-    - การใส่ข้อความ ไม่จำเป็นต้อง ใส่ spacebar หน้าหลังข้อความ ยังไม่ข้อความก็ไม่เคลื่อนไปหน้าหรือหลัง
-    
-    - การเขียน style css
-    -- ถ้าใส่ style ที่ tag ณ สถานที่จุดๆเดียว ไม่ควรใส่ tag ไปตรงๆ แต่ควรจะใส่ ชื่อ div ที่ใหญ่กว่าเพิ่ม เพื่อป้องกันการใช้ tag ซ้ำ
-    เช่น
-    ปุ่มใน form
-    button {
-        width: 100%;
-        ...
-    }
-    ให้ปรับเป็น
-    .form-contact button {
-        width: 100%;
-        ...
-    }
-    จะช่วยให้ไม่ต้องตั้งชื่อปุ่มหลายที่
-    -- การอ้างอิงถึงความสัมพันธ์
-        .a > .b คือ class b ทั้งหมดที่เป็นลูกของ class a เท่านั้น
-        .a .b คือ class b ทั้งหมดที่อยู่ class a เท่านั้น จะเป็นลึกแค่ไหนก็ได้
-        เป็นต้น
-    -->
     <nav>
         <a href="#header" class="logo"> P&P Produce </a>
     </nav>
+
     <div class="head-contact">
         <div>
             <h2 class="contact-center"> Contact Us </h2>
         </div>
     </div>
+
     <div class="main">
         <div class="our-store">
             <h3>Our Store</h3>
@@ -53,17 +28,20 @@
                 Road Don Han, Mueang Khon Kaen District,</br>
                 Khon Kaen 40260</p>
         </div>
+
         <div class="custom-service">
             <h3>Customer Service</h3>
             <p>Tel: 080 998 9424</br>
                 Email: pp.produce.p@gmail.com</p>
         </div>
+
         <div class="opening-hour">
             <h3>Opening Hours</h3>
             <p>Mon - Fri: 8am - 8pm</br>
                 Saturday: 9am - 7pm</p>
         </div>
     </div>
+
     <form class="form-contact">
         <div>
             <div>
@@ -72,6 +50,7 @@
                 <label for="email">Email<span>*</span></label>
                 <input name="email" type="email" id="email">
             </div>
+
             <div>
                 <label for="lastName">Last Name</label>
                 <input name="lastName" type="text" id="lastName">
@@ -90,12 +69,14 @@
             </br>
             500 Terry Francois Street San Francisco, CA 94158
         </p>
+
         <div class="iconLink">
             <a href="#" class="fa fa-facebook"></a>
             <a href="#" class="fa fa-twitter"></a>
             <a href="#" class="fa fa-instagram"></a>
         </div>
     </div>
+
 </body>
 
 </html>
