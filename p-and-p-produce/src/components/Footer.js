@@ -10,7 +10,11 @@ class Footer extends React.Component {
         <div className="info">
           <h4>P&amp;P Product</h4>
           <p>
-            pp.produce.p@gmail.com 080 998 9424
+          Tel: 080 998 9424
+            <br />
+            <a href="mailto:pp.produce.p@gmail.com" target="_blank">
+              Email: pp.produce.p@gmail.com
+            </a>
             <br />
             Location
           </p>
