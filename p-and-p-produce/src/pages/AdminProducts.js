@@ -1,12 +1,10 @@
 import React from "react";
 import "../styles/styleAdmin.css";
-import "../scripts/scriptAdmin.js";
-import history from '../history';
 import AdminNavBar from '../components/AdminNavBar.js';
 
 function AdminProducts() {
   return (
-    <div className="app">
+    <div className="app-admin">
         <AdminNavBar products></AdminNavBar>
     <div className="product-tab">
         <div className="head-product-tab">

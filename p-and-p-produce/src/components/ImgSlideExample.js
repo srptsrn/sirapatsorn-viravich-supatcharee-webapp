@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/styleImgSlide.css";
+import "../styles/styleImgSlideEx.css";
 
-class ImgSlide extends React.Component {
+class ImgSlideExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,7 +30,7 @@ class ImgSlide extends React.Component {
   render() {
   return (
     <div>
-      <section className='img-slide-section'>
+      <section className='img-slide-section-example'>
         <div className="image-head">
           <img src={this.state.imgList[this.state.indexImg]}/>
           <div className="arrow-button">
@@ -48,4 +48,4 @@ class ImgSlide extends React.Component {
 }
 }
 
-export default ImgSlide;
+export default ImgSlideExample;

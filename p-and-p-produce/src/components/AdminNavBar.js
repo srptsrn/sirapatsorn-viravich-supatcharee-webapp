@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class AdminNavigationBar extends React.Component {
   render() {
-    const { products, orders } = this.props;
+    const { products, orders, promote } = this.props;
     return (
       <div className="app-nav">
         <nav>
@@ -14,6 +14,14 @@ class AdminNavigationBar extends React.Component {
               P&amp;P Produce Admin
             </Link>
             <div className="type-admin-page">
+              <Link to="/admin/promote">
+                <button
+                  id="promote-nav"
+                  className={promote ? "select-admin-nav" : ""}
+                >
+                  Edit Banner
+                </button>
+              </Link>
               <Link to="/admin/products">
                 <button
                   id="product-nav"
