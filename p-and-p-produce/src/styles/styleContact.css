@@ -357,11 +357,9 @@ button {
   }
   .main {
       margin: auto;
-      display: table;
+      display: flex;
+      flex-direction: column;
       padding-bottom: 50px;
-  }
-  .form-contact {
-      margin: auto;
   }
   .main>.our-store,
   .main>.custom-service,
@@ -375,11 +373,21 @@ button {
       font-size: 14px;
       font-family: "light Libre Baskerville", serif;
   }
+  .form-contact {
+      margin: 30px 0 30px 0;
+  }
   .form-contact>div {
-      display: table;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+  }
+  .form-contact>div>div{
+    width: 100%;
+
   }
   .form-contact input {
-      width: 200px;
+      width: 100%;
   }
   .form-contact textarea {
       width: 100%;
@@ -392,17 +400,6 @@ button {
   }
 }
 
-@media only screen and (max-width: 510px) {
-  .main {
-      margin: auto;
-      display: table;
-      padding-bottom: 50px;
-  }
-  .form-contact {
-      margin: auto;
-  }
-}
-
 @media only screen and (max-width: 426px) {
   .head-contact {
       height: 30vh;
@@ -410,31 +407,15 @@ button {
   .head-contact h2 {
       font-size: 30px;
   }
-  .main {
-      padding: 0;
-      display: table;
-  }
   .main h3 {
       font-size: 20px;
   }
   .main p {
       font-size: 14.5px;
   }
-  .form-contact>div {
-    margin-top: 30px;
-      display: table;
-  }
-  .form-contact input {
-      width: 180px;
-  }
+  
   .form-contact label {
       font-size: 13px;
-  }
-  .form-contact textarea {
-      width: 190px;
-      height: 90px;
-      font-size: 12px;
-      font-family: "light Libre Baskerville", serif;
   }
 }
 
@@ -459,22 +440,14 @@ button {
   .main p {
       font-size: 14px;
   }
-  .form-contact>div {
-      display: table;
-  }
-  .form-contact input {
-      width: 190px;
-  }
   .form-contact button {
       font-size: 11px;
-      width: 190px;
+      width: 100%;
   }
-  .form-contact textarea {
-      width: 190px;
-      height: 90px;
-      font-size: 12px;
-      font-family: "light Libre Baskerville", serif;
-  }
+  
+  .form-contact {
+    margin: 40px 0 40px 0;
+}
 }
 
 @media only screen and (max-width: 331px) {
@@ -487,10 +460,6 @@ button {
       font-size: 26px;
       padding: 40px 0;
   }
-  .main {
-      padding: 0;
-      display: table;
-  }
   .main>.our-store,
   .main>.custom-service,
   .main>.opening-hour {
@@ -498,12 +467,6 @@ button {
   }
   .main h3 {
       font-size: 20px;
-  }
-  .form-contact>div {
-      display: table;
-  }
-  .form-contact input {
-      width: 195px;
   }
 }
 
@@ -524,8 +487,5 @@ button {
   }
   .main h3 {
       font-size: 18px;
-  }
-  .form-contact input {
-      width: 190px;
   }
 }
