@@ -1,7 +1,8 @@
 .menu-nav > a {
+  font-size: 0.9rem;
   text-decoration: none;
   cursor: pointer;
-  margin: 20px;
+  margin: 16px;
   color: black;
 }
 .menu-nav > a:hover {
@@ -89,7 +90,7 @@
 
 @media screen and (max-width: 1175px) {
   .menu-nav > a {
-    margin: 16px;
+    margin: 14px;
   }
   .menu-nav > div {
     margin: 10px;
@@ -108,7 +109,7 @@
     width: 140px;
   }
   .menu-nav > a {
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 }
 @media screen and (max-width: 987px) {

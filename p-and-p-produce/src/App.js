@@ -6,6 +6,7 @@ import AdminOrders from "./pages/AdminOrders.js";
 import AdminProducts from "./pages/AdminProducts.js";
 import Contact from "./pages/Contact.js";
 import Home from "./pages/Home.js";
+import Franchise from "./pages/Franchise.js";
 import AdminPromote from "./pages/AdminPromote.js";
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path="/contact">
           <Contact></Contact>
+        </Route>
+        <Route path="/franchise">
+          <Franchise></Franchise>
         </Route>
         <Route path="/admin">
         <AdminPromote></AdminPromote>

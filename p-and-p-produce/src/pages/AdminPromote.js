@@ -24,7 +24,7 @@ class AdminPromote extends React.Component {
           </div>
           <div className="display-edit-banner">
             <div className='edit-banner'>
-              <div className='add-banner' onClick={() => {}}></div>
+              <div className='add-banner'></div>
               <input
                 className='hide'
                 type="file"
@@ -40,6 +40,7 @@ class AdminPromote extends React.Component {
                     src="https://cdn.pixabay.com/photo/2017/07/15/15/00/easter-2506688_960_720.jpg"
                   />
                   <p>file name.jpg</p>
+                  <div className='icon-move'><div className='icon-move-up'></div><div className='icon-move-down'></div></div>
                   <div className="delete"></div>
                 </div>
                 <div>
@@ -48,6 +49,7 @@ class AdminPromote extends React.Component {
                     src="https://cdn.pixabay.com/photo/2018/04/10/03/41/liver-3306262_960_720.jpg"
                   />
                   <p>file name.jpg</p>
+                  <div className='icon-move'><div className='icon-move-up'></div><div className='icon-move-down'></div></div>
                   <div className="delete"></div>
                 </div>
                 <div>
@@ -56,6 +58,7 @@ class AdminPromote extends React.Component {
                     src="https://cdn.pixabay.com/photo/2014/11/09/01/20/pork-523102_960_720.jpg"
                   />
                   <p>file name.jpg</p>
+                  <div className='icon-move'><div className='icon-move-up'></div><div className='icon-move-down'></div></div>
                   <div className="delete"></div>
                 </div>
                 <div>
@@ -64,6 +67,7 @@ class AdminPromote extends React.Component {
                     src="https://cdn.pixabay.com/photo/2019/12/20/14/44/meat-4708596_960_720.jpg"
                   />
                   <p>file name.jpg</p>
+                  <div className='icon-move'><div className='icon-move-up'></div><div className='icon-move-down'></div></div>
                   <div className="delete"></div>
                 </div>
                 <div>
@@ -72,6 +76,7 @@ class AdminPromote extends React.Component {
                     src="https://cdn.pixabay.com/photo/2019/07/23/09/01/pork-4357068_960_720.jpg"
                   />
                   <p>file name.jpg</p>
+                  <div className='icon-move'><div className='icon-move-up'></div><div className='icon-move-down'></div></div>
                   <div className="delete"></div>
                 </div>
               </div>

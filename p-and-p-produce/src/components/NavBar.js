@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class NavigationBar extends React.Component {
   render() {
-    const { bestSellers, allProducts, about, contact } = this.props;
+    const { bestSellers, allProducts, about, contact, franchise } = this.props;
     return (
       <div>
         <nav>
@@ -23,6 +23,9 @@ class NavigationBar extends React.Component {
             </Link>
             <Link to="/" className={about ? "on-page" : ""}>
               About
+            </Link>
+            <Link to="/franchise" className={franchise ? "on-page" : ""}>
+            Join with us
             </Link>
             <Link to="/contact" className={contact ? "on-page" : ""}>
               Contact

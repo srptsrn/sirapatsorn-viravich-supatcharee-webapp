@@ -1,0 +1,21 @@
+.app-franchise {
+    padding: 90px 80px 0 80px;
+}
+.app-franchise > .franchise-poster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.app-franchise > .franchise-poster > h2 {
+    margin-bottom: 20px;
+}
+.app-franchise > .franchise-poster  > a {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+.app-franchise > .franchise-poster  > a >  img {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 100px;
+}
