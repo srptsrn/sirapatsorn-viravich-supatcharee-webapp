@@ -1,0 +1,248 @@
+body {
+    background-color: white;
+    margin: 0;
+    font-family: "Libre Baskerville", serif;
+    padding: 0 80px 0 80px;
+    color: rgb(71, 71, 71);
+}
+
+input,
+button {
+    font-family: "Libre Baskerville", serif;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+nav {
+    background-color: rgb(255, 156, 8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 68px;
+    z-index: 20;
+}
+
+nav .logo {
+    color: #0639c1;
+    font-size: 36px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.head-details {
+    margin: 100px 0 20px 0;
+    font-size: 20px;
+}
+
+.main {
+    margin: 0;
+    padding: 10px 100px 50px 200px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.main-image {
+    /* border: 1px solid red; */
+    display: inline-block;
+}
+
+.image-left-column {
+    width: 55%;
+    position: relative;
+}
+
+.details-right-column {
+    width: 35%;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.product-description {
+    /* border: 1px solid red; */
+    /* border-bottom: 1px solid #E1E8EE; */
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 17px;
+    font-family: "light Libre Baskerville", serif;
+}
+
+input {
+    width: 60px;
+    height: 25px;
+}
+
+button {
+    padding: 13px 50px;
+    margin-bottom: 15px;
+}
+
+.button-add-order {
+    background-color: white;
+    border: 1px solid blue;
+    text-align: center;
+    font-size: 16px;
+}
+
+.button-buy {
+    background-color: blue;
+    border: none;
+    width: 241px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+
+.button-add-order:hover {
+    color: #7c7c7c;
+}
+
+.button-buy:hover {
+    background-color: #1E90FF;
+}
+
+
+/* * {
+    box-sizing: border-box;
+    justify-content: space-between;
+} */
+
+.similar-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 68px 0 25px 0;
+    /* border: 1px solid black; */
+    font-size: 18px;
+}
+
+.column-image {
+    float: left;
+    width: 32.33%;
+    padding: 5px;
+    /* border: 1px solid black; */
+}
+
+.row-image::after {
+    content: "";
+    clear: both;
+    display: table;
+    box-sizing: border-box;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+}
+
+.best-seller {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.ribbon-on-image-first {
+    position: absolute;
+    top: 870px;
+    left: 115px;
+    background-color: #0000CD;
+    padding: 10px 30px;
+    color: white;
+    font-family: "light Libre Baskerville", serif;
+    font-size: 20px;
+}
+
+.ribbon-on-image-second {
+    position: absolute;
+    top: 870px;
+    left: 566px;
+    background-color: #0000CD;
+    padding: 10px 30px;
+    color: white;
+    font-family: "light Libre Baskerville", serif;
+    font-size: 20px;
+}
+
+.ribbon-on-image-third {
+    position: absolute;
+    top: 870px;
+    left: 1018px;
+    background-color: #0000CD;
+    padding: 10px 30px;
+    color: white;
+    font-family: "light Libre Baskerville", serif;
+    font-size: 20px;
+}
+
+.column-image h5 {
+    text-align: center;
+    font-size: 16px;
+    font-family: "Libre Baskerville", serif;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px dashed black;
+}
+
+.footer>h3 {
+    color: #0639c1;
+}
+
+.footer>p {
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px 2px;
+    border-radius: 50%;
+    font-family: sans-serif;
+}
+
+.fa:hover {
+    opacity: 0.8;
+}
+
+.fa-facebook {
+    background: #3b5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55acee;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}

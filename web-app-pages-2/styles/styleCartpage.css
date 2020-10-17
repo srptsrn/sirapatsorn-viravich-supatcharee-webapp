@@ -1,0 +1,179 @@
+body {
+    background-color: white;
+    margin: 0;
+    font-family: "Libre Baskerville", serif;
+    padding: 0 80px 0 80px;
+    color: rgb(71, 71, 71);
+}
+
+input,
+button {
+    font-family: "Libre Baskerville", serif;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+nav {
+    background-color: rgb(255, 156, 8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 68px;
+    z-index: 20;
+}
+
+nav .logo {
+    color: #0639c1;
+    font-size: 36px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.head-cart {
+    margin: 100px 0 20px 0;
+    font-size: 20px;
+}
+
+.main-carts {
+    /* border: 1px green solid; */
+    margin: 0;
+    padding: 0
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table,
+th,
+td {
+    border-bottom: 1px solid gray;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    height: 50px;
+    color: gray;
+}
+
+input {
+    width: 60px;
+    text-align: center;
+}
+
+.button-remove {
+    border: 0;
+    padding: 5px 10px;
+    margin-left: 70px;
+    border-radius: 3px;
+    color: white;
+    background-color: #c66;
+    font-size: 14px;
+}
+
+.button-remove:hover {
+    background-color: #a44;
+}
+
+.total-payment {
+    /* border: 1px solid red; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.total-cart {
+    /* border: 1px solid red; */
+    display: flex;
+    margin-left: 82%;
+}
+
+.total-label {
+    margin-right: 100px;
+}
+
+.total-value {
+    text-align: right;
+    margin-right: 30px;
+}
+
+.button-payment {
+    margin-top: 40px;
+    margin-left: 90%;
+    margin-bottom: 60px;
+    padding: 10px 30px;
+    background-color: #4CAF50;
+    font-size: 17px;
+    color: white;
+    border-radius: 3px;
+    display: table;
+}
+
+.button-payment:hover {
+    background-color: #494;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px dashed black;
+}
+
+.footer>h3 {
+    color: #0639c1;
+}
+
+.footer>p {
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px 2px;
+    border-radius: 50%;
+    font-family: sans-serif;
+}
+
+.fa:hover {
+    opacity: 0.8;
+}
+
+.fa-facebook {
+    background: #3b5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55acee;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
