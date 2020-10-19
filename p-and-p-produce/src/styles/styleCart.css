@@ -1,0 +1,98 @@
+.app-cart {
+    background-color: white;
+    margin: 0;
+    font-family: "Libre Baskerville", serif;
+    padding: 0 80px 0 80px;
+    color: rgb(71, 71, 71);
+}
+
+.app-cart .head-cart {
+    margin: 100px 0 20px 0;
+    font-size: 20px;
+}
+
+.app-cart .main-carts {
+    /* border: 1px green solid; */
+    margin: 0;
+    padding: 0
+}
+
+.app-cart table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.app-cart table,
+.app-cart th,
+.app-cart td {
+    border-bottom: 1px solid gray;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.app-cart th {
+    height: 50px;
+    color: gray;
+}
+.cart-table img {
+    object-fit: cover;
+    width: 120px;
+    height: 120px;
+}
+.app-cart input {
+    width: 60px;
+    text-align: center;
+}
+
+.app-cart .button-remove {
+    border: 0;
+    padding: 5px 10px;
+    margin-left: 70px;
+    border-radius: 3px;
+    color: white;
+    background-color: #c66;
+    font-size: 14px;
+}
+
+.app-cart .button-remove:hover {
+    background-color: #a44;
+}
+
+.app-cart .total-payment {
+    /* border: 1px solid red; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.app-cart .total-cart {
+    /* border: 1px solid red; */
+    display: flex;
+    margin-left: 82%;
+}
+
+.app-cart .total-label {
+    margin-right: 100px;
+}
+
+.app-cart .total-value {
+    text-align: right;
+    margin-right: 30px;
+}
+
+.app-cart .button-payment {
+    margin-top: 40px;
+    margin-left: 90%;
+    margin-bottom: 60px;
+    padding: 10px 30px;
+    background-color: #4CAF50;
+    font-size: 17px;
+    color: white;
+    border-radius: 3px;
+    display: table;
+}
+
+.app-cart .button-payment:hover {
+    background-color: #494;
+}

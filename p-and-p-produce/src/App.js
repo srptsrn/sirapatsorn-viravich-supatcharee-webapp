@@ -7,6 +7,8 @@ import AdminProducts from "./pages/AdminProducts.js";
 import Contact from "./pages/Contact.js";
 import Home from "./pages/Home.js";
 import Franchise from "./pages/Franchise.js";
+import Cart from "./pages/Cart.js";
+import ProductDetails from "./pages/ProductDetails.js";
 import AdminPromote from "./pages/AdminPromote.js";
 function App() {
   return (
@@ -21,11 +23,17 @@ function App() {
         <Route path="/admin/promote">
           <AdminPromote></AdminPromote>
         </Route>
+        <Route path="/product-details">
+          <ProductDetails></ProductDetails>
+        </Route>
         <Route path="/contact">
           <Contact></Contact>
         </Route>
         <Route path="/franchise">
           <Franchise></Franchise>
+        </Route>
+        <Route path="/cart">
+        <Cart></Cart>
         </Route>
         <Route path="/admin">
         <AdminPromote></AdminPromote>

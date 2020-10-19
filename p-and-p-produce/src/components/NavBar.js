@@ -39,12 +39,12 @@ class NavigationBar extends React.Component {
                 placeholder="Search"
               />
             </div>
-            <div className="cart-nav">
+            <Link to="/cart" className="cart-nav">
               <div className="cart-icon"></div>
               <div id="cart-amount">
                 <p>3</p>
               </div>
-            </div>
+            </Link>
           </div>
           <div className="menu-admin-nav"></div>
         </nav>
