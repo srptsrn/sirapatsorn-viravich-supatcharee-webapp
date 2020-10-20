@@ -61,6 +61,8 @@
   background-image: url("https://www.flaticon.com/svg/static/icons/svg/1020/1020190.svg");
   width: 24px;
   height: 24px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
   background-size: cover;
 }
 
