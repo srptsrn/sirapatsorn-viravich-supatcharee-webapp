@@ -57,6 +57,10 @@ button {
   padding: 0 16% 0 16%;
   margin-bottom: 80px;
 }
+.form-contact > label {
+  text-align: left;
+  width: 100%;
+}
 
 .form-contact>div {
   display: flex;

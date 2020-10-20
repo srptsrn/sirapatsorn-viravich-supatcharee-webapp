@@ -2,21 +2,22 @@ import React from "react";
 import "../styles/styleProductDetails.css";
 import NavBar from "../components/NavBar.js";
 import Footer from "../components/Footer.js";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class ProductDetail extends React.Component {
   render() {
     return (
       <div className="app-product-detail">
         <NavBar></NavBar>
-        <div class="head-details">
+        <div className="head-details">
           <div>
-            <h2 class="details-left">รายละเอียดสินค้า</h2>
+            <h2 className="details-left">Detail of product</h2>
           </div>
         </div>
 
-        <div class="main">
-          <div class="main-image">
-            <div class="image-left-column">
+        <div className="main-product-detail">
+          <div className="main-image-product-detail">
+            <div className="image-left-column-product-detail">
               <img
                 src={require("../assets/images/drumstick.jpg")}
                 alt="drumstick"
@@ -26,8 +27,8 @@ class ProductDetail extends React.Component {
             </div>
           </div>
 
-          <div class="details-right-column">
-            <div class="product-description">
+          <div className="details-right-column">
+            <div className="product-description">
               <h3>Drumstick</h3>
               <p>
                 I'm a product description. This is a great place to "sell"
@@ -36,30 +37,34 @@ class ProductDetail extends React.Component {
               </p>
               <h4>฿50.00</h4>
               <p>จำนวน</p>
-              <input type="number" value="1" min="1" />
+              <input type="number" defaultValue='1' min="1" />
               <br />
             </div>
 
-            <div class="button-add">
-              <button class="button-add-order">เพิ่มลงในตะกร้าสินค้า</button>
+            <div className="button-add-product-detail">
+              <Link to="/cart">
+                <button className="button-add-order">add to cart</button>
+              </Link>
               <br />
-              <button class="button-buy">ซื้อเลย</button>
+              <Link to="/cart">
+                <button className="button-buy">Buy now</button>
+              </Link>
             </div>
           </div>
         </div>
 
-        <div class="similar-product">
-          <h4>สินค้าที่คล้ายกัน</h4>
+        <div className="similar-product">
+          <h4>Similar product</h4>
         </div>
 
-        <div class="row-image">
-          <div class="column-image">
+        <div className="row-image">
+          <div className="column-image">
             <img
               src={require("../assets/images/wingstick.jpg")}
               alt="wingsticks"
               width="200px"
               height="200px"
-              class="best-seller"
+              className="best-seller"
             />
             <div class="ribbon-on-image-first">Best Seller</div>
             <h5>Wingsticks 1 kg.</h5>

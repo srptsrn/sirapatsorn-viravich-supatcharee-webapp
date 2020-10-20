@@ -11,7 +11,7 @@ class NavigationBar extends React.Component {
         <nav>
           <div>
             <Link to="/" className="logo-admin">
-              P&amp;P Produce
+              <img src={require("../assets/images/icon-ppproduce.png")}></img>
             </Link>
           </div>
           <div className="menu-nav">
@@ -21,11 +21,11 @@ class NavigationBar extends React.Component {
             <Link to="/" className={allProducts ? "on-page" : ""}>
               All Products
             </Link>
-            <Link to="/" className={about ? "on-page" : ""}>
+            {/* <Link to="/" className={about ? "on-page" : ""}>
               About
-            </Link>
+            </Link> */}
             <Link to="/franchise" className={franchise ? "on-page" : ""}>
-            Join with us
+              Join with us
             </Link>
             <Link to="/contact" className={contact ? "on-page" : ""}>
               Contact
@@ -62,7 +62,11 @@ class NavigationBar extends React.Component {
             Contact
           </Link>
         </div>
-        <a className="messenger-nav" href="https://www.facebook.com/PP-Produce-115054696537678" target="_blank">
+        <a
+          className="messenger-nav"
+          href="https://www.facebook.com/PP-Produce-115054696537678"
+          target="_blank"
+        >
           <div></div>
         </a>
       </div>

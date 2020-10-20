@@ -11,7 +11,8 @@ class AdminNavigationBar extends React.Component {
         <nav>
           <div>
             <Link to="/admin" className="logo-admin">
-              P&amp;P Produce Admin
+              <img src={require("../assets/images/icon-ppproduce.png")}></img>
+              Admin
             </Link>
             <div className="type-admin-page">
               <Link to="/admin/promote">

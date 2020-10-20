@@ -8,7 +8,7 @@ class Footer extends React.Component {
     return (
       <div>
         <div className="info">
-          <h4>P&amp;P Product</h4>
+          <h4>P&amp;P Produce</h4>
           <p>
             Tel: 080 998 9424
             <br />

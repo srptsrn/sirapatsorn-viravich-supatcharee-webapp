@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 .category-btn button {
-  background-color: #3899ec;
+  background-color: #0639c1;
   color: white;
   font-family: "Libre Baskerville", serif;
   height: 48px;
@@ -30,7 +30,7 @@
 }
 .category-btn button#category_pork_btn {
   margin-left: 38px;
-  background-color: rgb(250, 161, 27);
+  background-color: rgb(255, 156, 8);
 }
 .icon-chicken-home {
   width: 60px;

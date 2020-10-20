@@ -40,6 +40,8 @@
 
 .search-tab-nav > .icon-search {
   background-image: url("https://www.flaticon.com/svg/static/icons/svg/1020/1020190.svg");
+  opacity: 0.5;
+  filter: alpha(opacity=50);
   width: 24px;
   height: 24px;
   background-size: cover;
@@ -62,7 +64,7 @@
   margin-right: 4px;
 }
 #cart-amount {
-  background-color: #0f4cf7;
+  background-color: #0639c1;
   color: white;
   width: 28px;
   height: 28px;

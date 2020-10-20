@@ -18,11 +18,19 @@ nav > div {
   align-items: center;
 }
 
+nav img {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 12px;
+}
 nav .logo-admin {
   color: #0639c1;
-  font-size: 36px;
+  font-size: 26px;
   text-decoration: none;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 nav .type-admin-page {
@@ -52,7 +60,6 @@ nav .select-admin-nav {
   border-radius: 18px;
   box-shadow: 0 0 4px #888;
 }
-
 nav > a > .log-out {
   background-color: #e4e4e4;
   font-family: "Libre Baskerville", serif;

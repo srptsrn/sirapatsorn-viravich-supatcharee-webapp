@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top: 3px dashed black;
+  border-top: 1px solid black;
   padding: 8px;
 }
 

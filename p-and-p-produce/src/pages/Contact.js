@@ -59,11 +59,11 @@ function Contact() {
             <input name="subJect" type="text" id="subJect" />
           </div>
         </div>
-
+        <label htmlFor="textArea">Message<span>*</span></label>
         <textarea id="textArea" name="textArea" rows="10" cols="70">
-          Type your message here...
+          
         </textarea>
-        <button type="submit">Summit</button>
+        <button type="submit">Submit</button>
       </form>
       <Footer></Footer>
     </div>

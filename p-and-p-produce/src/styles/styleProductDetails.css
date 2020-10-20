@@ -1,157 +1,158 @@
 .app-product-detail {
-    background-color: white;
-    margin: 0;
-    font-family: "Libre Baskerville", serif;
-    padding: 0 80px 0 80px;
-    color: rgb(71, 71, 71);
+  background-color: white;
+  margin: 0;
+  font-family: "Libre Baskerville", serif;
+  padding: 0 80px 0 80px;
+  color: rgb(71, 71, 71);
 }
 
 .app-product-detail .head-details {
-    margin: 100px 0 20px 0;
-    font-size: 20px;
+  margin: 100px 0 20px 0;
+  font-size: 20px;
 }
 
-.app-product-detail .main {
-    margin: 0;
-    padding: 10px 100px 50px 200px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 100px;
+.app-product-detail .main-product-detail {
+  margin: 0;
+  /* padding: 10px 100px 50px 200px; */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
 }
 
-.app-product-detail .main-image {
-    /* border: 1px solid red; */
-    display: inline-block;
+.app-product-detail .main-image-product-detail {
+  /* border: 1px solid red; */
+  display: inline-block;
 }
 
-.app-product-detail .image-left-column {
-    width: 55%;
-    position: relative;
+.image-left-column-product-detail > img {
+  width: 36vw;
+  object-fit: cover;
 }
 
 .app-product-detail .details-right-column {
-    width: 35%;
-    margin-top: 20px;
-    margin-left: 50px;
+  width: 30vw;
+  /* margin-top: 20px; */
+  margin-left: 50px;
 }
 
 .app-product-detail .product-description {
-    /* border: 1px solid red; */
-    /* border-bottom: 1px solid #E1E8EE; */
-    margin-bottom: 20px;
+  /* border: 1px solid red; */
+  /* border-bottom: 1px solid #E1E8EE; */
+  margin-bottom: 20px;
 }
 
 .app-product-detail h3 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .app-product-detail p {
-    font-size: 17px;
-    font-family: "light Libre Baskerville", serif;
+  font-size: 17px;
+  font-family: "light Libre Baskerville", serif;
 }
 
 .app-product-detail input {
-    width: 60px;
-    height: 25px;
+  width: 98%;
+  height: 25px;
+  text-align: center;
 }
 
 .app-product-detail button {
-    padding: 13px 50px;
-    margin-bottom: 15px;
+  width: 100%;
+  padding: 13px 0;
+  margin-bottom: 15px;
 }
 
 .app-product-detail .button-add-order {
-    background-color: white;
-    border: 1px solid blue;
-    text-align: center;
-    font-size: 16px;
+  background-color: white;
+  border: 1px solid blue;
+  text-align: center;
+  font-size: 16px;
 }
 
 .app-product-detail .button-buy {
-    background-color: blue;
-    border: none;
-    width: 241px;
-    text-align: center;
-    color: white;
-    font-size: 16px;
+  background-color: blue;
+  border: none;
+  text-align: center;
+  color: white;
+  font-size: 16px;
 }
 
 .app-product-detail .button-add-order:hover {
-    color: #7c7c7c;
+  color: #7c7c7c;
 }
 
 .app-product-detail .button-buy:hover {
-    background-color: #1E90FF;
+  background-color: #1e90ff;
 }
 
 .app-product-detail .similar-product {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 68px 0 25px 0;
-    /* border: 1px solid black; */
-    font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 68px 0 25px 0;
+  /* border: 1px solid black; */
+  font-size: 18px;
 }
 
 .app-product-detail .column-image {
-    float: left;
-    width: 32.33%;
-    padding: 5px;
-    /* border: 1px solid black; */
+  float: left;
+  width: 32.33%;
+  padding: 5px;
+  /* border: 1px solid black; */
 }
 
 .app-product-detail .row-image::after {
-    content: "";
-    clear: both;
-    display: table;
-    box-sizing: border-box;
-    justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 50px;
+  content: "";
+  clear: both;
+  display: table;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
 }
 
 .app-product-detail .best-seller {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .app-product-detail .ribbon-on-image-first {
-    position: absolute;
-    top: 870px;
-    left: 115px;
-    background-color: #0000CD;
-    padding: 10px 30px;
-    color: white;
-    font-family: "light Libre Baskerville", serif;
-    font-size: 20px;
+  position: absolute;
+  top: 870px;
+  left: 115px;
+  background-color: #0000cd;
+  padding: 10px 30px;
+  color: white;
+  font-family: "light Libre Baskerville", serif;
+  font-size: 20px;
 }
 
 .app-product-detail .ribbon-on-image-second {
-    position: absolute;
-    top: 870px;
-    left: 566px;
-    background-color: #0000CD;
-    padding: 10px 30px;
-    color: white;
-    font-family: "light Libre Baskerville", serif;
-    font-size: 20px;
+  position: absolute;
+  top: 870px;
+  left: 566px;
+  background-color: #0000cd;
+  padding: 10px 30px;
+  color: white;
+  font-family: "light Libre Baskerville", serif;
+  font-size: 20px;
 }
 
 .app-product-detail .ribbon-on-image-third {
-    position: absolute;
-    top: 870px;
-    left: 1018px;
-    background-color: #0000CD;
-    padding: 10px 30px;
-    color: white;
-    font-family: "light Libre Baskerville", serif;
-    font-size: 20px;
+  position: absolute;
+  top: 870px;
+  left: 1018px;
+  background-color: #0000cd;
+  padding: 10px 30px;
+  color: white;
+  font-family: "light Libre Baskerville", serif;
+  font-size: 20px;
 }
 
 .app-product-detail .column-image h5 {
-    text-align: center;
-    font-size: 16px;
-    font-family: "Libre Baskerville", serif;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Libre Baskerville", serif;
 }
