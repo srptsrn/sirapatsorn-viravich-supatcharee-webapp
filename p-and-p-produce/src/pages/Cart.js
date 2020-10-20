@@ -27,7 +27,7 @@ class Cart extends React.Component {
 
               <tr>
                 <td class="image-table">
-                  <Link to="/product-details">
+                  <Link to="/product-details" className='link-no-underline'>
                     <img
                       src={require("../assets/images/breast.jpg")}
                       alt="breast"
@@ -37,7 +37,7 @@ class Cart extends React.Component {
                   </Link>
                 </td>
                 <td class="name">
-                  <Link to="/product-details">
+                  <Link to="/product-details" className='link-no-underline'>
                     Breast
                     <br />1 kg.
                   </Link>
@@ -52,7 +52,7 @@ class Cart extends React.Component {
 
               <tr>
                 <td class="image-table">
-                <Link to="/product-details">
+                <Link to="/product-details" className='link-no-underline'>
                   <img
                     src={require("../assets/images/drumstick.jpg")}
                     alt="drumstick"
@@ -62,7 +62,7 @@ class Cart extends React.Component {
                   </Link>
                 </td>
                 <td class="name">
-                <Link to="/product-details">
+                <Link to="/product-details" className='link-no-underline'>
                   Drumstick
                   <br />1 kg.
                   </Link>
@@ -77,7 +77,7 @@ class Cart extends React.Component {
 
               <tr>
                 <td class="image-table">
-                <Link to="/product-details">
+                <Link to="/product-details" className='link-no-underline'>
                   <img
                     src={require("../assets/images/wingstick.jpg")}
                     alt="wingstick"
@@ -87,7 +87,7 @@ class Cart extends React.Component {
                   </Link>
                 </td>
                 <td class="name">
-                <Link to="/product-details">
+                <Link to="/product-details" className='link-no-underline'>
                   Wingstick
                   <br />1 kg.
                   </Link>

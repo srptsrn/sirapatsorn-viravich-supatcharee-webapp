@@ -10,6 +10,10 @@ import Franchise from "./pages/Franchise.js";
 import Cart from "./pages/Cart.js";
 import ProductDetails from "./pages/ProductDetails.js";
 import AdminPromote from "./pages/AdminPromote.js";
+import BestSellers from "./pages/BestSellers.js";
+import AllProducts from "./pages/AllProducts.js";
+import SearchResults from "./pages/SearchResults.js";
+
 function App() {
   return (
     <Router>
@@ -25,6 +29,15 @@ function App() {
         </Route>
         <Route path="/product-details">
           <ProductDetails></ProductDetails>
+        </Route>
+        <Route path="/all-products">
+          <AllProducts></AllProducts>
+        </Route>
+        <Route path="/best-sellers">
+          <BestSellers></BestSellers>
+        </Route>
+        <Route path="/search-results">
+          <SearchResults></SearchResults>
         </Route>
         <Route path="/contact">
           <Contact></Contact>

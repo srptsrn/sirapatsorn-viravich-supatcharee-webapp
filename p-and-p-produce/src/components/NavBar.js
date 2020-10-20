@@ -5,7 +5,12 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class NavigationBar extends React.Component {
   render() {
-    const { bestSellers, allProducts, about, contact, franchise } = this.props;
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter') {
+        window.location = "/search-results";
+      }
+    }
+    const { bestSellers, allProducts, about, contact, franchise, searchResults } = this.props;
     return (
       <div>
         <nav>
@@ -15,12 +20,12 @@ class NavigationBar extends React.Component {
             </Link>
           </div>
           <div className="menu-nav">
-            <Link to="/" className={bestSellers ? "on-page" : ""}>
-              Best Sellers
-            </Link>
-            <Link to="/" className={allProducts ? "on-page" : ""}>
-              All Products
-            </Link>
+          <Link to="/best-sellers" className={bestSellers ? "on-page" : ""}>
+            Best Sellers
+          </Link>
+          <Link to="/all-products" className={allProducts ? "on-page" : ""}>
+            All Products
+          </Link>
             {/* <Link to="/" className={about ? "on-page" : ""}>
               About
             </Link> */}
@@ -37,6 +42,7 @@ class NavigationBar extends React.Component {
                 type="text"
                 className="search_web"
                 placeholder="Search"
+                onKeyDown={handleKeyDown}
               />
             </div>
             <Link to="/cart" className="cart-nav">
@@ -49,14 +55,11 @@ class NavigationBar extends React.Component {
           <div className="menu-admin-nav"></div>
         </nav>
         <div id="mySidenav" className="sidenav">
-          <Link to="/" className={bestSellers ? "on-page" : ""}>
+          <Link to="/best-sellers" className={bestSellers ? "on-page" : ""}>
             Best Sellers
           </Link>
-          <Link to="/" className={allProducts ? "on-page" : ""}>
+          <Link to="/all-products" className={allProducts ? "on-page" : ""}>
             All Products
-          </Link>
-          <Link to="/" className={about ? "on-page" : ""}>
-            About
           </Link>
           <Link to="/contact" className={contact ? "on-page" : ""}>
             Contact
