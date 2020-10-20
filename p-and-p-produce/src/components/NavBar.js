@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class NavigationBar extends React.Component {
   render() {
-    const { bestSellers, allProducts, about, contact } = this.props;
+    const { bestSellers, allProducts, about, contact, searchResults} = this.props;
     return (
       <div>
         <nav>
@@ -15,27 +15,29 @@ class NavigationBar extends React.Component {
             </Link>
           </div>
           <div className="menu-nav">
-            <Link to="/" className={bestSellers ? "on-page" : ""}>
+            <Link to="/bestSellers" className={bestSellers ? "on-page" : ""}>
               Best Sellers
             </Link>
-            <Link to="/" className={allProducts ? "on-page" : ""}>
+            <Link to="/allProducts" className={allProducts ? "on-page" : ""}>
               All Products
             </Link>
-            <Link to="/" className={about ? "on-page" : ""}>
+            <Link to="/about" className={about ? "on-page" : ""}>
               About
             </Link>
             <Link to="/contact" className={contact ? "on-page" : ""}>
               Contact
-            </Link>
-            <div className="search-tab-nav">
-              <div className="icon-search"></div>
-              <input
-                id="search_web"
-                type="text"
-                className="search_web"
-                placeholder="Search"
-              />
-            </div>
+            </Link >
+            <Link to="/searchResults" className={searchResults ? "on-page" : ""}>
+              <div className="search-tab-nav">
+                <div className="icon-search"></div>
+                <input
+                  id="search_web"
+                  type="text"
+                  className="search_web"
+                  placeholder="Search"
+                />
+              </div>
+            </Link >
             <div className="cart-nav">
               <div className="cart-icon"></div>
               <div id="cart-amount">
@@ -46,13 +48,13 @@ class NavigationBar extends React.Component {
           <div className="menu-admin-nav"></div>
         </nav>
         <div id="mySidenav" className="sidenav">
-          <Link to="/" className={bestSellers ? "on-page" : ""}>
+          <Link to="/bestSellers" className={bestSellers ? "on-page" : ""}>
             Best Sellers
           </Link>
-          <Link to="/" className={allProducts ? "on-page" : ""}>
+          <Link to="/allProducts" className={allProducts ? "on-page" : ""}>
             All Products
           </Link>
-          <Link to="/" className={about ? "on-page" : ""}>
+          <Link to="/about" className={about ? "on-page" : ""}>
             About
           </Link>
           <Link to="/contact" className={contact ? "on-page" : ""}>

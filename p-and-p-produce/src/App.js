@@ -7,6 +7,10 @@ import AdminProducts from "./pages/AdminProducts.js";
 import Contact from "./pages/Contact.js";
 import Home from "./pages/Home.js";
 import AdminPromote from "./pages/AdminPromote.js";
+import BestSellers from "./pages/BestSellers.js";
+import AllProducts from "./pages/AllProducts.js";
+import SearchResults from "./pages/SearchResults.js";
+
 function App() {
   return (
     <Router>
@@ -20,6 +24,12 @@ function App() {
         <Route path="/admin/promote">
           <AdminPromote></AdminPromote>
         </Route>
+        <Route path="/allProducts">
+          <AllProducts></AllProducts>
+        </Route>
+        <Route path="/bestSellers">
+          <BestSellers></BestSellers>
+        </Route>
         <Route path="/contact">
           <Contact></Contact>
         </Route>
@@ -28,6 +38,9 @@ function App() {
         </Route>
         <Route path="/">
           <Home></Home>
+        </Route>
+        <Route path="/searchResults">
+          <SearchResults></SearchResults>
         </Route>
       </Switch>
     </Router>

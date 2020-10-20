@@ -1,0 +1,220 @@
+.app-allProducts {
+  padding: 0 80px 0 80px;
+}
+
+.head-allProducts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 68px 0 20px 0;
+  color: white;
+  font-size: 50px;
+  height: 75vh;
+  background-image: url("../assets/images/chicken.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -10px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.productName {
+  width: 100%;
+  height: 35px;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 15px;
+}
+.productPrice {
+  width: 100%;
+  height: 35px;
+  margin: 0 0 -10px 0;
+  padding: 0;
+  font-size: 15px;
+}
+img {
+  width: 100%;
+  height: 200px;
+  margin: 0 0 15px 0;
+}
+
+.input-product-quantity {
+  width: 100%;
+  height: 35px;
+  margin: 10px 0 0 0;
+  font-size: 15px;
+  text-align: center;
+}
+
+.btn-add-to-cart {
+  width: 100%;
+  height: 35px;
+  margin: 10px 0 0 0;
+  font-size: 15px;
+  text-align: center;
+  border: 0px;
+  color: #ffffff;
+  background-color: #0639c1;
+}
+
+.btn-add-to-cart:hover {
+  opacity: 0.9;
+}
+.btn-more{
+  width: 100%;
+  height: 35px;
+  margin: 20px 0 20px 0;
+  font-size: 15px;
+  text-align: center;
+  border: 0px;
+  color: #ffffff;
+  background-color: rgb(255, 156, 8);
+  cursor: pointer
+}
+
+.btn-more:hover {
+  opacity: 0.9;
+}
+
+@media only screen and (max-width: 1033px) {
+  .column {
+    float: left;
+    width: 33.3%;
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .head-allProducts {
+    background-image: url("../assets/images/chicken.jpg");
+    height: 45vh;
+  }
+  .head-allProducts h2 {
+    font-size: 47px;
+  }
+}
+
+@media only screen and (max-width: 873px) {
+  .app-allProducts {
+    padding: 0 40px 0 40px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .head-allProducts {
+    height: 40vh;
+  }
+  .head-allProducts h2 {
+    font-size: 32.5px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .head-allProducts h2 {
+    font-size: 33px;
+  }
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 707px) {
+  .head-allProducts h2 {
+    font-size: 33px;
+  }
+}
+
+@media only screen and (max-width: 685px) {
+  .head-allProducts {
+    height: 37vh;
+  }
+}
+
+@media only screen and (max-width: 676px) {
+  .head-allProducts {
+    height: 35vh;
+  }
+  .head-allProducts h2 {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 609px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .head-allProducts {
+    height: 28vh;
+  }
+  .head-allProducts h2 {
+    font-size: 31px;
+  }
+}
+
+@media only screen and (max-width: 426px) {
+  .head-allProducts {
+    height: 30vh;
+  }
+  .head-allProducts h2 {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .head-allProducts {
+    height: 35vh;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media only screen and (max-width: 331px) {
+  .head-allProducts {
+    height: auto;
+    background-size: cover;
+    background-position: center;
+  }
+  .head-allProducts h2 {
+    font-size: 26px;
+    padding: 40px 0;
+  }
+}
+
+@media only screen and (max-width: 309px) {
+  .head-allProducts h2 {
+    font-size: 22px;
+  }
+}
