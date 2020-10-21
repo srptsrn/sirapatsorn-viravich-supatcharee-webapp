@@ -44,7 +44,7 @@ nav .logo {
     font-weight: bold;
 }
 
-.head-details {
+.head-detail {
     margin: 100px 0 20px 0;
     font-size: 20px;
 }
@@ -64,11 +64,13 @@ nav .logo {
 
 .image-left-column {
     width: 55%;
+    margin-top: 50px;
+    margin-right: 30px;
     position: relative;
 }
 
-.details-right-column {
-    width: 35%;
+.detail-right-column {
+    width: 40%;
     margin-top: 20px;
     margin-left: 50px;
 }
@@ -79,16 +81,16 @@ nav .logo {
     margin-bottom: 20px;
 }
 
-h3 {
-    font-size: 20px;
+.product-description h3 {
+    font-size: 25px;
 }
 
-p {
-    font-size: 17px;
+.product-description p {
+    font-size: 18px;
     font-family: "light Libre Baskerville", serif;
 }
 
-input {
+.product-description input {
     width: 60px;
     height: 25px;
 }
@@ -103,6 +105,7 @@ button {
     border: 1px solid blue;
     text-align: center;
     font-size: 16px;
+    width: 241px;
 }
 
 .button-buy {
@@ -122,26 +125,28 @@ button {
     background-color: #1E90FF;
 }
 
-
-/* * {
-    box-sizing: border-box;
-    justify-content: space-between;
-} */
-
 .similar-product {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 68px 0 25px 0;
     /* border: 1px solid black; */
-    font-size: 18px;
+    font-size: 20px;
+}
+
+.row-image {
+    display: contents;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 .column-image {
     float: left;
-    width: 32.33%;
+    width: 32.30%;
     padding: 5px;
-    /* border: 1px solid black; */
+    border: 1px solid black;
+    margin-top: 20px;
 }
 
 .row-image::after {
@@ -163,8 +168,8 @@ button {
 
 .ribbon-on-image-first {
     position: absolute;
-    top: 870px;
-    left: 115px;
+    top: 950px;
+    left: auto;
     background-color: #0000CD;
     padding: 10px 30px;
     color: white;
@@ -174,8 +179,8 @@ button {
 
 .ribbon-on-image-second {
     position: absolute;
-    top: 870px;
-    left: 566px;
+    top: 950px;
+    left: auto;
     background-color: #0000CD;
     padding: 10px 30px;
     color: white;
@@ -185,8 +190,8 @@ button {
 
 .ribbon-on-image-third {
     position: absolute;
-    top: 870px;
-    left: 1018px;
+    top: 950px;
+    left: auto;
     background-color: #0000CD;
     padding: 10px 30px;
     color: white;
@@ -194,7 +199,8 @@ button {
     font-size: 20px;
 }
 
-.column-image h5 {
+.column-image h5,
+.column-image p {
     text-align: center;
     font-size: 16px;
     font-family: "Libre Baskerville", serif;
@@ -245,4 +251,356 @@ button {
 .fa-instagram {
     background: #125688;
     color: white;
+}
+
+@media only screen and (max-width: 1441px) {
+    .button-add-order,
+    .button-buy {
+        font-size: 18px;
+        padding: auto;
+        width: 260px;
+    }
+}
+
+@media only screen and (max-width: 1320px) {
+    .column-image {
+        float: left;
+        width: 31.30%;
+        padding: 5px;
+    }
+    .button-add-order,
+    .button-buy {
+        font-size: 15px;
+        padding: auto;
+    }
+}
+
+@media only screen and (max-width: 112px) {
+    .ribbon-on-image-first {
+        top: 990px;
+        left: auto;
+    }
+    .ribbon-on-image-second {
+        top: 990px;
+        left: auto;
+    }
+    .ribbon-on-image-third {
+        top: 990px;
+        left: auto;
+    }
+}
+
+@media only screen and (max-width: 1072px) {
+    .button-add-order,
+    .button-buy {
+        font-size: 15px;
+        width: 241px;
+    }
+    .ribbon-on-image-first {
+        top: 970px;
+        left: auto;
+    }
+    .ribbon-on-image-second {
+        top: 970px;
+        left: auto;
+    }
+    .ribbon-on-image-third {
+        top: 970px;
+        left: auto;
+    }
+}
+
+@media only screen and (max-width: 996px) {
+    .detail-right-column {
+        width: 50%;
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+    .ribbon-on-image-first {
+        top: 970px;
+        left: auto;
+    }
+    .ribbon-on-image-second {
+        top: 970px;
+        left: auto;
+    }
+    .ribbon-on-image-third {
+        top: 970px;
+        left: auto;
+    }
+}
+
+@media only screen and (max-width: 888px) {
+    .product-description p {
+        font-size: 16px;
+    }
+    .ribbon-on-image-first {
+        top: 950px;
+        left: auto;
+    }
+    .ribbon-on-image-second {
+        top: 950px;
+        left: auto;
+    }
+    .ribbon-on-image-third {
+        top: 950px;
+        left: auto;
+    }
+}
+
+@media only screen and (max-width: 841px) {
+    .details-left {
+        font-size: 24px;
+    }
+    .detail-right-column {
+        width: 60%;
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+    .product-description h3 {
+        font-size: 20px;
+    }
+    .product-description p {
+        font-size: 16px;
+        font-family: "light Libre Baskerville", serif;
+    }
+    .product-description h4 {
+        font-size: 15px;
+    }
+    .product-description input {
+        width: 55px;
+        height: 22px;
+    }
+    .button-add-order,
+    .button-buy {
+        font-size: 15px;
+        width: 238px;
+    }
+    .similar-product h4 {
+        font-size: 17px;
+    }
+    .ribbon-on-image-first {
+        top: 885px;
+        left: auto;
+    }
+    .ribbon-on-image-second {
+        top: 885px;
+        left: auto;
+    }
+    .ribbon-on-image-third {
+        top: 885px;
+        left: auto;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .button-add-order,
+    .button-buy {
+        font-size: 14px;
+        width: 225px;
+    }
+    .similar-product h4 {
+        font-size: 17px;
+    }
+    .ribbon-on-image-first {
+        top: 905px;
+        left: auto;
+    }
+    .ribbon-on-image-second {
+        top: 905px;
+        left: auto;
+    }
+    .ribbon-on-image-third {
+        top: 905px;
+        left: auto;
+    }
+    .column-image h5,
+    .column-image p {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    .image-left-column img {
+        width: 320px;
+        height: 320px;
+    }
+    .button-add-order,
+    .button-buy {
+        font-size: 12px;
+        width: 210px;
+    }
+}
+
+@media only screen and (max-width: 749px) {
+    .image-left-column img {
+        width: 300px;
+        height: 300px;
+    }
+    .image-left-column {
+        margin-right: 60px;
+    }
+    .detail-right-column {
+        width: 55%;
+        margin-left: 25px;
+    }
+    .button-add-order,
+    .button-buy {
+        font-size: 12px;
+        width: 190px;
+    }
+    .column-image {
+        float: left;
+        width: 30.50%;
+        padding: 5px;
+        border: 1px solid black;
+        margin-top: 20px;
+    }
+    .column-image img {
+        width: 170px;
+        height: 170px;
+    }
+    .ribbon-on-image-first {
+        top: 945px;
+        left: auto;
+        padding: 5px 17px;
+        font-size: 17px;
+    }
+    .ribbon-on-image-second {
+        top: 945px;
+        left: auto;
+        padding: 5px 17px;
+        font-size: 17px;
+    }
+    .ribbon-on-image-third {
+        top: 945px;
+        left: auto;
+        padding: 5px 17px;
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .detail-right-column {
+        width: 80%;
+        margin-left: 5px;
+    }
+    .column-image {
+        float: left;
+        width: 30.50%;
+        padding: 5px;
+        border: 1px solid black;
+        margin-top: 15px;
+    }
+    .ribbon-on-image-first {
+        top: 925px;
+        left: auto;
+        padding: 5px 17px;
+        font-size: 17px;
+    }
+    .ribbon-on-image-second {
+        top: 925px;
+        left: auto;
+        padding: 5px 17px;
+        font-size: 17px;
+    }
+    .ribbon-on-image-third {
+        top: 925px;
+        left: auto;
+        padding: 5px 17px;
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .button-add-order,
+    .button-buy {
+        font-size: 11px;
+        width: 160px;
+    }
+    .column-image img {
+        width: 150px;
+        height: 150px;
+    }
+    .ribbon-on-image-first {
+        top: 925px;
+        left: auto;
+        padding: 5px 15px;
+        font-size: 17px;
+    }
+    .ribbon-on-image-second {
+        top: 925px;
+        left: auto;
+        padding: 5px 15px;
+        font-size: 15px;
+    }
+    .ribbon-on-image-third {
+        top: 925px;
+        left: auto;
+        padding: 5px 15px;
+        font-size: 15px;
+    }
+    .column-image h5,
+    .column-image p {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 647px) {
+    .image-left-column {
+        width: 40%;
+        margin-top: 50px;
+        margin-left: 0;
+        position: relative;
+    }
+    .image-left-column img {
+        width: 270px;
+        height: 270px;
+    }
+    .detail-right-column {
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+    .product-description h3 {
+        font-size: 17px;
+    }
+    .product-description h4 {
+        font-size: 14px;
+    }
+    .product-description input {
+        width: 50px;
+        height: 20px;
+    }
+    .button-add-order,
+    .button-buy {
+        font-size: 10px;
+        width: 140px;
+    }
+    .column-image img {
+        width: 130px;
+        height: 130px;
+    }
+    .ribbon-on-image-first {
+        top: 925px;
+        left: auto;
+        padding: 5px 15px;
+        font-size: 17px;
+    }
+    .ribbon-on-image-second {
+        top: 925px;
+        left: auto;
+        padding: 5px 15px;
+        font-size: 15px;
+    }
+    .ribbon-on-image-third {
+        top: 925px;
+        left: auto;
+        padding: 5px 15px;
+        font-size: 15px;
+    }
+    .column-image h5,
+    .column-image p {
+        font-size: 13px;
+    }
 }
