@@ -43,9 +43,7 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .info {
-    border-top: 2.8px dashed black;
-  }
+  
   .info h4 {
     font-size: 15px;
   }
@@ -55,9 +53,7 @@
 }
 
 @media only screen and (max-width: 737px) {
-  .info {
-    border-top: 2.6px dashed black;
-  }
+  
   .info h4 {
     font-size: 14px;
   }
@@ -67,20 +63,11 @@
 }
 
 @media only screen and (max-width: 685px) {
-  .info {
-    border-top: 2.6px dashed black;
-  }
   .info h4 {
     font-size: 14px;
   }
   .info p {
     font-size: 13px;
-  }
-}
-
-@media only screen and (max-width: 676px) {
-  .info {
-    border-top: 2.4px dashed black;
   }
 }
 
@@ -117,9 +104,6 @@
 }
 
 @media only screen and (max-width: 426px) {
-  .info {
-    border-top: 2.6px dashed black;
-  }
   .info h4 {
     font-size: 14px;
   }
@@ -129,9 +113,6 @@
 }
 
 @media only screen and (max-width: 376px) {
-  .info {
-    border-top: 2.4px dashed black;
-  }
   .info h4 {
     font-size: 13px;
   }
@@ -140,16 +121,7 @@
   }
 }
 
-@media only screen and (max-width: 331px) {
-  .info {
-    border-top: 2.2px dashed black;
-  }
-}
-
 @media only screen and (max-width: 309px) {
-  .info {
-    border-top: 2px dashed black;
-  }
   .info h4 {
     font-size: 12px;
   }

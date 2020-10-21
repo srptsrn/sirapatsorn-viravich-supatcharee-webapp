@@ -49,6 +49,7 @@ a.link-no-underline {
   font-size: 15px;
   text-align: center;
   padding: 0;
+  width: 100%;
 }
 
 .btn-add-to-cart {
@@ -77,11 +78,9 @@ a.link-no-underline {
   background-color: rgb(4, 43, 149);
 }
 
-@media only screen and (max-width: 1033px) {
-  .column {
-    float: left;
-    width: 33.3%;
-    padding: 10px;
+@media only screen and (max-width: 1160px) {
+  .column-best-sellers {
+    width: 30%;
   }
 }
 
@@ -90,14 +89,21 @@ a.link-no-underline {
     background-image: url("../assets/images/chicken.jpg");
     height: 45vh;
   }
-  .head-bestSellers h2 {
+  .head-best-sellers h2 {
     font-size: 47px;
   }
 }
-
+@media only screen and (max-width: 911px) {
+  .column-best-sellers {
+    width: 28%;
+  }
+}
 @media only screen and (max-width: 873px) {
-  .app-bestSellers {
-    padding: 0 40px 0 40px;
+  .app-best-sellers {
+    padding: 90px 40px 0 40px;
+  }
+  .card-best-sellers > img {
+    height: 160px;
   }
 }
 
@@ -105,13 +111,13 @@ a.link-no-underline {
   .head-bestSellers {
     height: 40vh;
   }
-  .head-bestSellers h2 {
+  .head-best-sellers h2 {
     font-size: 32.5px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .head-bestSellers h2 {
+  .head-best-sellers h2 {
     font-size: 33px;
   }
   .column {
@@ -119,10 +125,16 @@ a.link-no-underline {
     width: 50%;
     padding: 10px;
   }
+  .column-best-sellers {
+    /* width: 24%; */
+  }
+  .card-best-sellers > img {
+    height: 100px;
+  }
 }
 
 @media only screen and (max-width: 707px) {
-  .head-bestSellers h2 {
+  .head-best-sellers h2 {
     font-size: 33px;
   }
 }
@@ -137,8 +149,15 @@ a.link-no-underline {
   .head-bestSellers {
     height: 35vh;
   }
-  .head-bestSellers h2 {
+  .head-best-sellers h2 {
     font-size: 30px;
+  }
+  
+  .column-best-sellers {
+    width: 40%;
+  }
+  .card-best-sellers > img {
+    height: 180px;
   }
 }
 
@@ -148,23 +167,44 @@ a.link-no-underline {
     display: block;
     margin-bottom: 20px;
   }
+  
+  .column-best-sellers {
+    width: 45%;
+  }
+  .card-best-sellers > img {
+    height: 160px;
+  }
 }
 
 @media only screen and (max-width: 520px) {
   .head-bestSellers {
     height: 28vh;
   }
-  .head-bestSellers h2 {
+  .head-best-sellers h2 {
     font-size: 31px;
   }
 }
-
+@media only screen and (max-width: 478px) {
+  .column-best-sellers {
+    width: 80%; 
+  }
+  .card-best-sellers > img {
+    height: 250px;
+  }
+  .row-best-sellers {
+    justify-content: center;
+  }
+}
 @media only screen and (max-width: 426px) {
   .head-bestSellers {
     height: 30vh;
   }
-  .head-bestSellers h2 {
+  .head-best-sellers h2 {
     font-size: 30px;
+  }
+  
+  .card-best-sellers > img {
+    height: 220px;
   }
 }
 
@@ -174,6 +214,10 @@ a.link-no-underline {
     background-size: cover;
     background-position: center;
   }
+  
+  .card-best-sellers > img {
+    height: 180px;
+  }
 }
 
 @media only screen and (max-width: 331px) {
@@ -182,14 +226,22 @@ a.link-no-underline {
     background-size: cover;
     background-position: center;
   }
-  .head-bestSellers h2 {
+  .head-best-sellers h2 {
     font-size: 26px;
     padding: 40px 0;
+  }
+  
+  .card-best-sellers > img {
+    height: 170px;
   }
 }
 
 @media only screen and (max-width: 309px) {
-  .head-bestSellers h2 {
+  .head-best-sellers h2 {
     font-size: 22px;
+  }
+  
+  .card-best-sellers > img {
+    height: 150px;
   }
 }

@@ -3,6 +3,7 @@ import "../styles/styleProductDetails.css";
 import NavBar from "../components/NavBar.js";
 import Footer from "../components/Footer.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Picture from "../assets/images/chicken-meat.jpg";
 
 class ProductDetail extends React.Component {
   render() {
@@ -52,49 +53,112 @@ class ProductDetail extends React.Component {
             </div>
           </div>
         </div>
-
-        <div className="similar-product">
-          <h4>Similar product</h4>
+       
+        <div className="head-best-sellers">
+          <div>
+            <h2 className="best-sellers-center">Similar product</h2>
+          </div>
         </div>
-
-        <div className="row-image">
-          <div className="column-image">
-            <img
-              src={require("../assets/images/wingstick.jpg")}
-              alt="wingsticks"
-              width="200px"
-              height="200px"
-              className="best-seller"
-            />
-            <div class="ribbon-on-image-first">Best Seller</div>
-            <h5>Wingsticks 1 kg.</h5>
-            <h5>฿50.00</h5>
+        <div className="row-best-sellers">
+          <div className="column-best-sellers">
+            <Link to="/product-details" className="link-no-underline">
+              <div className="card-best-sellers">
+                <img src={Picture}></img>
+                <p className="product-name">Chicken</p>
+                <p className="product-price">฿50.00</p>
+                <input
+                  type="number"
+                  className="input-product-quantity"
+                  defaultValue="1"
+                  min="1"
+                ></input>
+                <Link to="/cart">
+                  <button type="button" className="btn-add-to-cart">
+                    Add to Cart{" "}
+                  </button>
+                </Link>
+                <Link to="/cart">
+                  <button type="button" className="btn-buy-now">
+                    Buy now
+                  </button>
+                </Link>
+              </div>
+            </Link>
           </div>
-
-          <div class="column-image">
-            <img
-              src={require("../assets/images/breast.jpg")}
-              alt="breasts"
-              width="200px"
-              height="200px"
-              class="best-seller"
-            />
-            <div class="ribbon-on-image-second">Best Seller</div>
-            <h5>Breasts 1 kg.</h5>
-            <h5>฿50.00</h5>
+          <div className="column-best-sellers">
+            <Link to="/product-details" className="link-no-underline">
+              <div className="card-best-sellers">
+                <img src={Picture}></img>
+                <p className="product-name">Chicken</p>
+                <p className="product-price">฿50.00</p>
+                <input
+                  type="number"
+                  className="input-product-quantity"
+                  defaultValue="1"
+                  min="1"
+                ></input>
+                <Link to="/cart">
+                  <button type="button" className="btn-add-to-cart">
+                    Add to Cart{" "}
+                  </button>
+                </Link>
+                <Link to="/cart">
+                  <button type="button" className="btn-buy-now">
+                    Buy now
+                  </button>
+                </Link>
+              </div>
+            </Link>
           </div>
-
-          <div class="column-image">
-            <img
-              src={require("../assets/images/drumstick.jpg")}
-              alt="drumsticks "
-              width="200px "
-              height="200px "
-              class="best-seller"
-            />
-            <div class="ribbon-on-image-third">Best Seller</div>
-            <h5>Drumsticks 1 kg.</h5>
-            <h5>฿50.00</h5>
+          <div className="column-best-sellers">
+            <Link to="/product-details" className="link-no-underline">
+              <div className="card-best-sellers">
+                <img src={Picture}></img>
+                <p className="product-name">Chicken</p>
+                <p className="product-price">฿50.00</p>
+                <input
+                  type="number"
+                  className="input-product-quantity"
+                  defaultValue="1"
+                  min="1"
+                ></input>
+                <Link to="/cart">
+                  <button type="button" className="btn-add-to-cart">
+                    Add to Cart{" "}
+                  </button>
+                </Link>
+                <Link to="/cart">
+                  <button type="button" className="btn-buy-now">
+                    Buy now
+                  </button>
+                </Link>
+              </div>
+            </Link>
+          </div>
+          <div className="column-best-sellers">
+            <Link to="/product-details" className="link-no-underline">
+              <div className="card-best-sellers">
+                <img src={Picture}></img>
+                <p className="product-name">Chicken</p>
+                <p className="product-price">฿50.00</p>
+                <input
+                  type="number"
+                  className="input-product-quantity"
+                  defaultValue="1"
+                  min="1"
+                ></input>
+                <Link to="/cart">
+                  <button type="button" className="btn-add-to-cart">
+                    Add to Cart{" "}
+                  </button>
+                </Link>
+                <Link to="/cart">
+                  <button type="button" className="btn-buy-now">
+                    Buy now
+                  </button>
+                </Link>
+              </div>
+            </Link>
           </div>
         </div>
         <Footer></Footer>

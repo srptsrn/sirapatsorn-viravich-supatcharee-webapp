@@ -615,6 +615,9 @@
     width: 100px;
     font-size: 0.7rem;
   }
+  .table-display-order .detail {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 310px) {

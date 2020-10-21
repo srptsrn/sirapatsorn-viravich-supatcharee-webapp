@@ -62,3 +62,76 @@ img {
   background-size: contain;
   background-color: transparent;
 }
+@media screen and (max-width: 1200px) {
+  .img-slide-section {
+    height: 380px;
+  }
+}
+@media screen and (max-width: 1128px) {
+  .img-slide-section {
+    height: 340px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .img-slide-section {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 940px) {
+  .img-slide-section {
+    height: 280px;
+  }
+}
+@media screen and (max-width: 864px) {
+  .img-slide-section {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 790px) {
+  .img-slide-section {
+    height: 220px;
+  }
+  .arrow-button > div {
+    width: 140px;
+  }
+  .prev-img, .after-img {
+    width: 30px;
+    height: 30px;
+  } 
+}
+@media screen and (max-width: 700px) {
+  .img-slide-section {
+    height: 200px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .img-slide-section {
+    height: 170px;
+  }
+  
+  .arrow-button > div {
+    width: 100px;
+  }
+  .prev-img, .after-img {
+    width: 30px;
+    height: 30px;
+  } 
+}
+@media screen and (max-width: 550px) {
+  .img-slide-section {
+    height: 150px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .img-slide-section {
+    height: 120px;
+  }
+  
+  .arrow-button > div {
+    width: 60px;
+  }
+  .prev-img, .after-img {
+    width: 20px;
+    height: 20px;
+  } 
+}
