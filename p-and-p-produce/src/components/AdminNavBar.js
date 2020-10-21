@@ -4,6 +4,22 @@ import "../styles/styleAdNav.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class AdminNavigationBar extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      visibleAdmin: false,
+    };
+
+    this.toggleMenu = this.toggleMenu.bind(this);
+  }
+
+  toggleMenu() {
+    this.setState({
+      visibleAdmin: !this.state.visibleAdmin,
+    });
+    console.log(this.state.visibleAdmin);
+  }
   render() {
     const { products, orders, promote } = this.props;
     return (
@@ -45,12 +61,23 @@ class AdminNavigationBar extends React.Component {
           <Link to="/">
             <button className="log-out">Log out</button>
           </Link>
-          <div className="menu-admin-nav"></div>
+          <div className="menu-admin-nav" onClick={() => {
+              this.toggleMenu();
+            }}></div>
         </nav>
-        <div id="mySidenav" className="sidenav">
-          <a href="AdminProducts.html">Edit products</a>
-          <a href="AdminOrders.html">Orders</a>
-          <a>Log out</a>
+        <div
+          id="mySidenav"
+          id="mySidenav"
+          className={this.state.visibleAdmin ? "sidenav-show" : "sidenav-hide"}
+        >
+          <Link></Link>
+          <Link></Link>
+          <Link></Link>
+          <Link to="/admin">
+                  Edit Banner</Link>
+          <Link to="/admin/products">Edit products</Link>
+          <Link to="/admin/orders">Orders</Link>
+          <Link to="/">Log out</Link>
         </div>
       </div>
     );

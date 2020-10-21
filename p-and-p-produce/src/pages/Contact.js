@@ -2,8 +2,29 @@ import React from "react";
 import "../styles/styleContact.css";
 import NavBar from "../components/NavBar.js";
 import Footer from "../components/Footer.js";
+import { GoogleMap, LoadScript } from "@react-google-maps/api";
+const containerStyle = {
+  width: "100%",
+  height: "400px",
+  marginBottom: "70px",
+};
 
+const center = {
+  lat: 16.300516,
+  lng: 102.858832,
+};
 function Contact() {
+  const [map, setMap] = React.useState(null);
+
+  const onLoad = React.useCallback(function callback(map) {
+    const bounds = new window.google.maps.LatLngBounds();
+    map.fitBounds(bounds);
+    setMap(map);
+  }, []);
+
+  const onUnmount = React.useCallback(function callback(map) {
+    setMap(null);
+  }, []);
   return (
     <div className="app-contact">
       <NavBar contact></NavBar>
@@ -59,12 +80,21 @@ function Contact() {
             <input name="subJect" type="text" id="subJect" />
           </div>
         </div>
-        <label htmlFor="textArea">Message<span>*</span></label>
-        <textarea id="textArea" name="textArea" rows="10" cols="70">
-          
-        </textarea>
+        <label htmlFor="textArea">
+          Message<span>*</span>
+        </label>
+        <textarea id="textArea" name="textArea" rows="10" cols="70"></textarea>
         <button type="submit">Submit</button>
       </form>
+      <LoadScript googleMapsApiKey="AIzaSyCCZ7HSVdSM7zxSlqZJw75WnehEPpgICQM">
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={10}
+          onLoad={onLoad}
+          onUnmount={onUnmount}
+        ></GoogleMap>
+      </LoadScript>
       <Footer></Footer>
     </div>
   );

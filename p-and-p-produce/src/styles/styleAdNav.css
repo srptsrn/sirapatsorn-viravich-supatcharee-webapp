@@ -74,7 +74,20 @@ nav .menu-admin-nav {
   display: none;
 }
 
-.sidenav {
+.sidenav-show {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 171, 44);
+  overflow-x: hidden;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.sidenav-hide {
   height: 0;
   width: 100%;
   position: fixed;
@@ -87,7 +100,7 @@ nav .menu-admin-nav {
   text-align: center;
 }
 
-.sidenav a {
+.sidenav-hide a, .sidenav-show a {
   padding: 16px 16px 16px 32px;
   text-decoration: none;
   font-size: 1.2rem;
@@ -97,11 +110,11 @@ nav .menu-admin-nav {
   border-bottom: 1px solid rgb(255, 196, 108);
 }
 
-.sidenav a:hover {
+.sidenav-hide a:hover, .sidenav-show a:hover {
   color: #f1f1f1;
 }
 
-.sidenav .closebtn {
+.sidenav-hide .closebtn, .sidenav-show .closebtn {
   position: absolute;
   top: 0;
   right: 25px;

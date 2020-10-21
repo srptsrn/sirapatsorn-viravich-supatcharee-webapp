@@ -4,13 +4,37 @@ import "../styles/styleNav.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class NavigationBar extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      visible: false,
+    };
+
+    this.toggleMenu = this.toggleMenu.bind(this);
+  }
+
+  toggleMenu() {
+    this.setState({
+      visible: !this.state.visible,
+    });
+    console.log(this.state.visible);
+  }
   render() {
     const handleKeyDown = (event) => {
-      if (event.key === 'Enter') {
+      if (event.key === "Enter") {
         window.location = "/search-results";
       }
-    }
-    const { bestSellers, allProducts, about, contact, franchise, searchResults } = this.props;
+    };
+
+    const {
+      bestSellers,
+      allProducts,
+      about,
+      contact,
+      franchise,
+      searchResults,
+    } = this.props;
     return (
       <div>
         <nav>
@@ -20,12 +44,12 @@ class NavigationBar extends React.Component {
             </Link>
           </div>
           <div className="menu-nav">
-          <Link to="/best-sellers" className={bestSellers ? "on-page" : ""}>
-            Best Sellers
-          </Link>
-          <Link to="/all-products" className={allProducts ? "on-page" : ""}>
-            All Products
-          </Link>
+            <Link to="/best-sellers" className={bestSellers ? "on-page" : ""}>
+              Best Sellers
+            </Link>
+            <Link to="/all-products" className={allProducts ? "on-page" : ""}>
+              All Products
+            </Link>
             {/* <Link to="/" className={about ? "on-page" : ""}>
               About
             </Link> */}
@@ -52,9 +76,19 @@ class NavigationBar extends React.Component {
               </div>
             </Link>
           </div>
-          <div className="menu-admin-nav"></div>
+          <div
+            className="menu-admin-nav"
+            onClick={() => {
+              this.toggleMenu();
+            }}
+          ></div>
         </nav>
-        <div id="mySidenav" className="sidenav">
+        <div
+          id="mySidenav"
+          className={this.state.visible ? "sidenav-show" : "sidenav-hide"}
+        >
+          <Link >
+          </Link>
           <Link to="/best-sellers" className={bestSellers ? "on-page" : ""}>
             Best Sellers
           </Link>
@@ -64,6 +98,27 @@ class NavigationBar extends React.Component {
           <Link to="/contact" className={contact ? "on-page" : ""}>
             Contact
           </Link>
+          <Link to="/best-sellers" className={bestSellers ? "on-page" : ""}>
+              Best Sellers
+            </Link>
+            <Link to="/all-products" className={allProducts ? "on-page" : ""}>
+              All Products
+            </Link>
+            {/* <Link to="/" className={about ? "on-page" : ""}>
+              About
+            </Link> */}
+            <Link to="/franchise" className={franchise ? "on-page" : ""}>
+              Join with us
+            </Link>
+            <Link to="/contact" className={contact ? "on-page" : ""}>
+              Contact
+            </Link>
+            <Link to="/search" className={contact ? "on-page" : ""}>
+              Search
+            </Link>
+            <Link to="/cart">
+              Cart
+            </Link>
         </div>
         <a
           className="messenger-nav"

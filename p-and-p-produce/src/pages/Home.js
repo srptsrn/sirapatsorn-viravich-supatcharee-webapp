@@ -26,7 +26,7 @@ class Home extends React.Component {
             <button
               id="category_chicken_btn"
               onClick={() => {
-                console.log("ck");
+                window.location = "/all-products";
               }}
             >
               Chicken
@@ -34,7 +34,7 @@ class Home extends React.Component {
             <button
               id="category_pork_btn"
               onClick={() => {
-                console.log("p");
+                window.location = "/all-products";
               }}
             >
               Pork
