@@ -2,17 +2,130 @@ import React from "react";
 import "../styles/styleAdmin.css";
 import AdminNavBar from "../components/AdminNavBar.js";
 import ImgSlideExample from "../components/ImgSlideExample.js";
+import firebase from "../components/Firebase.js";
+const connector = firebase.storage();
+const storageRef = connector.ref();
+const uploadImge = "banner/";
 
 class AdminPromote extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataBanner: [
+      ],
+    };
+  }
   fileOnChange = (e) => {
     console.log(e.target.files[0]);
     const file = e.target.files[0];
     if (file) {
       const path = file.name;
-      console.log(path);
+      console.log("fileOnChange: " + path);
+      this.OnUpload(file);
     }
   };
+  pressUpload = () => {
+    document.getElementById("file").click();
+  };
+
+  OnUpload = (file) => {
+    console.log("OnUpload");
+    const path = uploadImge + file.name;
+    const uploadTask = storageRef.child(path).put(file);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      },
+      (err) => {
+        console.log(err);
+      },
+      () => {
+        uploadTask.snapshot.ref
+          .getDownloadURL()
+          .then((url) => {
+            localStorage.setItem("current", url);
+            console.log("file : " + url);
+            this.onGetImgList();
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+      }
+    );
+  };
+  getImgUrl = async (path) => {
+    return await storageRef.child(path).getDownloadURL();
+  };
+  imageRef = storageRef.child(uploadImge);
+  onGetImgList = () => {
+    const spinnerLoading = document.querySelector("#spinner");
+    // spinnerLoading.className = "spinner-show";
+    var array = []; // make a separate copy of the array
+    this.imageRef
+      .listAll()
+      .then((res) => {
+        // spinnerLoading.className = "spinner-hide";
+        const files = res.items;
+        files.forEach((file) => {
+          console.log(file);
+          this.getImgUrl(file.fullPath)
+            .then((url) => {
+              // console.log(url);
+              console.log("b "+ this.state.dataBanner.length);
+              array.push({ img: url, name: "new upload", path: file.fullPath });
+              this.setState({ dataBanner: array });
+              console.log("a "+ this.state.dataBanner.length);
+            })
+            .catch((error) => {
+              console.log({ msg: "error", error });
+            });
+        });
+      })
+      .catch((err) => {
+        console.log({ msg: "error", err });
+      });
+  };
+  componentWillMount() {
+    this.onGetImgList();
+  }
   render() {
+    const onDeleteImg = async (item) => {
+      const deleteImgRef = storageRef.child(item.path);
+      deleteImgRef
+        .delete()
+        .then((result) => {
+          console.log("delete " + item.path + " success");
+          window.location.reload();
+          // var array = [...this.state.dataBanner]; // make a separate copy of the array
+          // var index = array.indexOf(item);
+          // if (index !== -1) {
+          //   array.splice(index, 1);
+          //   this.setState({ dataBanner: array });
+          // }
+        })
+        .catch((err) => {
+          console.log("delete " + item.path + " fail");
+        });
+    };
+    const listBanner = this.state.dataBanner.map(function (item, i) {
+      return (
+        <div>
+          <img key={i} className="storage-img" src={item.img} />
+          <p>{item.name}</p>
+          <div className="icon-move">
+            <div className="icon-move-up" onClick={() => {}}></div>
+            <div className="icon-move-down" onClick={() => {}}></div>
+          </div>
+          <div
+            className="delete"
+            onClick={() => {
+              onDeleteImg(item);
+            }}
+          ></div>
+        </div>
+      );
+    });
     return (
       <div className="app-admin">
         <AdminNavBar promote></AdminNavBar>
@@ -23,10 +136,10 @@ class AdminPromote extends React.Component {
             </div>
           </div>
           <div className="display-edit-banner">
-            <div className='edit-banner'>
-              <div className='add-banner'></div>
+            <div className="edit-banner">
+              <div className="add-banner" onClick={this.pressUpload}></div>
               <input
-                className='hide'
+                className="hide"
                 type="file"
                 name="file"
                 id="file"
@@ -34,60 +147,16 @@ class AdminPromote extends React.Component {
                 onChange={(e) => this.fileOnChange(e)}
               />
               <div className="store-list">
-                <div>
-                  <img
-                    className="storage-img"
-                    src="https://cdn.pixabay.com/photo/2017/07/15/15/00/easter-2506688_960_720.jpg"
-                  />
-                  <p>file name.jpg</p>
-                  <div className='icon-move'><div className='icon-move-up'></div><div className='icon-move-down'></div></div>
-                  <div className="delete"></div>
-                </div>
-                <div>
-                  <img
-                    className="storage-img"
-                    src="https://cdn.pixabay.com/photo/2018/04/10/03/41/liver-3306262_960_720.jpg"
-                  />
-                  <p>file name.jpg</p>
-                  <div className='icon-move'><div className='icon-move-up'></div><div className='icon-move-down'></div></div>
-                  <div className="delete"></div>
-                </div>
-                <div>
-                  <img
-                    className="storage-img"
-                    src="https://cdn.pixabay.com/photo/2014/11/09/01/20/pork-523102_960_720.jpg"
-                  />
-                  <p>file name.jpg</p>
-                  <div className='icon-move'><div className='icon-move-up'></div><div className='icon-move-down'></div></div>
-                  <div className="delete"></div>
-                </div>
-                <div>
-                  <img
-                    className="storage-img"
-                    src="https://cdn.pixabay.com/photo/2019/12/20/14/44/meat-4708596_960_720.jpg"
-                  />
-                  <p>file name.jpg</p>
-                  <div className='icon-move'><div className='icon-move-up'></div><div className='icon-move-down'></div></div>
-                  <div className="delete"></div>
-                </div>
-                <div>
-                  <img
-                    className="storage-img"
-                    src="https://cdn.pixabay.com/photo/2019/07/23/09/01/pork-4357068_960_720.jpg"
-                  />
-                  <p>file name.jpg</p>
-                  <div className='icon-move'><div className='icon-move-up'></div><div className='icon-move-down'></div></div>
-                  <div className="delete"></div>
-                </div>
+                {listBanner}
               </div>
-              <div id="spinner" className="hide"></div>
+              <div id="spinner" className="spinner-hide"></div>
             </div>
-            <div className='show-ex-edit-banner'>
+            <div className="show-ex-edit-banner">
               <h4>Examble</h4>
-                <ImgSlideExample></ImgSlideExample>
+              <ImgSlideExample></ImgSlideExample>
               <div>
-              <button id='publish_banner'>Publish</button>
-              <button id='reset_banner'>Reset</button>
+                <button id="publish_banner">Publish</button>
+                <button id="reset_banner">Reset</button>
               </div>
             </div>
           </div>

@@ -213,6 +213,7 @@
 .store-list {
   overflow-y: scroll;
   height: 314px;
+  min-width: 300px;
 }
 .store-list > div {
   display: flex;
@@ -231,6 +232,9 @@
 }
 .store-list > div:hover {
   background-color: #e8f4ff;
+}
+.show-ex-edit-banner {
+  width: 100%;
 }
 .show-ex-edit-banner button {
   background-color: #e4e4e4;
@@ -294,8 +298,34 @@
   background-size: cover;
   opacity: 0.4;
 }
-.store-list .icon-move-up:hover,.store-list .icon-move-down:hover {
+.store-list .icon-move-up:hover,
+.store-list .icon-move-down:hover {
   opacity: 0.76;
+}
+#spinner {
+  position: fixed;
+  top: 200px;
+  opacity: 0.6;
+  width: 100px;
+  height: 100px;
+  border: 20px solid #fff;
+  border-top: 20px solid #ffbd72;
+  border-radius: 50%;
+  animation: spinAnimation 2s linear infinite;
+}
+.spinner-hide {
+  visibility: hidden;
+}
+.spinner-show {
+  visibility: visible;
+}
+@keyframes spinAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 @media screen and (max-width: 898px) {
   .select-filter-product select,
