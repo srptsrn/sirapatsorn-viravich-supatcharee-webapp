@@ -2,6 +2,7 @@ import { render } from "@testing-library/react";
 import React from "react";
 import "../styles/styleAdNav.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import firebase from "../components/Firebase.js";
 
 class AdminNavigationBar extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class AdminNavigationBar extends React.Component {
     console.log(this.state.visibleAdmin);
   }
   render() {
-    const { products, orders, promote } = this.props;
+    const { products, orders, promote, signUp } = this.props;
     return (
       <div className="app-nav">
         <nav>
@@ -57,13 +58,23 @@ class AdminNavigationBar extends React.Component {
               </Link>
             </div>
           </div>
-
-          <Link to="/">
-            <button className="log-out">Log out</button>
+          <Link>
+          <button className="tr-web-home">return to web home</button>
+          <button className="new-account">New account</button>
+            <button className="my-account">My account</button>
+            <button
+              className="log-out"
+              onClick={() => firebase.auth().signOut()}
+            >
+              Log out
+            </button>
           </Link>
-          <div className="menu-admin-nav" onClick={() => {
+          <div
+            className="menu-admin-nav"
+            onClick={() => {
               this.toggleMenu();
-            }}></div>
+            }}
+          ></div>
         </nav>
         <div
           id="mySidenav"
@@ -73,8 +84,7 @@ class AdminNavigationBar extends React.Component {
           <Link></Link>
           <Link></Link>
           <Link></Link>
-          <Link to="/admin">
-                  Edit Banner</Link>
+          <Link to="/admin">Edit Banner</Link>
           <Link to="/admin/products">Edit products</Link>
           <Link to="/admin/orders">Orders</Link>
           <Link to="/">Log out</Link>
