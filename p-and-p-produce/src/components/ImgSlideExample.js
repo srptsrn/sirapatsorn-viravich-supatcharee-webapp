@@ -22,10 +22,10 @@ class ImgSlideExample extends React.Component {
       .then((res) => {
         const files = res.items;
         files.forEach((file) => {
-          console.log(file);
+          // console.log(file);
           this.getImgUrl(file.fullPath)
             .then((url) => {
-              console.log("onGetImgList: " + url);
+              // console.log("onGetImgList: " + url);
               var array = [...this.state.dataBanner]; // make a separate copy of the array
               array.push({ img: url, name: "new upload", path: file.fullPath });
               if (JSON.stringify(array[0]) === JSON.stringify({ img: "" })) {

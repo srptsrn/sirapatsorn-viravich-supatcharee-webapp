@@ -9,9 +9,8 @@ class AdminNavigationBar extends React.Component {
     super(props);
 
     this.state = {
-      visibleAdmin: false,
+      visibleAdmin: false
     };
-
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
@@ -21,6 +20,15 @@ class AdminNavigationBar extends React.Component {
     });
     console.log(this.state.visibleAdmin);
   }
+  nameAdmin() {
+    const user = firebase.auth().currentUser;
+    if(user) {
+      console.log(user.displayName);
+      return user.displayName
+    } else {
+      return ''
+    }
+  }
   render() {
     const { products, orders, promote, signUp } = this.props;
     return (
@@ -29,7 +37,10 @@ class AdminNavigationBar extends React.Component {
           <div>
             <Link to="/admin" className="logo-admin">
               <img src={require("../assets/images/icon-ppproduce.png")}></img>
-              Admin
+              <div>
+                <p className="text-admin-nav">Admin</p>
+                <p className="text-name-nav">{this.nameAdmin()}</p>
+              </div>
             </Link>
             <div className="type-admin-page">
               <Link to="/admin/promote">
@@ -59,9 +70,9 @@ class AdminNavigationBar extends React.Component {
             </div>
           </div>
           <Link>
-          <button className="tr-web-home">return to web home</button>
-          <button className="new-account">New account</button>
-            <button className="my-account">My account</button>
+            <Link className="tr-web-home" to="/">return to web home</Link>
+            <Link className="new-account" to="/admin/signup">New account</Link>
+            <Link className="my-account" to="/admin/account">My account</Link>
             <button
               className="log-out"
               onClick={() => firebase.auth().signOut()}
