@@ -35,7 +35,40 @@ h2.search-results-center {
   border-radius: 8px;
 }
 
+.row-search-results {
+  margin-bottom: 80px;
+  display: flex;
+  flex-wrap: wrap;
+}
+/* Float four columns side by side */
+.column-search-results {
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  margin: 10px;
+}
 
+/* Remove extra left and right margins, due to padding */
+
+/* Style the counter cards */
+.card-search-results {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.product-name,
+.product-price {
+  margin: 4px auto;
+  font-size: 16px;
+}
+.card-search-results > img {
+  width: 100%;
+  height: 200px;
+}
 
 @media only screen and (max-width: 1033px) {
   .column {

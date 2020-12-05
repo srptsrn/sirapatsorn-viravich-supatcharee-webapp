@@ -44,9 +44,12 @@ class ImgSlide extends React.Component {
   };
   componentDidMount() {
     this.onGetImgList();
+    setInterval(() => {
+      this.setImg(1)
+    }, 3000);
   }
   setImg = (num) => {
-    let size = 0,
+    var size = 0,
       key;
     for (let key in this.state.dataBanner) {
       if (this.state.dataBanner.hasOwnProperty(key)) size++;
@@ -54,29 +57,30 @@ class ImgSlide extends React.Component {
     this.setState({ indexImg: (this.state.indexImg += num) });
     if (this.state.indexImg < 0) {
       this.setState({ indexImg: size - 1 });
-    } else if (this.state.indexImg >= size) {
+    } else if (this.state.indexImg >= size - 1) {
       this.setState({ indexImg: 0 });
     }
   };
+
   render() {
-  return (
-    <div>
-      <section className='img-slide-section'>
-        <div className="image-head">
-          <img src={this.state.dataBanner[this.state.indexImg].img}/>
-          <div className="arrow-button">
-            <div className="prev-div" onClick={() => this.setImg(-1)}>
-              <div className="prev-img"></div>
-            </div>
-            <div className="after-div" onClick={() => this.setImg(1)}>
-              <div className="after-img"></div>
+    return (
+      <div>
+        <section className='img-slide-section'>
+          <div className="image-head">
+            <img id="imgeslide" src={this.state.dataBanner[this.state.indexImg].img} />
+            <div className="arrow-button">
+              <div className="prev-div" onClick={() => this.setImg(-1)}>
+                <div className="prev-img"></div>
+              </div>
+              <div className="after-div" onClick={() => this.setImg(1)}>
+                <div className="after-img"></div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
-  );
-}
+        </section>
+      </div>
+    );
+  }
 }
 
 export default ImgSlide;

@@ -47,7 +47,7 @@ class CatagoryProduct extends React.Component {
             <div className="card-best-sellers">
               <img src={Picture}></img>
               <p className="product-name">{item.name}</p>
-              <p className="product-price">฿50.00</p>
+              <p className="product-price">฿{item.price}</p>
               <input
                 type="number"
                 className="input-product-quantity"

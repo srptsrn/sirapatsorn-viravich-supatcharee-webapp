@@ -17,7 +17,7 @@ class Footer extends React.Component {
               pp.produce.p@gmail.com
             </a>
             <br />
-            Road Don Han, Mueang Khon Kaen District, Khon Kaen 40260
+            Don Han Road, Mueang Khon Kaen District, Khon Kaen 40260
             <br />
             <br />
             <Link to="/login">for admin</Link>
