@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
 }
-.img-slide-section input{
+.img-slide-section input {
   display: none;
 }
 .image-head {
@@ -18,6 +18,7 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
 .arrow-button {
   width: 100%;
   height: 100%;
@@ -67,7 +68,7 @@ img {
 
 /*css for automatic navigation*/
 
-.navigation-auto{
+.navigation-auto {
   position: absolute;
   display: flex;
   width: 800px;
@@ -75,31 +76,31 @@ img {
   margin-top: 460px;
 }
 
-.navigation-auto div{
-  border: 2px solid #40D3DC;
+.navigation-auto div {
+  border: 2px solid #40d3dc;
   padding: 5px;
   border-radius: 10px;
   transition: 1s;
 }
 
-.navigation-auto div:not(:last-child){
+.navigation-auto div:not(:last-child) {
   margin-right: 40px;
 }
 
-#radio1:checked ~ .navigation-auto .auto-btn1{
-  background: #40D3DC;
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+  background: #40d3dc;
 }
 
-#radio2:checked ~ .navigation-auto .auto-btn2{
-  background: #40D3DC;
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+  background: #40d3dc;
 }
 
-#radio3:checked ~ .navigation-auto .auto-btn3{
-  background: #40D3DC;
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+  background: #40d3dc;
 }
 
-#radio4:checked ~ .navigation-auto .auto-btn4{
-  background: #40D3DC;
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+  background: #40d3dc;
 }
 
 @media screen and (max-width: 1200px) {
@@ -134,10 +135,11 @@ img {
   .arrow-button > div {
     width: 140px;
   }
-  .prev-img, .after-img {
+  .prev-img,
+  .after-img {
     width: 30px;
     height: 30px;
-  } 
+  }
 }
 @media screen and (max-width: 700px) {
   .img-slide-section {
@@ -148,14 +150,15 @@ img {
   .img-slide-section {
     height: 170px;
   }
-  
+
   .arrow-button > div {
     width: 100px;
   }
-  .prev-img, .after-img {
+  .prev-img,
+  .after-img {
     width: 30px;
     height: 30px;
-  } 
+  }
 }
 @media screen and (max-width: 550px) {
   .img-slide-section {
@@ -166,12 +169,13 @@ img {
   .img-slide-section {
     height: 120px;
   }
-  
+
   .arrow-button > div {
     width: 60px;
   }
-  .prev-img, .after-img {
+  .prev-img,
+  .after-img {
     width: 20px;
     height: 20px;
-  } 
+  }
 }
