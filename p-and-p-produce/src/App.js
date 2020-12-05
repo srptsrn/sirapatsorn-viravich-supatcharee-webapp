@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import AdminOrders from "./pages/AdminOrders.js";
+import AdminDetailOrder from "./pages/AdminDetailOrder.js";
 import AdminProducts from "./pages/AdminProducts.js";
 import AdminEditProduct from "./pages/AdminEditProduct.js";
 import Contact from "./pages/Contact.js";
@@ -36,6 +37,7 @@ function App() {
             component={AdminEditProduct}
           />
           <PrivateRoute exact path="/admin/orders" component={AdminOrders} />
+          <PrivateRoute exact path="/admin/orders/:id" component={AdminDetailOrder} />
           <PrivateRoute exact path="/admin/promote" component={AdminPromote} />
           <PrivateRoute exact path="/admin" component={AdminPromote} />
           <PrivateRoute exact path="/admin/signup" component={AdminSignUp} />

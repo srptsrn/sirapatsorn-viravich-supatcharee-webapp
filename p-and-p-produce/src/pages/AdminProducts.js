@@ -9,7 +9,7 @@ class AdminProducts extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataProduct: [{ img: "" }],
+      dataProduct: [{ img: {}, img_order: [] }],
     };
   }
   componentDidMount() {
@@ -24,24 +24,16 @@ class AdminProducts extends React.Component {
           var id = doc.id;
           data.id = id;
           array.push(data);
-          console.log(data);
           if (JSON.stringify(array[0]) === JSON.stringify({ img: "" })) {
             array.shift();
           }
+          console.log(array);
         });
         this.setState({ dataProduct: array });
       });
   }
   render() {
     const changeVis = (index, selectItem) => {
-      // let dataProduct = [...this.state.dataProduct];
-      // if (selectItem.visibility == false) {
-      //   dataProduct[index] = { ...dataProduct[index], visibility: true };
-      //   this.setState({ dataProduct });
-      // } else {
-      //   dataProduct[index] = { ...dataProduct[index], visibility: false };
-      //   this.setState({ dataProduct });
-      // }
       var vis = selectItem.visibility;
       const cf = window.confirm(
         (vis ? "Hide " : "Show ") + selectItem.name + "?"
@@ -102,31 +94,37 @@ class AdminProducts extends React.Component {
       }
     };
     const editProduct = (id) => {
-      console.log(id);
-      window.location.pathname.includes("/admin/products/" + id);
+      window.location.href = "/admin/products/" + id;
     };
     const visibility = {
       true: "https://www.flaticon.com/svg/static/icons/svg/565/565654.svg", // show
       false: "https://www.flaticon.com/svg/static/icons/svg/565/565655.svg", // hide
     };
     const listItemsProduct = this.state.dataProduct.map(function (item, i) {
+      const imgUrl = item.img;
+      const nameImg = item.img_order[0];
       return (
         <tr
           key={i}
-          onClick={() => {
-            editProduct(item.id);
-          }}
         >
-          <td>
-            <Link to={"/admin/products/" + item.id}>
-              <img className="table-img-product" src={item.img}></img>
+          <td onClick={() => {
+            editProduct(item.id);
+          }}>
+            <Link>
+              <img className="table-img-product" src={imgUrl[nameImg]}></img>
             </Link>
           </td>
-          <td className="name-product-list-table-display-product">
-            <Link to={"/admin/products/" + item.id}>{item.name}</Link>
+          <td className="name-product-list-table-display-product" onClick={() => {
+            editProduct(item.id);
+          }}>
+            <Link>{item.name}</Link>
           </td>
-          <td>{item.price}</td>
-          <td>{item.inventory}</td>
+          <td onClick={() => {
+            editProduct(item.id);
+          }}>{item.price}</td>
+          <td onClick={() => {
+            editProduct(item.id);
+          }}>{item.inventory}</td>
           <td className="action-edit-product">
             <div
               className="visibility"
@@ -153,6 +151,9 @@ class AdminProducts extends React.Component {
         </tr>
       );
     });
+    const handleNewProduct = () => {
+      window.location.href = "/admin/products/new-product";
+    }
     return (
       <div className="app-admin">
         <AdminNavBar products></AdminNavBar>
@@ -162,7 +163,7 @@ class AdminProducts extends React.Component {
               <h3>Products</h3>
               <h3 id="num-product">{this.state.dataProduct.length}</h3>
             </div>
-            <button>+ New Product</button>
+            <button onClick={handleNewProduct}>+ New Product</button>
           </div>
           <div className="display-product">
             <div className="select-filter-product">

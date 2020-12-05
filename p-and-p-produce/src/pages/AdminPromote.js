@@ -92,11 +92,12 @@ class AdminPromote extends React.Component {
   render() {
     const onDeleteImg = async (item) => {
       const deleteImgRef = storageRef.child(item.path);
+      console.log(item.path);
       deleteImgRef
         .delete()
         .then((result) => {
           console.log("delete " + item.path + " success");
-          window.location.reload();
+          // window.location.reload();
           // var array = [...this.state.dataBanner]; // make a separate copy of the array
           // var index = array.indexOf(item);
           // if (index !== -1) {

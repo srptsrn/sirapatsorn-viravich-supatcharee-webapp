@@ -1,97 +1,70 @@
 import React from "react";
 import "../styles/styleAdmin.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 import AdminNavBar from "../components/AdminNavBar.js";
+import firebase from "../components/Firebase.js";
+const connector = firebase.firestore();
 
 class AdminOrders extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        dataOrders: [
-            {
-              name: "Jan Jan",
-              email: "email1@mail.com",
-              phone: "0987654321",
-              date: "18:30 16/09/2020",
-              confirm: "Unconfirmed",
-              status: "-",
-            },
-            {
-              name: "Jan Jan",
-              email: "email1@mail.com",
-              phone: "0987654321",
-              date: "18:30 16/09/2020",
-              confirm: "Confirmed",
-              status: "Waiting for send",
-            },
-            {
-              name: "Jan Jan",
-              email: "email1@mail.com",
-              phone: "0987654321",
-              date: "18:30 16/09/2020",
-              confirm: "Cancel",
-              status: "-",
-            },
-            {
-              name: "Jan Jan",
-              email: "email1@mail.com",
-              phone: "0987654321",
-              date: "18:30 16/09/2020",
-              confirm: "Unconfirmed",
-              status: "-",
-            },
-            {
-              name: "Jan Jan",
-              email: "email1@mail.com",
-              phone: "0987654321",
-              date: "18:30 16/09/2020",
-              confirm: "Unconfirmed",
-              status: "-",
-            },
-            {
-              name: "Jan Jan",
-              email: "email1@mail.com",
-              phone: "0987654321",
-              date: "18:30 16/09/2020",
-              confirm: "Unconfirmed",
-              status: "-",
-            },
-            {
-              name: "Jan Jan",
-              email: "email1@mail.com",
-              phone: "0987654321",
-              date: "18:30 16/09/2020",
-              confirm: "Confirmed",
-              status: "Waiting for send",
-            },
-            {
-              name: "Jan Jan",
-              email: "email1@mail.com",
-              phone: "0987654321",
-              date: "18:30 16/09/2020",
-              confirm: "Confirmed",
-              status: "Waiting for send",
-            }
-        ]
+      dataOrders: [],
     };
   }
-  render() {
-    const listItemsOrder = this.state.dataOrders.map(function (item, i) {
-        return (
-          <tr key={i}>
-            <td>{item.name}</td>
-            <td>{item.email}</td>
-            <td>{item.phone}</td>
-            <td>{item.date}</td>
-            <td>{item.confirm}</td>
-            <td>{item.status}</td>
-            <td className="detail-order">
-              <div
-                className="detail"
-              ></div>
-            </td>
-          </tr>
-        );
+  componentDidMount() {
+    let array = [];
+    // อ่านข้อมูล
+    connector
+      .collection("orders")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+
+          var id = doc.id;
+          data.id = id;
+          array.push(data);
+        });
+        this.setState({ dataOrders: array });
+        // let nnn = this.state.dataOrders[0];
+        //   delete nnn.id;
+        // connector
+        //     .collection("orders")
+        //     .doc()
+        //     .set(nnn)
+        //     .then(() => {
+        //       console.log("duplicate");
+        //     })
       });
+  }
+  render() {
+    const detailProduct = (id) => {
+      window.location.href = "/admin/orders/" + id;
+    };
+    const listItemsOrder = this.state.dataOrders.map(function (item, i) {
+      return (
+        <tr
+          key={i}
+          onClick={() => {
+            detailProduct(item.id);
+          }}
+        >
+          <td>{item.name}</td>
+          <td>{item.email}</td>
+          <td>{item.phone}</td>
+          <td>{item.date}</td>
+          <td>{item.confirm}</td>
+          <td>{item.status}</td>
+          <Link>
+            <td className="detail-order">
+              <div className="detail"></div>
+            </td>
+          </Link>
+        </tr>
+      );
+    });
     return (
       <div className="app-admin">
         <AdminNavBar orders></AdminNavBar>

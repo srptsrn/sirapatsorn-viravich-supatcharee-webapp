@@ -172,6 +172,7 @@
   padding: 18px 0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .head-orders-tab h3 {
@@ -255,8 +256,7 @@
   background-color: #3899ec;
   color: #fff;
 }
-
-.form-edit-product > .head-product-tab > div > button {
+.form-edit-product > .head-product-tab > div > a > button {
   background-color: #e4e4e4;
   font-family: "Libre Baskerville", serif;
   height: 36px;
@@ -267,7 +267,15 @@
   font-size: 1rem;
   margin-left: 20px;
 }
-.form-edit-product > .head-product-tab > div > button:nth-child(2) {
+.form-edit-product > .head-product-tab > div > button {
+  font-family: "Libre Baskerville", serif;
+  height: 36px;
+  width: 100px;
+  border: 0;
+  border-radius: 18px;
+  box-shadow: 0 0 4px #888;
+  font-size: 1rem;
+  margin-left: 20px;
   background-color: #3899ec;
   color: white;
 }
@@ -368,6 +376,81 @@
 .form-edit-product select:focus,
 .form-edit-product select:hover {
   border: 1.4px solid black;
+}
+.display-detail-orders {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 80px 40px 80px;
+}
+.display-detail-orders h2 {
+  margin: 0;
+}
+.display-detail-orders > .display-detail-customer-orders {
+  display: flex;
+  justify-content: space-between;
+}
+.display-detail-orders > .display-detail-customer-orders > div {
+  display: flex;
+  flex-direction: column;
+}
+.display-detail-orders img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
+.display-detail-orders button {
+  background-color: #e4e4e4;
+  font-family: "Libre Baskerville", serif;
+  height: 36px;
+  width: 140px;
+  border: 0;
+  border-radius: 18px;
+  box-shadow: 0 0 4px #888;
+  font-size: 1rem;
+  margin-left: 20px;
+}
+
+.display-detail-orders button.confirm-order-btn {
+  background-color: #3899ec;
+  color: white;
+}
+
+.display-detail-orders button.download-pp-slip-btn {
+  background-color: #0ca118;
+  color: white;
+  width: 260px;
+  margin-top: 16px;
+}
+
+.display-detail-orders button.sended-order-btn {
+  background-color: #3899ec;
+  color: white;
+  width: 220px;
+  font-size: 0.9em;
+}
+
+.display-detail-orders input {
+  font-weight: 100%;
+  padding: 4px;
+  margin-left: 10px;
+  border: 0;
+  border-bottom: 1.4px solid rgb(161, 161, 161);
+}
+.display-detail-orders input:focus,
+.display-detail-orders input:hover {
+  border-bottom: 1.4px solid black;
+}
+.head-orders-tab > button {
+  background-color: #3899ec;
+  color: white;
+  font-family: "Libre Baskerville", serif;
+  height: 30px;
+  width: 140px;
+  border: 0;
+  border-radius: 18px;
+  box-shadow: 0 0 4px #888;
+  font-size: 0.85rem;
 }
 @media screen and (max-width: 1070px) {
   #body_table_orders td {
