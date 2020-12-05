@@ -20,12 +20,16 @@ class CatagoryProduct extends React.Component {
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           const data = doc.data();
-          array.push(data);
+          if (this.props.bestSellers && data.tag === "best_sellers") {
+            array.push(data);
+          }
+          if (this.props.allProducts) {
+            array.push(data);
+          }
           if (JSON.stringify(array[0]) === JSON.stringify({ img: "" })) {
             array.shift();
           }
         });
-        console.log("d");
         this.setState({ dataProduct: array });
       });
   }
@@ -40,8 +44,9 @@ class CatagoryProduct extends React.Component {
     } = this.props;
 
     const listCategoryProduct = this.state.dataProduct.map(function (item, i) {
+      // const imgUrl = item.img;
+      // const nameImg = item.img_order[0];
       return (
-        // เอา item มาใส่แต่ละส่วน เหมือน item.name
         <div className="column-best-sellers">
           <Link to="/product-details" className="link-no-underline">
             <div className="card-best-sellers">

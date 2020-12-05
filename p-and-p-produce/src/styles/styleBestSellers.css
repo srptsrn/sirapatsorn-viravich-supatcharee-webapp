@@ -49,7 +49,7 @@ a.link-no-underline {
   font-size: 15px;
   text-align: center;
   padding: 0;
-  width: 100%;
+  width: 98%;
 }
 
 .btn-add-to-cart {
@@ -125,9 +125,9 @@ a.link-no-underline {
     width: 50%;
     padding: 10px;
   }
-  .column-best-sellers {
+  /* .column-best-sellers {
     /* width: 24%; */
-  }
+  /*} */
   .card-best-sellers > img {
     height: 100px;
   }

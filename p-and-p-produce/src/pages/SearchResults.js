@@ -23,10 +23,7 @@ const SearchResults = () => {
       console.log(result)
       setSearchResults(result)
     }
-
   }
-
-  
 
   useEffect(() => {
     const getData = async () => {
@@ -44,7 +41,6 @@ const SearchResults = () => {
             if (JSON.stringify(array[0]) === JSON.stringify({ img: "" })) {
               array.shift();
             }
-            
           });
           setProducts(array); 
           setSearchResults(array);
@@ -59,8 +55,7 @@ const SearchResults = () => {
     filter(search);
     if (search === '') {
       setSearchResults(products)
-    }
-    
+    }  
   }, [search, products])
 
   const handleSearchValueChange = (event) => {
