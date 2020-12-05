@@ -2,13 +2,13 @@ import React from "react";
 import Picture from "../assets/images/chicken-meat.jpg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import firebase from "../components/Firebase.js";
-const connector = firebase.firestore();
 
+const connector = firebase.firestore();
 class CatagoryProduct extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataProduct: [{ img: "" }],
+      dataProduct: [{ img: {}, img_order: [] }],
     };
   }
   componentDidMount() {
@@ -24,6 +24,9 @@ class CatagoryProduct extends React.Component {
             array.push(data);
           }
           if (this.props.allProducts) {
+            array.push(data);
+          }
+          if (this.props.searchResults) {
             array.push(data);
           }
           if (JSON.stringify(array[0]) === JSON.stringify({ img: "" })) {
@@ -44,13 +47,14 @@ class CatagoryProduct extends React.Component {
     } = this.props;
 
     const listCategoryProduct = this.state.dataProduct.map(function (item, i) {
-      // const imgUrl = item.img;
-      // const nameImg = item.img_order[0];
+      const imgUrl = item.img;
+      const nameImg = item.img_order[0];
+      // console.log(item)
       return (
         <div className="column-best-sellers">
           <Link to="/product-details" className="link-no-underline">
             <div className="card-best-sellers">
-              <img src={Picture}></img>
+              <img src={imgUrl[nameImg]}></img>
               <p className="product-name">{item.name}</p>
               <p className="product-price">฿{item.price}</p>
               <input
