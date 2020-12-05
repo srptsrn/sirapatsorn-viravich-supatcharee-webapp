@@ -12,7 +12,7 @@ class Footer extends React.Component {
           <p>
             Tel: 080 998 9424
             <br />
-            Email: {' '}
+            Email: 
             <a href="mailto:pp.produce.p@gmail.com" target="_blank">
               pp.produce.p@gmail.com
             </a>
@@ -20,7 +20,7 @@ class Footer extends React.Component {
             Don Han Road, Mueang Khon Kaen District, Khon Kaen 40260
             <br />
             <br />
-            <Link to="/admin">for admin</Link>
+            <Link to="/login">for admin</Link>
           </p>
           <div className="icon-link">
             <a

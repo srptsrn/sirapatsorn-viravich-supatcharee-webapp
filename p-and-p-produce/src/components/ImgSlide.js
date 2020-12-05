@@ -45,7 +45,7 @@ class ImgSlide extends React.Component {
   componentDidMount() {
     this.onGetImgList();
     setInterval(() => {
-      // this.setImg(1)
+      this.setImg(1)
     }, 3000);
   }
   setImg = (num) => {
@@ -57,7 +57,7 @@ class ImgSlide extends React.Component {
     this.setState({ indexImg: (this.state.indexImg += num) });
     if (this.state.indexImg < 0) {
       this.setState({ indexImg: size - 1 });
-    } else if (this.state.indexImg >= size) {
+    } else if (this.state.indexImg >= size - 1) {
       this.setState({ indexImg: 0 });
     }
   };

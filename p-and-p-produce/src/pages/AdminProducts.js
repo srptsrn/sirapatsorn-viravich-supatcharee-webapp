@@ -1,78 +1,130 @@
 import React from "react";
 import "../styles/styleAdmin.css";
 import AdminNavBar from "../components/AdminNavBar.js";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import firebase from "../components/Firebase.js";
+const connector = firebase.firestore();
 
 class AdminProducts extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataProduct: [
-        {
-          img:
-            "https://static.wixstatic.com/media/e9cd45_5733c955f336440fae920a5496704d95~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_85/e9cd45_5733c955f336440fae920a5496704d95~mv2.webp",
-          name: "Chicken1",
-          price: 500.0,
-          inventory: 100,
-          visibility: 0,
-        },
-        {
-          img:
-            "https://static.wixstatic.com/media/e9cd45_5733c955f336440fae920a5496704d95~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_85/e9cd45_5733c955f336440fae920a5496704d95~mv2.webp",
-          name: "Chicken2",
-          price: 50.0,
-          inventory: 100,
-          visibility: 0,
-        },
-        {
-          img:
-            "https://static.wixstatic.com/media/e9cd45_5733c955f336440fae920a5496704d95~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_85/e9cd45_5733c955f336440fae920a5496704d95~mv2.webp",
-          name: "Chicken3",
-          price: 50.0,
-          inventory: 100,
-          visibility: 0,
-        },
-        {
-          img:
-            "https://static.wixstatic.com/media/e9cd45_5733c955f336440fae920a5496704d95~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_85/e9cd45_5733c955f336440fae920a5496704d95~mv2.webp",
-          name: "Chicken4",
-          price: 50.0,
-          inventory: 100,
-          visibility: 1,
-        },
-        {
-          img:
-            "https://static.wixstatic.com/media/e9cd45_5733c955f336440fae920a5496704d95~mv2.jpg/v1/fill/w_600,h_600,al_c,lg_1,q_85/e9cd45_5733c955f336440fae920a5496704d95~mv2.webp",
-          name: "Chicken5",
-          price: 50.0,
-          inventory: 100,
-          visibility: 1,
-        },
-      ],
+      dataProduct: [{ img: "" }],
     };
   }
-
+  componentDidMount() {
+    let array = [];
+    // อ่านข้อมูล
+    connector
+      .collection("products")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          var id = doc.id;
+          data.id = id;
+          array.push(data);
+          console.log(data);
+          if (JSON.stringify(array[0]) === JSON.stringify({ img: "" })) {
+            array.shift();
+          }
+        });
+        this.setState({ dataProduct: array });
+      });
+  }
   render() {
     const changeVis = (index, selectItem) => {
-      let dataProduct = [...this.state.dataProduct];
-      if (selectItem.visibility == 1) {
-        dataProduct[index] = { ...dataProduct[index], visibility: 0 };
-        this.setState({ dataProduct });
-      } else {
-        dataProduct[index] = { ...dataProduct[index], visibility: 1 };
-        this.setState({ dataProduct });
+      // let dataProduct = [...this.state.dataProduct];
+      // if (selectItem.visibility == false) {
+      //   dataProduct[index] = { ...dataProduct[index], visibility: true };
+      //   this.setState({ dataProduct });
+      // } else {
+      //   dataProduct[index] = { ...dataProduct[index], visibility: false };
+      //   this.setState({ dataProduct });
+      // }
+      var vis = selectItem.visibility;
+      const cf = window.confirm(
+        (vis ? "Hide " : "Show ") + selectItem.name + "?"
+      );
+      if (cf) {
+        connector
+          .collection("products")
+          .doc(selectItem.id)
+          .set(
+            {
+              visibility: !vis,
+            },
+            { merge: true }
+          )
+          .then(() => {
+            console.log("visibility");
+            let dataProduct = [...this.state.dataProduct];
+            if (vis == false) {
+              dataProduct[index] = { ...dataProduct[index], visibility: true };
+              this.setState({ dataProduct });
+            } else {
+              dataProduct[index] = { ...dataProduct[index], visibility: false };
+              this.setState({ dataProduct });
+            }
+          })
+          .catch((error) => console.error(error));
       }
     };
+    const duplicateDoc = (index, selectItem) => {
+      const cf = window.confirm("Duplicate " + selectItem.name + "?");
+      if (cf) {
+        let data = selectItem;
+        delete data.id;
+        data.name = data.name + " (copy)";
+        connector
+          .collection("products")
+          .doc()
+          .set(this.state.dataProduct[index])
+          .then(() => {
+            console.log("duplicate");
+            window.location.reload(true);
+          })
+          .catch((error) => console.error(error));
+      }
+    };
+    const deleteDoc = (index, selectItem) => {
+      const cf = window.confirm("Delete " + selectItem.name + "?");
+      if (cf) {
+        connector
+          .collection("products")
+          .doc(selectItem.id)
+          .delete()
+          .then(() => {
+            console.log("Delete");
+            window.location.reload(true);
+          })
+          .catch((error) => console.error(error));
+      }
+    };
+    const editProduct = (id) => {
+      console.log(id);
+      window.location.pathname.includes("/admin/products/" + id);
+    };
     const visibility = {
-      0: "https://www.flaticon.com/svg/static/icons/svg/565/565654.svg", // show
-      1: "https://www.flaticon.com/svg/static/icons/svg/565/565655.svg", // hide
+      true: "https://www.flaticon.com/svg/static/icons/svg/565/565654.svg", // show
+      false: "https://www.flaticon.com/svg/static/icons/svg/565/565655.svg", // hide
     };
     const listItemsProduct = this.state.dataProduct.map(function (item, i) {
       return (
-        <tr key={i}>
+        <tr
+          key={i}
+          onClick={() => {
+            editProduct(item.id);
+          }}
+        >
           <td>
-            <img className="table-img-product" src={item.img}></img>
+            <Link to={"/admin/products/" + item.id}>
+              <img className="table-img-product" src={item.img}></img>
+            </Link>
           </td>
-          <td>{item.name}</td>
+          <td className="name-product-list-table-display-product">
+            <Link to={"/admin/products/" + item.id}>{item.name}</Link>
+          </td>
           <td>{item.price}</td>
           <td>{item.inventory}</td>
           <td className="action-edit-product">
@@ -85,8 +137,18 @@ class AdminProducts extends React.Component {
                 changeVis(i, item);
               }}
             ></div>
-            <div className="duplicate"></div>
-            <div className="delete"></div>
+            <div
+              className="duplicate"
+              onClick={() => {
+                duplicateDoc(i, item);
+              }}
+            ></div>
+            <div
+              className="delete"
+              onClick={() => {
+                deleteDoc(i, item);
+              }}
+            ></div>
           </td>
         </tr>
       );
@@ -98,7 +160,7 @@ class AdminProducts extends React.Component {
           <div className="head-product-tab">
             <div>
               <h3>Products</h3>
-              <h3 id="num-product">9</h3>
+              <h3 id="num-product">{this.state.dataProduct.length}</h3>
             </div>
             <button>+ New Product</button>
           </div>

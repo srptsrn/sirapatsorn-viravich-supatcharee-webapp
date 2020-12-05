@@ -32,6 +32,15 @@ nav .logo-admin {
   display: flex;
   align-items: center;
 }
+.logo-admin > div > p {
+  margin: 0;
+  width: 120px;
+  font-size: 0.6em;
+}
+.logo-admin > div > p.text-name-nav {
+  font-size: 0.46em;
+  word-wrap: break-word;
+}
 
 nav .type-admin-page {
   background-color: #d3d3d3;
@@ -100,7 +109,8 @@ nav .menu-admin-nav {
   text-align: center;
 }
 
-.sidenav-hide a, .sidenav-show a {
+.sidenav-hide a,
+.sidenav-show a {
   padding: 16px 16px 16px 32px;
   text-decoration: none;
   font-size: 1.2rem;
@@ -110,11 +120,13 @@ nav .menu-admin-nav {
   border-bottom: 1px solid rgb(255, 196, 108);
 }
 
-.sidenav-hide a:hover, .sidenav-show a:hover {
+.sidenav-hide a:hover,
+.sidenav-show a:hover {
   color: #f1f1f1;
 }
 
-.sidenav-hide .closebtn, .sidenav-show .closebtn {
+.sidenav-hide .closebtn,
+.sidenav-show .closebtn {
   position: absolute;
   top: 0;
   right: 25px;

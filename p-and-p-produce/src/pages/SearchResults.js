@@ -4,38 +4,67 @@ import NavBar from "../components/NavBar.js";
 import Footer from "../components/Footer.js";
 import Picture from "../assets/images/chicken-meat.jpg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import firebase from "../components/Firebase.js";
 
 const SearchResults = () => {
 
-  const products = [{
-    name: 'c1',
-    price: 50.0
-  },
-  {
-    name: 'c2',
-    price: 50.0
-  },
-  {
-    name: 'c3',
-    price: 50.0
-  }]
+  const connector = firebase.firestore();
 
   const [search, setSearch] = useState('');
 
-  useEffect(() => {
-    setSearch(new URLSearchParams(window.location.search).get('search'));
-    // console.log(new URLSearchParams(window.location.search).get('search'));
-  }, [])
+  const [products, setProducts] = useState([]);
 
-  const handleSearchValueChange = (event) => {
-    console.log(event.target.value);
-    setSearch(event.target.value);
+  const [searchResults, setSearchResults] = useState([]);
+
+  const filter = (search) => {
+    if (search != '') {
+      console.log(products)
+      const result = products.filter(product => String(product.name.toLowerCase()).includes(search.toLowerCase()));
+      console.log(result)
+      setSearchResults(result)
+    }
+
   }
 
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
-      window.location = `/search-results?search=${search}`;
+  
+
+  useEffect(() => {
+    const getData = async () => {
+      let array = [];
+      // อ่านข้อมูล
+      await connector
+        .collection("products")
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            var id = doc.id;
+            data.id = id;
+            array.push(data);
+            if (JSON.stringify(array[0]) === JSON.stringify({ img: "" })) {
+              array.shift();
+            }
+            
+          });
+          setProducts(array); 
+          setSearchResults(array);
+        });
     }
+    setSearch(new URLSearchParams(window.location.search).get('search'));
+    getData();
+  }, [])
+
+  useEffect(() => {
+    console.log(search)
+    filter(search);
+    if (search === '') {
+      setSearchResults(products)
+    }
+    
+  }, [search, products])
+
+  const handleSearchValueChange = (event) => {
+    setSearch(event.target.value);
   }
 
   return (
@@ -47,38 +76,40 @@ const SearchResults = () => {
         </div>
       </div>
       <div class="search-tab-search-results">
-
         <div class="icon-search"></div>
-
-        <input id="search_web" type="text" class="search_web" value={search} onChange={handleSearchValueChange} onKeyDown={handleKeyDown} placeholder="Search" />
+        <input id="search_web"
+          type="text" class="search_web"
+          value={search}
+          onChange={handleSearchValueChange}
+          placeholder="Search" />
       </div>
-      <div className="row-best-sellers">
-        {products.map((value, index) => {
-          return <div className="column-best-sellers">
-          <Link to="/product-details" className="link-no-underline">
-            <div className="card-best-sellers">
-              <img src={Picture}></img>
-              <p className="product-name">{value.name}</p>
-              <p className="product-price">฿{value.price}</p>
-              <input
-                type="number"
-                className="input-product-quantity"
-                defaultValue="1"
-                min="1"
-              ></input>
-              <Link to="/cart">
-                <button type="button" className="btn-add-to-cart">
-                  Add to Cart{" "}
-                </button>
-              </Link>
-              <Link to="/cart">
-                <button type="button" className="btn-buy-now">
-                  Buy now
+      <div className="row-search-results">
+        {searchResults.map((value, index) => {
+          return <div className="column-search-results">
+            <Link to="/product-details" className="link-no-underline">
+              <div className="card-search-results">
+                <img src={Picture}></img>
+                <p className="product-name">{value.name}</p>
+                <p className="product-price">฿{value.price}</p>
+                <input
+                  type="number"
+                  className="input-product-quantity"
+                  defaultValue="1"
+                  min="1"
+                ></input>
+                <Link to="/cart">
+                  <button type="button" className="btn-add-to-cart">
+                    Add to Cart{" "}
+                  </button>
+                </Link>
+                <Link to="/cart">
+                  <button type="button" className="btn-buy-now">
+                    Buy now
               </button>
-              </Link>
-            </div>
-          </Link>
-        </div>
+                </Link>
+              </div>
+            </Link>
+          </div>
         })}
       </div>
       <Footer></Footer>

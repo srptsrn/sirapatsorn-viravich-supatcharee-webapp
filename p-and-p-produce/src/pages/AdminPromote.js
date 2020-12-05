@@ -16,11 +16,11 @@ class AdminPromote extends React.Component {
     };
   }
   fileOnChange = (e) => {
-    console.log(e.target.files[0]);
+    // console.log(e.target.files[0]);
     const file = e.target.files[0];
     if (file) {
       const path = file.name;
-      console.log("fileOnChange: " + path);
+      // console.log("fileOnChange: " + path);
       this.OnUpload(file);
     }
   };
@@ -29,7 +29,7 @@ class AdminPromote extends React.Component {
   };
 
   OnUpload = (file) => {
-    console.log("OnUpload");
+    // console.log("OnUpload");
     const path = uploadImge + file.name;
     const uploadTask = storageRef.child(path).put(file);
     uploadTask.on(
@@ -45,7 +45,7 @@ class AdminPromote extends React.Component {
           .getDownloadURL()
           .then((url) => {
             localStorage.setItem("current", url);
-            console.log("file : " + url);
+            // console.log("file : " + url);
             this.onGetImgList();
           })
           .catch((e) => {
@@ -68,14 +68,14 @@ class AdminPromote extends React.Component {
         // spinnerLoading.className = "spinner-hide";
         const files = res.items;
         files.forEach((file) => {
-          console.log(file);
+          // console.log(file);
           this.getImgUrl(file.fullPath)
             .then((url) => {
               // console.log(url);
-              console.log("b "+ this.state.dataBanner.length);
+              // console.log("b "+ this.state.dataBanner.length);
               array.push({ img: url, name: "new upload", path: file.fullPath });
               this.setState({ dataBanner: array });
-              console.log("a "+ this.state.dataBanner.length);
+              // console.log("a "+ this.state.dataBanner.length);
             })
             .catch((error) => {
               console.log({ msg: "error", error });
