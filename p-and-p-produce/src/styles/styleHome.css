@@ -1,0 +1,132 @@
+.app-home {
+  padding: 90px 80px 0 80px;
+}
+.app-home h2.best-sellers-center {
+  text-align: center;
+}
+.app-home > .row-best-sellers > a {
+  width: 100%;
+}
+.app-home > .row-best-sellers > a > button {
+  background-color: rgb(255, 156, 8);
+  color: white;
+  font-family: "Libre Baskerville", serif;
+  height: 36px;
+  width: 97.5%;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgb(160, 160, 160);
+  font-size: 1.05rem;
+  margin: 5px 10px 0 10px;
+}
+.category-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+}
+.category-btn > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.category-btn > div > label {
+  cursor: pointer;
+}
+.category-btn button {
+  background-color: #0639c1;
+  color: white;
+  font-family: "Libre Baskerville", serif;
+  height: 48px;
+  width: 240px;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgb(160, 160, 160);
+  font-size: 1.05rem;
+  margin: 0 10px 0 10px;
+}
+.category-btn button#category_pork_btn {
+  margin-left: 38px;
+  background-color: rgb(255, 156, 8);
+}
+.icon-chicken-home {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+.icon-pork-home {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 940px) {
+  .category-btn button {
+    height: 40px;
+    width: 200px;
+  }
+  .icon-chicken-home {
+    width: 50px;
+    height: 50px;
+  }
+  .icon-pork-home {
+    width: 62px;
+    height: 62px;
+  }
+  .category-btn button#category_pork_btn {
+    margin-left: 25px;
+  }
+}
+@media only screen and (max-width: 873px) {
+  .app-home {
+    padding: 90px 40px 0 40px;
+  }
+}
+@media screen and (max-width: 813px) {
+  .category-btn button {
+    height: 35px;
+    width: 160px;
+  }
+  .icon-chicken-home {
+    width: 50px;
+    height: 50px;
+  }
+  .icon-pork-home {
+    width: 62px;
+    height: 62px;
+  }
+  .category-btn button#category_pork_btn {
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 718px) {
+  .category-btn button {
+    height: 35px;
+    width: 160px;
+  }
+  .icon-chicken-home {
+    width: 40px;
+    height: 40px;
+  }
+  .icon-pork-home {
+    width: 42px;
+    height: 42px;
+  }
+  .category-btn button#category_pork_btn {
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .category-btn > div {
+    flex-direction: column;
+  }
+  .category-btn button {
+    margin: 10px;
+  }
+  .category-btn button {
+    width: 220px;
+  }
+}

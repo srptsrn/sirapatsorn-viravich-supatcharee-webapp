@@ -1,0 +1,247 @@
+.app-best-sellers {
+  padding: 90px 80px 0 80px;
+}
+h2.best-sellers-center {
+  margin-left: 10px;
+}
+a.link-no-underline {
+  text-decoration: none;
+    color: rgb(71, 71, 71);
+}
+.row-best-sellers {
+  margin-bottom: 80px;
+  display: flex;
+  flex-wrap: wrap;
+}
+/* Float four columns side by side */
+.column-best-sellers {
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  margin: 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+
+/* Style the counter cards */
+.card-best-sellers {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.product-name,
+.product-price {
+  margin: 4px auto;
+  font-size: 16px;
+}
+.card-best-sellers > img {
+  width: 100%;
+  height: 200px;
+}
+
+.input-product-quantity {
+  height: 35px;
+  margin: 10px 0 0 0;
+  font-size: 15px;
+  text-align: center;
+  padding: 0;
+  width: 98%;
+}
+
+.btn-add-to-cart {
+  width: 100%;
+  height: 35px;
+  margin: 10px 0 0 0;
+  font-size: 15px;
+  text-align: center;
+  border: 1px solid #0639c1;
+  background-color: white;
+}
+.btn-add-to-cart:hover {
+  color: #7c7c7c;
+}
+.btn-buy-now {
+  width: 100%;
+  height: 35px;
+  margin: 10px 0 0 0;
+  font-size: 15px;
+  text-align: center;
+  border: 0px;
+  color: #ffffff;
+  background-color: #0639c1;
+}
+.btn-buy-now:hover {
+  background-color: rgb(4, 43, 149);
+}
+
+@media only screen and (max-width: 1160px) {
+  .column-best-sellers {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .head-bestSellers {
+    background-image: url("../assets/images/chicken.jpg");
+    height: 45vh;
+  }
+  .head-best-sellers h2 {
+    font-size: 47px;
+  }
+}
+@media only screen and (max-width: 911px) {
+  .column-best-sellers {
+    width: 28%;
+  }
+}
+@media only screen and (max-width: 873px) {
+  .app-best-sellers {
+    padding: 90px 40px 0 40px;
+  }
+  .card-best-sellers > img {
+    height: 160px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .head-bestSellers {
+    height: 40vh;
+  }
+  .head-best-sellers h2 {
+    font-size: 32.5px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .head-best-sellers h2 {
+    font-size: 33px;
+  }
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+  }
+  /* .column-best-sellers {
+    /* width: 24%; */
+  /*} */
+  .card-best-sellers > img {
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 707px) {
+  .head-best-sellers h2 {
+    font-size: 33px;
+  }
+}
+
+@media only screen and (max-width: 685px) {
+  .head-bestSellers {
+    height: 37vh;
+  }
+}
+
+@media only screen and (max-width: 676px) {
+  .head-bestSellers {
+    height: 35vh;
+  }
+  .head-best-sellers h2 {
+    font-size: 30px;
+  }
+  
+  .column-best-sellers {
+    width: 40%;
+  }
+  .card-best-sellers > img {
+    height: 180px;
+  }
+}
+
+@media only screen and (max-width: 609px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .column-best-sellers {
+    width: 45%;
+  }
+  .card-best-sellers > img {
+    height: 160px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .head-bestSellers {
+    height: 28vh;
+  }
+  .head-best-sellers h2 {
+    font-size: 31px;
+  }
+}
+@media only screen and (max-width: 478px) {
+  .column-best-sellers {
+    width: 80%; 
+  }
+  .card-best-sellers > img {
+    height: 250px;
+  }
+  .row-best-sellers {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 426px) {
+  .head-bestSellers {
+    height: 30vh;
+  }
+  .head-best-sellers h2 {
+    font-size: 30px;
+  }
+  
+  .card-best-sellers > img {
+    height: 220px;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .head-bestSellers {
+    height: 35vh;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .card-best-sellers > img {
+    height: 180px;
+  }
+}
+
+@media only screen and (max-width: 331px) {
+  .head-bestSellers {
+    height: auto;
+    background-size: cover;
+    background-position: center;
+  }
+  .head-best-sellers h2 {
+    font-size: 26px;
+    padding: 40px 0;
+  }
+  
+  .card-best-sellers > img {
+    height: 170px;
+  }
+}
+
+@media only screen and (max-width: 309px) {
+  .head-best-sellers h2 {
+    font-size: 22px;
+  }
+  
+  .card-best-sellers > img {
+    height: 150px;
+  }
+}

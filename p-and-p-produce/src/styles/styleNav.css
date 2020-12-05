@@ -1,0 +1,189 @@
+.menu-nav > a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 16px;
+  color: black;
+}
+.menu-nav > a:hover {
+  transition: all 0.3s ease-out;
+  box-shadow: 0 -2px 0 0 black inset;
+}
+.menu-nav > a.cart-nav:hover {
+  transition: none;
+  box-shadow: none;
+}
+.menu-nav > a.on-page {
+  color: #0639c1;
+}
+.menu-nav > a.on-page:hover {
+  transition: all 0.3s ease-out;
+  box-shadow: 0 -2px 0 0 #0639c1 inset;
+}
+.menu-nav > div {
+  margin: 14px;
+}
+.search-tab-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  width: 200px;
+  height: 40px;
+  margin: 8px;
+  box-shadow: inset 0 0 4px rgb(158, 158, 158);
+  border-radius: 12px;
+  padding: 0 8px;
+  font-family: "Libre Baskerville", serif;
+  cursor: pointer;
+}
+
+.search-tab-nav > .icon-search {
+  background-image: url("https://www.flaticon.com/svg/static/icons/svg/1020/1020190.svg");
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+}
+
+.search-tab-nav > input {
+  border: 0;
+  width: 88%;
+}
+.cart-nav {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.cart-icon {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-image: url("../assets/images/shopping-cart-of-checkered-design.png");
+  margin-right: 4px;
+}
+#cart-amount {
+  background-color: #0639c1;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.messenger-nav {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  box-shadow: 0 0 8px #888;
+}
+.messenger-nav > div {
+  background-image: url("https://www.flaticon.com/svg/static/icons/svg/889/889101.svg");
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 1175px) {
+  .menu-nav > a {
+    margin: 14px;
+  }
+  .menu-nav > div {
+    margin: 10px;
+  }
+}
+@media screen and (max-width: 1125px) {
+  .search-tab-nav {
+    width: 160px;
+  }
+  .search-tab-nav > input {
+    width: 82%;
+  }
+}
+@media screen and (max-width: 1039px) {
+  .search-tab-nav {
+    width: 140px;
+  }
+  .menu-nav > a {
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 987px) {
+  .menu-nav > a {
+    margin: 12px;
+  }
+  .menu-nav > div {
+    margin: 6px;
+  }
+}
+@media screen and (max-width: 946px) {
+  .menu-nav > a {
+    margin: 10px;
+  }
+  .menu-nav > div {
+    margin: 4px;
+  }
+}
+
+@media screen and (max-width: 910px) {
+  .search-tab-nav {
+    width: 120px;
+  }
+  .search-tab-nav > input {
+    width: 78%;
+  }
+  .cart-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+  }
+  #cart-amount {
+    font-size: 0.8em;
+    width: 22px;
+    height: 22px;
+  }
+}
+@media screen and (max-width: 862px) {
+  .search-tab-nav {
+    width: 100px;
+  }
+  .search-tab-nav > input {
+    width: 72%;
+  }
+}
+@media screen and (max-width: 834px) {
+  .menu-nav > a {
+    margin: 6px;
+  }
+  .menu-nav > div {
+    margin: 2px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  nav .menu-nav {
+    display: none;
+  }
+}
+@media screen and (max-width: 413px) {
+  .messenger-nav {
+    width: 50px;
+    height: 50px;
+    right: 20px;
+    bottom: 20px;
+  }
+  .messenger-nav > div {
+    width: 26px;
+    height: 26px;
+  }
+}

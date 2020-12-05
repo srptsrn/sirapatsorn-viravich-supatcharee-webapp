@@ -1,0 +1,131 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid black;
+  padding: 8px;
+}
+
+.info > h3 {
+  color: #0639c1;
+}
+
+.info > p {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.icon-link {
+  display: flex;
+}
+
+.fa {
+  width: 30px;
+  height: 30px;
+  margin: 16px;
+}
+
+.fa:hover {
+  opacity: 0.8;
+}
+.fa-facebook {
+  background-image: url("https://www.flaticon.com/svg/static/icons/svg/889/889102.svg");
+}
+.fa-messenger {
+  background-image: url("https://www.flaticon.com/svg/static/icons/svg/889/889101.svg");
+}
+.fa-email {
+  background-image: url("https://www.flaticon.com/svg/static/icons/svg/321/321817.svg");
+}
+.fa-phone {
+  background-image: url("https://www.flaticon.com/svg/static/icons/svg/890/890547.svg");
+}
+
+@media only screen and (max-width: 800px) {
+  
+  .info h4 {
+    font-size: 15px;
+  }
+  .info p {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 737px) {
+  
+  .info h4 {
+    font-size: 14px;
+  }
+  .info p {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 685px) {
+  .info h4 {
+    font-size: 14px;
+  }
+  .info p {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 613px) {
+  .info h4 {
+    font-size: 13px;
+  }
+  .info p {
+    font-size: 12px;
+  }
+  .info > .iconLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 19px;
+    font-size: 25px;
+    width: 19px;
+    text-align: center;
+    text-decoration: none;
+    margin: 15px 2px;
+    width: 100%;
+    text-align: center;
+    font-family: sans-serif;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .info h4 {
+    font-size: 13.5px;
+  }
+  .info p {
+    font-size: 12.5px;
+  }
+}
+
+@media only screen and (max-width: 426px) {
+  .info h4 {
+    font-size: 14px;
+  }
+  .info p {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .info h4 {
+    font-size: 13px;
+  }
+  .info p {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 309px) {
+  .info h4 {
+    font-size: 12px;
+  }
+  .info p {
+    font-size: 10px;
+  }
+}
