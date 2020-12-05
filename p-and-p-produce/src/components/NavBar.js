@@ -8,10 +8,15 @@ class NavigationBar extends React.Component {
     super(props);
 
     this.state = {
-      visible: false,
+      search: '',
+      visible: false
     };
 
     this.toggleMenu = this.toggleMenu.bind(this);
+  }
+
+  handleSearchValueChange = (event) => {
+    this.setState({search: event.target.value})
   }
 
   toggleMenu() {
@@ -23,7 +28,7 @@ class NavigationBar extends React.Component {
   render() {
     const handleKeyDown = (event) => {
       if (event.key === "Enter") {
-        window.location = "/search-results";
+        window.location = `/search-results?search=${this.state.search}`;
       }
     };
 
@@ -58,17 +63,20 @@ class NavigationBar extends React.Component {
             </Link>
             <Link to="/contact" className={contact ? "on-page" : ""}>
               Contact
-            </Link>
+            </Link >
             <div className="search-tab-nav">
-              <div className="icon-search"></div>
+              <Link to={`/search-results?search=${this.state.search}`} className={"icon-search " + (searchResults ? "on-page" : "")}></Link>
               <input
                 id="search_web"
                 type="text"
+                value={this.state.search}
+                onChange={this.handleSearchValueChange}
                 className="search_web"
                 placeholder="Search"
                 onKeyDown={handleKeyDown}
               />
             </div>
+          
             <Link to="/cart" className="cart-nav">
               <div className="cart-icon"></div>
               <div id="cart-amount">
@@ -113,7 +121,7 @@ class NavigationBar extends React.Component {
             <Link to="/contact" className={contact ? "on-page" : ""}>
               Contact
             </Link>
-            <Link to="/search" className={contact ? "on-page" : ""}>
+            <Link to="/search-results" className={searchResults ? "on-page" : ""}>
               Search
             </Link>
             <Link to="/cart">
