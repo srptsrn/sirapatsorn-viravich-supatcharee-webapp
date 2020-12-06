@@ -1,0 +1,759 @@
+body {
+    background-color: white;
+    margin: 0;
+    font-family: "Libre Baskerville", serif;
+    padding: 0 80px 0 80px;
+    color: rgb(71, 71, 71);
+}
+
+input,
+button {
+    font-family: "Libre Baskerville", serif;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+nav {
+    background-color: rgb(255, 156, 8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 68px;
+    z-index: 20;
+}
+
+nav .logo {
+    color: #0639c1;
+    font-size: 36px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.payment-header {
+    margin: 100px 0 20px 0;
+    font-size: 20px;
+}
+
+.main-list-orders {
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    overflow-y: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    text-align: center;
+    border-spacing: 0;
+    display: inline-table;
+}
+
+table,
+th,
+td {
+    border-bottom: 1px solid gray;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70px;
+    padding-bottom: 15px;
+}
+
+th {
+    font-size: 20px;
+    color: gray;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    text-align: right;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    text-align: right;
+}
+
+.total-amount-and-price {
+    border: 1px solid green;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    /* float: right; */
+    display: flex;
+    width: 90%;
+}
+
+.label-amount {
+    border: 1px solid red;
+    /* margin-left: 900px; */
+    display: flex;
+    width: 100%;
+    padding: 30px 0px 50px 0px;
+    /* float: right; */
+    justify-content: center;
+    align-items: center;
+}
+
+.total-label {
+    margin-left: 180px;
+}
+
+.label-amount>div {
+    margin-left: 100px;
+}
+
+.total-price {
+    margin-left: 80px;
+}
+
+.fill-out-detail-info-customer {
+    padding-bottom: 20px;
+}
+
+.form-info-customer {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.form-info-customer>div {
+    border: 1px solid green;
+    display: block;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.form-info-customer>div>div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-info-customer input {
+    font-weight: 100%;
+    padding: 4px;
+    margin: 10px 0 30px 0;
+    border: 0;
+    border-bottom: 1.4px solid rgb(161, 161, 161);
+}
+
+.form-info-customer input:focus,
+.form-info-customer input:hover,
+.form-info-customer textarea:focus,
+.form-info-customer textarea:hover {
+    border-bottom: 1.4px solid black;
+}
+
+.form-info-customer input:invalid {
+    border-bottom: 1.4px solid red;
+}
+
+.form-info-customer span {
+    color: red;
+}
+
+.form-info-customer textarea {
+    border: 0;
+    border-bottom: 1.4px solid rgb(161, 161, 161);
+    width: 100%;
+    resize: none;
+    font-family: "Libre Baskerville", serif;
+}
+
+.button-confirm-and-cancle {
+    border: 1px solid green;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+button {
+    width: 15%;
+    border: 0;
+    /* background-color: green; */
+    color: white;
+    height: 40px;
+    /* margin: 0px 100px 0px 75px; */
+    opacity: 1;
+    transition: 0.25s;
+    font-size: 16px;
+}
+
+.confirm {
+    background-color: green;
+    /* margin-left: 400px; */
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    margin-left: 30%;
+    margin-bottom: 50px;
+}
+
+.cancel {
+    background-color: rgb(190, 10, 10);
+    margin-left: 10%;
+    margin-bottom: 50px;
+}
+
+.form-info-customer button:hover {
+    opacity: 0.7;
+}
+
+.footer-payment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px dashed black;
+}
+
+.footer-payment>h4 {
+    color: #0639c1;
+}
+
+.footer-payment>p {
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px 2px;
+    border-radius: 50%;
+    font-family: sans-serif;
+}
+
+.fa:hover {
+    opacity: 0.8;
+}
+
+.fa-facebook {
+    background: #3b5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55acee;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+@media only screen and (max-width: 900px) {
+    .confirm,
+    .cancel {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    .total-amount-and-price {
+        margin-bottom: 20px;
+    }
+    .total-label {
+        margin-left: 170px;
+    }
+    .label-amount>div {
+        margin-left: 90px;
+    }
+    .total-price {
+        margin-left: 60px;
+    }
+    .confirm,
+    .cancel {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 818px) {
+    .total-amount-and-price {
+        font-size: 16px;
+    }
+    .total-label {
+        margin-left: 150px;
+    }
+    .label-amount>div {
+        margin-left: 80px;
+    }
+    .total-price {
+        margin-left: 40px;
+    }
+    .confirm,
+    .cancel {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .total-amount-and-price {
+        font-size: 15px;
+    }
+    .total-label {
+        margin-left: 140px;
+    }
+    .label-amount>div {
+        margin-left: 70px;
+    }
+    .total-price {
+        margin-left: 30px;
+    }
+    .form-info-customer>div {
+        width: 50%;
+    }
+    button {
+        width: 16%;
+    }
+    .confirm,
+    .cancel {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .total-amount-and-price {
+        font-size: 14px;
+        width: 95%;
+    }
+    .total-label {
+        margin-left: 110px;
+    }
+    .label-amount>div {
+        margin-left: 40px;
+    }
+    .total-price {
+        margin-left: 20px;
+    }
+    .form-info-customer>div {
+        width: 55%;
+    }
+    button {
+        width: 20%;
+    }
+    .confirm {
+        font-size: 12px;
+        margin-left: 25%;
+    }
+    .cancel {
+        font-size: 12px;
+        margin-left: 9%;
+    }
+}
+
+@media only screen and (max-width: 592px) {
+    .payment-header h2,
+    .fill-out-detail-info-customer h2 {
+        font-size: 22px;
+    }
+    table {
+        width: 100%;
+    }
+    .table-list-orders th {
+        font-size: 17px;
+    }
+    .table-list-orders td {
+        font-size: 15px;
+    }
+    .total-amount-and-price {
+        font-size: 14px;
+        width: 95%;
+    }
+    .total-label {
+        margin-left: 80px;
+    }
+    .label-amount>div {
+        margin-left: 40px;
+    }
+    .total-price {
+        margin-left: 20px;
+    }
+    .form-info-customer>div {
+        width: 60%;
+    }
+    .form-info-customer label,
+    .form-info-customer span {
+        font-size: 15px;
+    }
+    button {
+        width: 20%;
+    }
+    .confirm {
+        font-size: 11px;
+        margin-left: 25%;
+    }
+    .cancel {
+        font-size: 11px;
+        margin-left: 9%;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .payment-header h2,
+    .fill-out-detail-info-customer h2 {
+        font-size: 20px;
+    }
+    .table-list-orders th {
+        font-size: 17px;
+    }
+    .table-list-orders td {
+        font-size: 14px;
+    }
+    .total-amount-and-price {
+        font-size: 13px;
+        width: 99%;
+    }
+    .total-label {
+        margin-left: 70px;
+    }
+    .label-amount>div {
+        margin-left: 30px;
+    }
+    .total-price {
+        margin-left: 20px;
+    }
+    .form-info-customer>div {
+        width: 70%;
+    }
+    .form-info-customer label,
+    .form-info-customer span {
+        font-size: 15px;
+    }
+    button {
+        width: 22%;
+    }
+    .confirm {
+        font-size: 11px;
+        margin-left: 23%;
+    }
+    .cancel {
+        font-size: 11px;
+        margin-left: 8%;
+    }
+}
+
+@media only screen and (max-width: 488px) {
+    .payment-header h2,
+    .fill-out-detail-info-customer h2 {
+        font-size: 20px;
+    }
+    .table-list-orders th {
+        font-size: 17px;
+    }
+    .table-list-orders td {
+        font-size: 14px;
+    }
+    .total-amount-and-price {
+        font-size: 13px;
+        width: 100%;
+    }
+    .total-label {
+        margin-left: 40px;
+    }
+    .label-amount>div {
+        margin-left: 15px;
+    }
+    .total-price {
+        margin-left: 10px;
+    }
+    .form-info-customer>div {
+        width: 70%;
+    }
+    .form-info-customer label,
+    .form-info-customer span {
+        font-size: 15px;
+    }
+    button {
+        width: 27%;
+    }
+    .confirm {
+        font-size: 11px;
+        margin-left: 20%;
+    }
+    .cancel {
+        font-size: 11px;
+        margin-left: 6%;
+    }
+}
+
+@media only screen and (max-width: 456px) {
+    .payment-header h2,
+    .fill-out-detail-info-customer h2 {
+        font-size: 20px;
+    }
+    .table-list-orders th {
+        font-size: 15px;
+    }
+    .table-list-orders td {
+        font-size: 13px;
+    }
+    .total-amount-and-price {
+        font-size: 13px;
+        width: 100%;
+    }
+    .total-label {
+        margin-left: 25px;
+    }
+    .label-amount>div {
+        margin-left: 13px;
+    }
+    .total-price {
+        margin-left: 8px;
+    }
+    .form-info-customer>div {
+        width: 80%;
+    }
+    .form-info-customer label,
+    .form-info-customer span {
+        font-size: 13px;
+    }
+    button {
+        width: 27%;
+    }
+    .confirm {
+        font-size: 10px;
+        margin-left: 18%;
+    }
+    .cancel {
+        font-size: 10px;
+        margin-left: 5%;
+    }
+    .footer-payment h4,
+    .footer-payment p {
+        font-size: 14px;
+    }
+    .fa {
+        padding: 18px;
+        font-size: 30px;
+        width: 18px;
+        text-align: center;
+        text-decoration: none;
+        margin: 20px 2px;
+        border-radius: 50%;
+        font-family: sans-serif;
+    }
+}
+
+@media only screen and (max-width: 433px) {
+    .payment-header h2,
+    .fill-out-detail-info-customer h2 {
+        font-size: 18px;
+    }
+    .table-list-orders th {
+        font-size: 15px;
+    }
+    .table-list-orders td {
+        font-size: 13px;
+    }
+    .total-amount-and-price {
+        font-size: 13px;
+        width: 100%;
+    }
+    .total-label {
+        margin-left: 20px;
+    }
+    .label-amount>div {
+        margin-left: 13px;
+    }
+    .total-price {
+        margin-left: 8px;
+    }
+    .form-info-customer>div {
+        width: 85%;
+    }
+    .form-info-customer label,
+    .form-info-customer span {
+        font-size: 13px;
+    }
+    button {
+        width: 32%;
+    }
+    .confirm {
+        font-size: 10px;
+        margin-left: 15%;
+    }
+    .cancel {
+        font-size: 10px;
+        margin-left: 4%;
+    }
+    .footer-payment h4,
+    .footer-payment p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 406px) {
+    .table-list-orders th {
+        font-size: 14px;
+    }
+    .table-list-orders td {
+        font-size: 12px;
+    }
+    .total-amount-and-price {
+        font-size: 12px;
+        width: 100%;
+        display: content;
+    }
+    .total-label {
+        margin-left: 20px;
+    }
+    .label-amount>div {
+        margin-left: 13px;
+    }
+    .total-price {
+        margin-left: 8px;
+    }
+    .form-info-customer>div {
+        width: 90%;
+    }
+    .confirm {
+        font-size: 10px;
+        margin-left: 15%;
+    }
+    .cancel {
+        font-size: 10px;
+        margin-left: 4%;
+    }
+    .footer-payment h4,
+    .footer-payment p {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 395px) {
+    .total-amount-and-price {
+        font-size: 12px;
+        width: 100%;
+        display: content;
+    }
+    .total-label {
+        margin-left: 16px;
+    }
+    .label-amount>div {
+        margin-left: 10px;
+    }
+    .total-price {
+        margin-left: 5px;
+    }
+    .form-info-customer>div {
+        width: 100%;
+    }
+    #slip-payment {
+        font-size: 10px;
+    }
+    .confirm {
+        font-size: 10px;
+        margin-left: 15%;
+    }
+    .cancel {
+        font-size: 10px;
+        margin-left: 4%;
+    }
+}
+
+@media only screen and (max-width: 391px) {
+    .total-label {
+        margin-left: 13px;
+    }
+    .label-amount>div {
+        margin-left: 9px;
+    }
+    .total-price {
+        margin-left: 4px;
+    }
+    button {
+        width: 35%;
+    }
+    .confirm {
+        font-size: 10px;
+        margin-left: 13%;
+    }
+    .cancel {
+        font-size: 10px;
+        margin-left: 3%;
+    }
+}
+
+@media only screen and (max-width: 385px) {
+    .total-amount-and-price {
+        font-size: 12px;
+        width: 100%;
+        display: table;
+    }
+    .total-label {
+        margin-left: 13px;
+    }
+    .label-amount>div {
+        margin-left: 9px;
+    }
+    .total-price {
+        margin-left: 4px;
+    }
+    .form-info-customer>div {
+        width: 100%;
+    }
+    #slip-payment {
+        font-size: 10px;
+    }
+    .confirm {
+        font-size: 10px;
+        margin-left: 15%;
+    }
+    .cancel {
+        font-size: 10px;
+        margin-left: 4%;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .total-label {
+        margin-left: 11px;
+    }
+    .label-amount>div {
+        margin-left: 8px;
+    }
+    .total-price {
+        margin-left: 50px;
+    }
+    .confirm {
+        font-size: 10px;
+        margin-left: 13%;
+    }
+    .cancel {
+        font-size: 10px;
+        margin-left: 3%;
+    }
+}
