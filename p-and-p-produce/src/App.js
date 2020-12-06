@@ -45,7 +45,7 @@ function App() {
           <Route exact path="/login" component={AdminLogin} />
           {/* user */}
           <Route exact path="/" component={Home} />
-          <Route exact path="/product-details" component={ProductDetails} />
+          <Route exact path="/product-details/:id" component={ProductDetails} />
           <Route exact path="/all-products" component={AllProducts} />
           <Route exact path="/best-sellers" component={BestSellers} />
           <Route exact path="/search-results" component={SearchResults} />

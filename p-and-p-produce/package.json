@@ -2,7 +2,7 @@
   "name": "p-and-p-produce",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://supatchareec.github.io/sirapatsorn-viravich-supatcharee-webapp/",
+  "homepage": "./",
   "dependencies": {
     "-": "0.0.1",
     "@react-google-maps/api": "^1.13.0",

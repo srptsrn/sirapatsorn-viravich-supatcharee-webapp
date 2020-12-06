@@ -2,6 +2,7 @@ import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
 import firebase from "../components/Firebase.js";
 import { AuthContext } from "../auth/Auth.js";
+import AdminNavBar from "../components/AdminNavBar.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 const SignUp = ({ history }) => {
   const handleSignUp = useCallback(
@@ -28,7 +29,7 @@ const SignUp = ({ history }) => {
               });
             user.sendEmailVerification(); //Send email verification
             alert("Create account success. please check email verification."); //Show success message
-        });
+          });
         firebase.auth().signOut(); //Logout is triggered --> line 16 in app.js
         history.push("/admin/signup");
       } catch (error) {
@@ -39,24 +40,28 @@ const SignUp = ({ history }) => {
   );
 
   return (
-    <div>
-      <h1>Sign up</h1>
-      <form onSubmit={handleSignUp}>
-        <label>
-          Full Name
-          <input name="name" type="text" placeholder="Full Name" />
-        </label>
-        <label>
-          Email
-          <input name="email" type="email" placeholder="Email" />
-        </label>
-        <label>
-          Password
-          <input name="password" type="password" placeholder="Password" />
-        </label>
-        <button type="submit">Sign Up</button>
-      </form>
-      <Link to="/admin">return to web admin</Link>
+    <div className="app-admin">
+      <AdminNavBar signup></AdminNavBar>
+      <div className="display-product">
+        <div className="div-sign-up">
+          <h1>Sign up</h1>
+          <form onSubmit={handleSignUp}>
+            <label>
+              Full Name
+              <input name="name" type="text" placeholder="Full Name" />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" placeholder="Email" />
+            </label>
+            <label>
+              Password
+              <input name="password" type="password" placeholder="Password" />
+            </label>
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
