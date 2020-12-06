@@ -19,7 +19,9 @@ class CatagoryProduct extends React.Component {
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          const data = doc.data();
+          let data = doc.data();
+          var id = doc.id;
+          data.id = id;
           if (this.props.bestSellers && data.tag === "best_sellers") {
             array.push(data);
           }
@@ -52,7 +54,7 @@ class CatagoryProduct extends React.Component {
       // console.log(item)
       return (
         <div className="column-best-sellers">
-          <Link to="/product-details" className="link-no-underline">
+          <Link to={"/product-details/" + item.id} className="link-no-underline">
             <div className="card-best-sellers">
               <img src={imgUrl[nameImg]}></img>
               <p className="product-name">{item.name}</p>

@@ -30,7 +30,7 @@ class AdminNavigationBar extends React.Component {
     }
   }
   render() {
-    const { products, orders, promote, signUp } = this.props;
+    const { products, orders, promote, signup, account } = this.props;
     return (
       <div className="app-nav">
         <nav>
@@ -67,12 +67,28 @@ class AdminNavigationBar extends React.Component {
                   Orders
                 </button>
               </Link>
+              <Link to="/admin/signup">
+                <button
+                  id="signup-nav"
+                  className={signup ? "select-admin-nav" : ""}
+                >
+                  Create account
+                </button>
+              </Link>
+              <Link to="/admin/account">
+                <button
+                  id="account-nav"
+                  className={account ? "select-admin-nav" : ""}
+                >
+                  My account
+                </button>
+              </Link>
             </div>
           </div>
           <Link>
-            <Link className="tr-web-home" to="/">return to web home</Link>
+            {/* <Link className="tr-web-home" to="/">return to web home</Link>
             <Link className="new-account" to="/admin/signup">New account</Link>
-            <Link className="my-account" to="/admin/account">My account</Link>
+            <Link className="my-account" to="/admin/account">My account</Link> */}
             <button
               className="log-out"
               onClick={() => firebase.auth().signOut()}

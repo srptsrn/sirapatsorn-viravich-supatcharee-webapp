@@ -4,8 +4,56 @@ import NavBar from "../components/NavBar.js";
 import Footer from "../components/Footer.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Picture from "../assets/images/chicken-meat.jpg";
+import firebase from "../components/Firebase.js";
+const connector = firebase.firestore();
 
 class ProductDetail extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataProduct: {
+        id: null,
+        name: "",
+        description: "",
+        img: { a: "" },
+        inventory: 0,
+        price: 0,
+        tag: null,
+        visibility: true,
+        img_order: [],
+      },
+      noData: false,
+    };
+  }
+  componentDidMount() {
+    const id = this.props.match.params.id;
+    if (id) {
+      console.log(id);
+      let obj = {};
+      connector
+        .collection("products")
+        .doc(id)
+        .get()
+        .then((doc) => {
+          if (doc.exists) {
+            console.log("Document data:", doc.data());
+            obj = doc.data();
+            obj.id = id;
+            this.setState({
+              dataProduct: obj,
+            });
+          } else {
+            this.setState({ noData: true });
+          }
+        })
+        .catch(function (error) {
+          this.setState({ noData: true });
+          console.log("Error getting document:", error);
+        });
+    } else {
+      this.setState({ noData: true });
+    }
+  }
   render() {
     return (
       <div className="app-product-detail">
@@ -20,8 +68,11 @@ class ProductDetail extends React.Component {
           <div className="main-image-product-detail">
             <div className="image-left-column-product-detail">
               <img
-                src={require("../assets/images/drumstick.jpg")}
-                alt="drumstick"
+                src={
+                  this.state.dataProduct.img[
+                    this.state.dataProduct.img_order[0]
+                  ]
+                }
                 width="350px"
                 height="350px"
               />
@@ -30,15 +81,11 @@ class ProductDetail extends React.Component {
 
           <div className="details-right-column">
             <div className="product-description">
-              <h3>Drumstick</h3>
-              <p>
-                I'm a product description. This is a great place to "sell"
-                product and grab buyers' attention. Describe your product
-                clearly and concisely. Use unique keywords.
-              </p>
-              <h4>฿50.00</h4>
-              <p>จำนวน</p>
-              <input type="number" defaultValue='1' min="1" />
+              <h3>{this.state.dataProduct.name}</h3>
+              <p>{this.state.dataProduct.description}</p>
+              <h4>฿{this.state.dataProduct.price}</h4>
+              <p>Amount</p>
+              <input type="number" defaultValue="1" min="1" />
               <br />
             </div>
 
@@ -53,7 +100,7 @@ class ProductDetail extends React.Component {
             </div>
           </div>
         </div>
-       
+
         <div className="head-best-sellers">
           <div>
             <h2 className="best-sellers-center">Similar product</h2>
