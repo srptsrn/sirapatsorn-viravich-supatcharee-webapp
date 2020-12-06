@@ -1,0 +1,50 @@
+span {
+  font-family: "Libre Baskerville", serif;
+}
+.body-payment-app {
+  text-align: center;
+}
+.body-payment-app .form-contact {
+  text-align: left;
+}
+.main-list-order-payment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 16% 0 16%;
+}
+.table-display-product-payment tr {
+  height: 40px;
+  border-bottom: 1px solid rgb(182, 182, 182);
+}
+.total-amount-and-price {
+  color: #0639c1;
+}
+.fill-out-detail-info-customer {
+  margin-top: 40px;
+}
+.payment-slip-input {
+  padding-top: 20px;
+}
+.btn-payment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16% 0 16%;
+  margin-bottom: 50px;
+}
+.btn-cf-payment,
+.btn-cc-payment {
+  font-family: "Libre Baskerville", serif;
+  height: 36px;
+  width: 50%;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 0 4px #888;
+  margin: -100px 20px 0 20px;
+  border-bottom: 1.4px solid rgb(161, 161, 161);
+}
+.btn-cf-payment {
+    background-color: #0639c1;
+    color: white;
+  }
