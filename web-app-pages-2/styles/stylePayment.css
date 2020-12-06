@@ -97,7 +97,7 @@ td:nth-child(3) {
 }
 
 .total-amount-and-price {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     margin-top: 25px;
     margin-bottom: 25px;
     /* float: right; */
@@ -106,7 +106,7 @@ td:nth-child(3) {
 }
 
 .label-amount {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     /* margin-left: 900px; */
     display: flex;
     width: 100%;
@@ -133,7 +133,7 @@ td:nth-child(3) {
 }
 
 .form-info-customer {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -143,9 +143,9 @@ td:nth-child(3) {
 }
 
 .form-info-customer>div {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: block;
-    width: 40%;
+    width: 50%;
     justify-content: space-between;
 }
 
