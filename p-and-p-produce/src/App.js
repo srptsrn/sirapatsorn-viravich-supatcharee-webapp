@@ -9,6 +9,7 @@ import Contact from "./pages/Contact.js";
 import Home from "./pages/Home.js";
 import Franchise from "./pages/Franchise.js";
 import Cart from "./pages/Cart.js";
+import Payment from "./pages/Payment.js";
 import ProductDetails from "./pages/ProductDetails.js";
 import AdminLogin from "./pages/AdminLogin.js";
 import AdminSignUp from "./pages/AdminSignUp.js";
@@ -52,6 +53,7 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/franchise" component={Franchise} />
           <Route exact path="/cart" component={Cart} />
+          <Route exact path="/payment" component={Payment} />
         </div>
       </Router>
     </AuthProvider>

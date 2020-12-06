@@ -6,6 +6,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class Cart extends React.Component {
   render() {
+    const handlePayMent = () => {
+      window.location.href = "/payment";
+    }
     return (
       <div className="app-cart">
         <NavBar></NavBar>
@@ -107,7 +110,7 @@ class Cart extends React.Component {
                 <br />
                 <div class="total-value">฿250.00</div>
               </div>
-              <button class="button-payment">Payment</button>
+              <button class="button-payment" onClick={handlePayMent}>CHECKOUT</button>
             </div>
           </div>
         </div>

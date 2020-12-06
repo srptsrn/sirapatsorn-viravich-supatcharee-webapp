@@ -227,30 +227,30 @@ class AdminPromote extends React.Component {
               this.setState({ imageNews: { name: file.fullPath, url: url } });
               console.log(this.state.imageNews);
 
-              let status = connector
-                .ref()
-                .child(uploadImgeNews + file.name)
-                .put(file);
-              status.on(
-                "state_changed",
-                (snapshot) => {
-                  let progress =
-                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                },
-                (err) => {
-                  console.log(err);
-                },
-                () => {
-                  status.snapshot.ref
-                    .getDownloadURL()
-                    .then((url) => {
-                      console.log("ssss");
-                    })
-                    .catch((e) => {
-                      console.log(e);
-                    });
-                }
-              );
+            //   let status = connector
+            //     .ref()
+            //     .child(uploadImgeNews + file.name)
+            //     .put(file);
+            //   status.on(
+            //     "state_changed",
+            //     (snapshot) => {
+            //       let progress =
+            //         (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            //     },
+            //     (err) => {
+            //       console.log(err);
+            //     },
+            //     () => {
+            //       status.snapshot.ref
+            //         .getDownloadURL()
+            //         .then((url) => {
+            //           console.log("ssss");
+            //         })
+            //         .catch((e) => {
+            //           console.log(e);
+            //         });
+            //     }
+            //   );
             })
             .catch((error) => {
               console.log({ msg: "error", error });
