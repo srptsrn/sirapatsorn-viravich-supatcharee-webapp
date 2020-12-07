@@ -55,9 +55,6 @@ class NavigationBar extends React.Component {
             <Link to="/all-products" className={allProducts ? "on-page" : ""}>
               All Products
             </Link>
-            {/* <Link to="/" className={about ? "on-page" : ""}>
-              About
-            </Link> */}
             <Link to="/franchise" className={franchise ? "on-page" : ""}>
               News
             </Link>

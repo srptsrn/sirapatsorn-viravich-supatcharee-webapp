@@ -5,9 +5,9 @@ import ImgSlideExample from "../components/ImgSlideExample.js";
 import firebase from "../components/Firebase.js";
 const connector = firebase.storage();
 const storageRef = connector.ref();
-const uploadImge = "banner/";
+const uploadImge = "banner-test/";
 const uploadImgeBannerPublish = "banner/";
-const uploadImgeNews = "news/";
+const uploadImgeNews = "news-test/";
 const uploadImgeNewsPublish = "news/";
 
 class AdminPromote extends React.Component {
@@ -41,15 +41,7 @@ class AdminPromote extends React.Component {
     document.getElementById("fileNews").click();
   };
   OnUploadNews = (file) => {
-    const deleteImgRef = storageRef.child(this.state.imageNews.name);
-    deleteImgRef
-      .delete()
-      .then((result) => {
-        console.log("delete " + this.state.imageNews.name + " success");
-      })
-      .catch((err) => {
-        console.log("delete " + this.state.imageNews.name + " fail");
-      });
+    this.deleteFolderContents(uploadImgeNews);    
     const path = uploadImgeNews + file.name;
     const uploadTask = storageRef.child(path).put(file);
     uploadTask.on(
@@ -64,7 +56,8 @@ class AdminPromote extends React.Component {
         uploadTask.snapshot.ref
           .getDownloadURL()
           .then((url) => {
-            this.setState({ imageNews: { name: file.name, url: url } });
+            this.setState({ imageNews: { name: path, url: url } });
+            console.log(this.state.imageNews);
           })
           .catch((e) => {
             console.log(e);
@@ -113,7 +106,7 @@ class AdminPromote extends React.Component {
         files.forEach((file) => {
           this.getImgUrl(file.fullPath)
             .then((url) => {
-              array.push({ img: url, name: "new upload", path: file.fullPath });
+              array.push({ img: url, name: file.name, path: file.fullPath });
               this.setState({ dataBanner: array });
             })
             .catch((error) => {
@@ -135,7 +128,8 @@ class AdminPromote extends React.Component {
         files.forEach((file) => {
           this.getImgUrl(file.fullPath)
             .then((url) => {
-              array.push({ img: url, name: file.name, path: file.fullPath });
+              console.log(file);
+              array.push({ img: url, name: file.name, path: uploadImge + file.name });
               this.setState({ dataBanner: array });
             })
             .catch((error) => {
@@ -155,11 +149,13 @@ class AdminPromote extends React.Component {
         const files = res.items;
         files.forEach((file) => {
           this.getImgUrl(file.fullPath)
-            .then((url) => {
+            .then(async (url) => {
+              const response = await fetch(url);
+              const blob = await response.blob();
               let status = connector
                 .ref()
                 .child(destinationPath + file.name)
-                .put(file);
+                .put(blob);
               status.on(
                 "state_changed",
                 (snapshot) => {
@@ -212,9 +208,98 @@ class AdminPromote extends React.Component {
         console.log({ msg: "error", err });
       });
   };
+  handlePublishBanner = () => {
+    // delete uploadImgeBannerPublish ก่อน
+    this.deleteFolderContents(uploadImgeBannerPublish);
+    this.moveFirebaseFile(uploadImge, uploadImgeBannerPublish);
+  }
+  handleResetBanner = () => {
+    this.deleteFolderContents(uploadImge);
+    this.moveFirebaseFile(uploadImgeBannerPublish, uploadImge);
+    this.onGetImgListPublish();
+  }
+  
+  handlePublishNews = () => {
+    this.deleteFolderContents(uploadImgeNewsPublish);
+    this.moveFirebaseFile(uploadImgeNews, uploadImgeNewsPublish);
+  }
+  handleResetNews = () => {
+    this.deleteFolderContents(uploadImgeNews);
+    // this.moveFirebaseFile(uploadImgeNewsPublish, uploadImgeNews);
+    const imageRefNews = storageRef.child(uploadImgeNewsPublish);
+    imageRefNews
+      .listAll()
+      .then((res) => {
+        const files = res.items;
+        files.forEach((file) => {
+          this.getImgUrl(file.fullPath)
+            .then(async (url) => {
+              this.setState({ imageNews: { name: file.fullPath, url: url } });
+              console.log(this.state.imageNews);
+              const response = await fetch(url);
+              const blob = await response.blob();
+              let status = connector
+                .ref()
+                .child(uploadImgeNews + file.name)
+                .put(blob);
+              status.on(
+                "state_changed",
+                (snapshot) => {
+                  let progress =
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                },
+                (err) => {
+                  console.log(err);
+                },
+                () => {
+                  status.snapshot.ref
+                    .getDownloadURL()
+                    .then((url) => {
+                      console.log("ssss");
+                    })
+                    .catch((e) => {
+                      console.log(e);
+                    });
+                }
+              );
+            })
+            .catch((error) => {
+              console.log({ msg: "error", error });
+            });
+        });
+      })
+      .catch((err) => {
+        console.log({ msg: "error", err });
+      });
+  }
+  deleteFolderContents = (path) => {
+    const ref = firebase.storage().ref(path);
+    ref.listAll()
+      .then(dir => {
+        dir.items.forEach(fileRef => {
+          this.deleteFile(ref.fullPath, fileRef.name);
+        });
+        dir.prefixes.forEach(folderRef => {
+          this.deleteFolderContents(folderRef.fullPath);
+        })
+        console.log("dddd");
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  deleteFile(pathToFile, fileName) {
+    const ref = firebase.storage().ref(pathToFile);
+    const childRef = ref.child(fileName);
+    childRef.delete()
+  }
   componentWillMount() {
     //////////////////////////////////////////////
-    // this.moveFirebaseFile(uploadImgeBannerPublish, uploadImge);
+    // delete uploadImge ก่อน
+    this.deleteFolderContents(uploadImge);
+    this.deleteFolderContents(uploadImgeNews);
+    this.moveFirebaseFile(uploadImgeBannerPublish, uploadImge);
     this.onGetImgListPublish();
     const imageRefNews = storageRef.child(uploadImgeNewsPublish);
     imageRefNews
@@ -223,34 +308,35 @@ class AdminPromote extends React.Component {
         const files = res.items;
         files.forEach((file) => {
           this.getImgUrl(file.fullPath)
-            .then((url) => {
+            .then(async (url) => {
               this.setState({ imageNews: { name: file.fullPath, url: url } });
               console.log(this.state.imageNews);
-
-            //   let status = connector
-            //     .ref()
-            //     .child(uploadImgeNews + file.name)
-            //     .put(file);
-            //   status.on(
-            //     "state_changed",
-            //     (snapshot) => {
-            //       let progress =
-            //         (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            //     },
-            //     (err) => {
-            //       console.log(err);
-            //     },
-            //     () => {
-            //       status.snapshot.ref
-            //         .getDownloadURL()
-            //         .then((url) => {
-            //           console.log("ssss");
-            //         })
-            //         .catch((e) => {
-            //           console.log(e);
-            //         });
-            //     }
-            //   );
+              const response = await fetch(url);
+              const blob = await response.blob();
+              let status = connector
+                .ref()
+                .child(uploadImgeNews + file.name)
+                .put(blob);
+              status.on(
+                "state_changed",
+                (snapshot) => {
+                  let progress =
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                },
+                (err) => {
+                  console.log(err);
+                },
+                () => {
+                  status.snapshot.ref
+                    .getDownloadURL()
+                    .then((url) => {
+                      console.log("ssss");
+                    })
+                    .catch((e) => {
+                      console.log(e);
+                    });
+                }
+              );
             })
             .catch((error) => {
               console.log({ msg: "error", error });
@@ -269,7 +355,7 @@ class AdminPromote extends React.Component {
         .delete()
         .then((result) => {
           console.log("delete " + item.path + " success");
-          // window.location.reload();
+          window.location.reload();
           // var array = [...this.state.dataBanner]; // make a separate copy of the array
           // var index = array.indexOf(item);
           // if (index !== -1) {
@@ -286,10 +372,10 @@ class AdminPromote extends React.Component {
         <div>
           <img key={i} className="storage-img" src={item.img} />
           <p className="name-img-insert">{item.name}</p>
-          <div className="icon-move">
+          {/* <div className="icon-move">
             <div className="icon-move-up" onClick={() => {}}></div>
             <div className="icon-move-down" onClick={() => {}}></div>
-          </div>
+          </div> */}
           <div
             className="delete"
             onClick={() => {
@@ -326,8 +412,8 @@ class AdminPromote extends React.Component {
               <h4>Examble</h4>
               <ImgSlideExample></ImgSlideExample>
               <div>
-                <button id="publish_banner">Publish</button>
-                <button id="reset_banner">Reset</button>
+                <button id="publish_banner" onClick={this.handlePublishBanner}>Publish</button>
+                <button id="reset_banner" onClick={this.handleResetBanner}>Reset</button>
               </div>
             </div>
           </div>
@@ -351,8 +437,8 @@ class AdminPromote extends React.Component {
               />
               <img src={this.state.imageNews.url}></img>
               <div>
-                <button id="publish_banner">Publish</button>
-                <button id="reset_banner">Reset</button>
+                <button id="publish_banner" onClick={this.handlePublishNews}>Publish</button>
+                <button id="reset_banner" onClick={this.handleResetNews}>Reset</button>
               </div>
             </div>
           </div>

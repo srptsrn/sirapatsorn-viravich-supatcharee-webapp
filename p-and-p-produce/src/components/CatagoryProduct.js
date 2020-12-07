@@ -19,20 +19,26 @@ class CatagoryProduct extends React.Component {
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          let data = doc.data();
-          var id = doc.id;
-          data.id = id;
-          if (this.props.bestSellers && data.tag === "best_sellers") {
-            array.push(data);
-          }
-          if (this.props.allProducts) {
-            array.push(data);
-          }
-          if (this.props.searchResults) {
-            array.push(data);
-          }
-          if (JSON.stringify(array[0]) === JSON.stringify({ img: "" })) {
-            array.shift();
+          if (
+            this.props.displayNumber &&
+            array.length >= parseInt(this.props.displayNumber)
+          ) {
+          } else {
+            let data = doc.data();
+            var id = doc.id;
+            data.id = id;
+            if (this.props.bestSellers && data.tag === "best_sellers") {
+              array.push(data);
+            }
+            if (this.props.allProducts) {
+              array.push(data);
+            }
+            if (this.props.searchResults) {
+              array.push(data);
+            }
+            if (JSON.stringify(array[0]) === JSON.stringify({ img: "" })) {
+              array.shift();
+            }
           }
         });
         this.setState({ dataProduct: array });
@@ -46,6 +52,7 @@ class CatagoryProduct extends React.Component {
       contact,
       franchise,
       searchResults,
+      displayNumber,
     } = this.props;
 
     const listCategoryProduct = this.state.dataProduct.map(function (item, i) {
@@ -54,7 +61,10 @@ class CatagoryProduct extends React.Component {
       // console.log(item)
       return (
         <div className="column-best-sellers">
-          <Link to={"/product-details/" + item.id} className="link-no-underline">
+          <Link
+            to={"/product-details/" + item.id}
+            className="link-no-underline"
+          >
             <div className="card-best-sellers">
               <img src={imgUrl[nameImg]}></img>
               <p className="product-name">{item.name}</p>

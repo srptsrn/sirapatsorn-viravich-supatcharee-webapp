@@ -9,7 +9,7 @@ const AdminAccount = ({ history }) => {
   const handleChangePW = useCallback(
     async (event) => {
       event.preventDefault();
-      const { oldPassword, newPassword } = event.target.elements;
+      const { newPassword } = event.target.elements;
       try {
         await firebase
           .auth()
@@ -81,14 +81,6 @@ const AdminAccount = ({ history }) => {
           </form>
           <h1>Change password</h1>
           <form onSubmit={handleChangePW}>
-            <label>
-              Old Password
-              <input
-                name="oldPassword"
-                type="password"
-                placeholder="Password"
-              />
-            </label>
             <label>
               New Password
               <input

@@ -153,19 +153,23 @@ class AdminDetailOrders extends React.Component {
         .getDownloadURL()
         .then((url) => {
           console.log(url);
-          downloadImage(url);
+          downloadImage(url, path);
         })
         .catch((err) => {
           console.log({ msg: "download err", err });
         });
     };
-    const downloadImage = async (url) => {
+    const downloadImage = async (url, fileName) => {
+      console.log(url);
       const link = document.createElement("a");
       const response = await fetch(url);
       const blob = await response.blob();
       const objUrl = URL.createObjectURL(blob);
+      console.log(response);
+      console.log(blob);
+      console.log(objUrl);
       link.setAttribute("href", objUrl);
-      link.setAttribute("download", "cat4.jpg");
+      link.setAttribute("download", fileName);
       link.click();
     };
     const handleExaminer = () => {
@@ -218,7 +222,7 @@ class AdminDetailOrders extends React.Component {
           <div className="display-orders">
             <div className="display-detail-orders">
               <div className="display-detail-customer-orders">
-              <div>
+                <div>
                   <div>
                     <h2>Order</h2>
                     <table className="table-display-product table-display-product-order">
@@ -305,7 +309,7 @@ class AdminDetailOrders extends React.Component {
                     </form>
                   </div>
                 </div>
-                
+
                 <div>
                   {imgSlip}
                   <button

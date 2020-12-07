@@ -3,6 +3,7 @@ import "../styles/styleHome.css";
 import NavBar from "../components/NavBar.js";
 import Footer from "../components/Footer.js";
 import ImgSlide from "../components/ImgSlide.js";
+import CatagoryProduct from "../components/CatagoryProduct.js";
 
 import Picture from "../assets/images/chicken-meat.jpg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -14,8 +15,8 @@ class Home extends React.Component {
         <NavBar></NavBar>
         <ImgSlide></ImgSlide>
         <div className="category-btn">
-          <h1>Category</h1>
-          <div>
+          {/* <h1>Category</h1> */}
+          {/* <div>
             <label htmlFor="category_chicken_btn">
               <img
                 className="icon-chicken-home"
@@ -45,7 +46,7 @@ class Home extends React.Component {
                 src={require("../assets/images/pork.png")}
               />
             </label>
-          </div>
+          </div> */}
         </div>
         <div className="head-best-sellers">
           <div>
@@ -54,7 +55,8 @@ class Home extends React.Component {
         </div>
 
         <div className="row-best-sellers">
-          <div className="column-best-sellers">
+        <CatagoryProduct bestSellers displayNumber="4"></CatagoryProduct>
+          {/* <div className="column-best-sellers">
             <Link to="/product-details" className="link-no-underline">
               <div className="card-best-sellers">
                 <img src={Picture}></img>
@@ -153,7 +155,7 @@ class Home extends React.Component {
                 </Link>
               </div>
             </Link>
-          </div>
+          </div> */}
           <Link to="/best-sellers">
           <button>See more..</button>
           </Link>
@@ -166,7 +168,8 @@ class Home extends React.Component {
         </div>
 
         <div className="row-best-sellers">
-          <div className="column-best-sellers">
+        <CatagoryProduct allProducts displayNumber="4"></CatagoryProduct>
+          {/* <div className="column-best-sellers">
             <Link to="/product-details" className="link-no-underline">
               <div className="card-best-sellers">
                 <img src={Picture}></img>
@@ -265,7 +268,7 @@ class Home extends React.Component {
                 </Link>
               </div>
             </Link>
-          </div>
+          </div> */}
           <Link to="/all-products">
           <button>See more..</button>
           </Link>

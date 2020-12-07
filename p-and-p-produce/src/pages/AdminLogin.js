@@ -54,7 +54,7 @@ const Login = ({ history }) => {
               name="email"
               type="email"
               placeholder="Email"
-              defaultValue="supatcharee_chaiya@kkumail.com"
+              // defaultValue="supatcharee_chaiya@kkumail.com"
             />
           </label>
           <label>
@@ -63,7 +63,7 @@ const Login = ({ history }) => {
               name="password"
               type="password"
               placeholder="Password"
-              defaultValue="123456"
+              // defaultValue="123456"
             />
           </label>
           <button type="submit">Log in</button>
