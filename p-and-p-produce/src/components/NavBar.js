@@ -113,7 +113,7 @@ class NavigationBar extends React.Component {
               About
             </Link> */}
             <Link to="/franchise" className={franchise ? "on-page" : ""}>
-              Join with us
+            News
             </Link>
             <Link to="/contact" className={contact ? "on-page" : ""}>
               Contact

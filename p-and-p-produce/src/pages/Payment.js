@@ -4,25 +4,67 @@ import NavBar from "../components/NavBar.js";
 import Footer from "../components/Footer.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import firebase from "../components/Firebase.js";
-const connector = firebase.storage();
-const storageRef = connector.ref();
-const uploadImgeNewsPublish = "news/";
+const connector = firebase.firestore();
 class Payment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
-  componentWillMount() {}
   render() {
     const handleSubmitOrder = (event) => {
       event.preventDefault();
+      let {
+        firstName,
+        email,
+        lastName,
+        phone,
+        address,
+      } = event.target.elements;
+      console.log(address.value);
+      connector
+        .collection("orders")
+        .doc()
+        .set({
+          address: address.value,
+          confirm: "",
+          date: "18:30 16/09/2020",
+          email: email.value,
+          examiner: {
+            cancle: "",
+            confirm_order: "",
+            send: "",
+          },
+          name: firstName.value + " " + lastName.value,
+          payment_slip: {
+            "846047.svg":
+              "https://firebasestorage.googleapis.com/v0/b/p-and-p-produce-web-app.appspot.com/o/payment-slip%2F846047.svg?alt=media&token=58058469-6281-4e54-a2cb-98710544b1bc",
+          },
+          phone: phone.value,
+          products: {
+            mvHOQpDOV1IEwfVNAtfl: 6,
+          },
+          status: "",
+          tracking: "",
+        })
+        .then(() => {
+          window.location.href = "/";
+        })
+        .catch((error) => console.error(error));
     };
     const clickConfirmOrder = () => {
-        window.confirm('Please check the information is correct before you click the Confirm.')
-    }
+      const cf = window.confirm(
+        "Please check the information is correct before you click the Confirm."
+      );
+      if (cf) {
+        document.getElementById("btn_submit_form_order").click();
+      }
+    };
     const clickCancelOrder = () => {
-        window.confirm('Are you sure you want to cancel this order?')
-    }
+      const cf = window.confirm("Are you sure you want to cancel this order?");
+      if (cf) {
+        window.location.href = "/";
+      }
+    };
     return (
       <div className="app-franchise">
         <NavBar></NavBar>
@@ -99,7 +141,7 @@ class Payment extends React.Component {
             </label>
             <textarea
               id="textArea"
-              name="textArea"
+              name="address"
               rows="4"
               cols="70"
             ></textarea>
@@ -115,12 +157,19 @@ class Payment extends React.Component {
                 />
               </div>
             </div>
+            <button
+              type="submit"
+              className="hide"
+              id="btn_submit_form_order"
+            ></button>
           </form>
           <div className="btn-payment">
-            <button type="submit" className="btn-cf-payment" onClick={clickConfirmOrder}>
+            <button className="btn-cf-payment" onClick={clickConfirmOrder}>
               Confirm order
             </button>
-            <button className="btn-cc-payment" onClick={clickCancelOrder}>Cancel</button>
+            <button className="btn-cc-payment" onClick={clickCancelOrder}>
+              Cancel
+            </button>
           </div>
         </div>
         <Footer></Footer>

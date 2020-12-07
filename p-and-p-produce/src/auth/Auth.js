@@ -9,11 +9,12 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
-      if (user && user.emailVerified) {
-        setCurrentUser(user.emailVerified);
-      } else {
-        setCurrentUser(false);
-      }
+    //   if (user && user.emailVerified) {
+    //     setCurrentUser(user.emailVerified);
+    //   } else {
+    //     setCurrentUser(false);
+    //   }
+    setCurrentUser(user);
       setPending(false);
     });
   }, []);

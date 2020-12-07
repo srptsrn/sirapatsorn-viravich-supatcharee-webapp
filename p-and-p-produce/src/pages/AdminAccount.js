@@ -59,7 +59,7 @@ const AdminAccount = ({ history }) => {
     [history]
   );
 
-  const { currentUser } = useContext(AuthContext);
+  // const { currentUser } = useContext(AuthContext);
 
   return (
     <div className="app-admin">
