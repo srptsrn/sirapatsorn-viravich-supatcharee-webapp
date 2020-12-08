@@ -3,21 +3,54 @@ import "../styles/styleFranchise.css";
 import NavBar from "../components/NavBar.js";
 import Footer from "../components/Footer.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
+import firebase from "../components/Firebase.js";
+const connector = firebase.storage();
+const storageRef = connector.ref();
+const uploadImgeNewsPublish = "news/";
 class Franchise extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      imageNews: { name: "", url: "" },
+    };
+  }
+  getImgUrl = async (path) => {
+    return await storageRef.child(path).getDownloadURL();
+  };
+  componentWillMount() {
+    const imageRefNews = storageRef.child(uploadImgeNewsPublish);
+    imageRefNews
+      .listAll()
+      .then((res) => {
+        const files = res.items;
+        files.forEach((file) => {
+          this.getImgUrl(file.fullPath)
+            .then((url) => {
+              this.setState({ imageNews: { name: file.fullPath, url: url } });
+              console.log(this.state.imageNews);
+            })
+            .catch((error) => {
+              console.log({ msg: "error", error });
+            });
+        });
+      })
+      .catch((err) => {
+        console.log({ msg: "error", err });
+      });
+  }
   render() {
     return (
       <div className="app-franchise">
         <NavBar franchise></NavBar>
         <div className="franchise-poster">
-          <h2>Join with us</h2>
+          <h2>News</h2>
           <a
             href="https://www.facebook.com/PP-Produce-115054696537678"
             target="_blank"
           >
-            <img src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.0-9/120840878_380330713343407_138052855224277582_o.jpg?_nc_cat=111&_nc_sid=8bfeb9&_nc_eui2=AeFl4FpYPSYMd-_uxW8z3LlSRlkEjg-o0HdGWQSOD6jQdwGy_FesELPHJFmmKRdweOXsyxo_FDgQa0JLaPU3EF2J&_nc_ohc=eMVRi6GsjNAAX-ue1dN&_nc_ht=scontent.fbkk10-1.fna&oh=17c892e1bd6030e08252fbe1f1ebff89&oe=5FAD3564"></img>
+            <img src={this.state.imageNews.url}></img>
           </a>
-          <Link to="/contact" className='btn-contact'>
+          <Link to="/contact" className="btn-contact">
             Contact Us
           </Link>
         </div>

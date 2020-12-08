@@ -9,7 +9,7 @@ class AdminNavigationBar extends React.Component {
     super(props);
 
     this.state = {
-      visibleAdmin: false
+      visibleAdmin: false,
     };
     this.toggleMenu = this.toggleMenu.bind(this);
   }
@@ -22,15 +22,15 @@ class AdminNavigationBar extends React.Component {
   }
   nameAdmin() {
     const user = firebase.auth().currentUser;
-    if(user) {
+    if (user) {
       console.log(user.displayName);
-      return user.displayName
+      return user.displayName;
     } else {
-      return ''
+      return "";
     }
   }
   render() {
-    const { products, orders, promote, signUp } = this.props;
+    const { products, orders, promote, signup, account } = this.props;
     return (
       <div className="app-nav">
         <nav>
@@ -67,15 +67,34 @@ class AdminNavigationBar extends React.Component {
                   Orders
                 </button>
               </Link>
+              {/* <Link to="/admin/signup">
+                <button
+                  id="signup-nav"
+                  className={signup ? "select-admin-nav" : ""}
+                >
+                  Create account
+                </button>
+              </Link>
+              <Link to="/admin/account">
+                <button
+                  id="account-nav"
+                  className={account ? "select-admin-nav" : ""}
+                >
+                  My account
+                </button>
+              </Link> */}
             </div>
           </div>
           <Link>
-            <Link className="tr-web-home" to="/">return to web home</Link>
+            {/* <Link className="tr-web-home" to="/">return to web home</Link>
             <Link className="new-account" to="/admin/signup">New account</Link>
-            <Link className="my-account" to="/admin/account">My account</Link>
+            <Link className="my-account" to="/admin/account">My account</Link> */}
             <button
               className="log-out"
-              onClick={() => firebase.auth().signOut()}
+              onClick={() => {
+                firebase.auth().signOut();
+                window.location.href = "/login";
+              }}
             >
               Log out
             </button>
@@ -98,7 +117,7 @@ class AdminNavigationBar extends React.Component {
           <Link to="/admin">Edit Banner</Link>
           <Link to="/admin/products">Edit products</Link>
           <Link to="/admin/orders">Orders</Link>
-          <Link to="/">Log out</Link>
+          <Link to="/login" >Log out</Link>
         </div>
       </div>
     );

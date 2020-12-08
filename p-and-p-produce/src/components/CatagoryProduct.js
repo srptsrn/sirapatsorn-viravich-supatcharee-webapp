@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import firebase from "../components/Firebase.js";
-import { CounterProvider} from "../components/CounterProvider.js";
+import { CounterProvider } from "../components/CounterProvider.js";
 
 const connector = firebase.firestore();
 class CatagoryProduct extends React.Component {
@@ -19,31 +19,28 @@ class CatagoryProduct extends React.Component {
       .collection("products")
       .get()
       .then((querySnapshot) => {
-        let count = 0;
         querySnapshot.forEach((doc) => {
-          const data = doc.data();
-          data.id = doc.id
-          if (this.props.bestSellers && data.tag === "best_sellers") {
-            array.push(data);
+          if (
+            this.props.displayNumber &&
+            array.length >= parseInt(this.props.displayNumber)
+          ) {
+          } else {
+            let data = doc.data();
+            var id = doc.id;
+            data.id = id;
+            if (this.props.bestSellers && data.tag === "best_sellers") {
+              array.push(data);
+            }
+            if (this.props.allProducts) {
+              array.push(data);
+            }
+            if (this.props.searchResults) {
+              array.push(data);
+            }
+            if (JSON.stringify(array[0]) === JSON.stringify({ img: "" })) {
+              array.shift();
+            }
           }
-          if (this.props.allProducts) {
-            array.push(data);
-          }
-          // Home page start
-          if (this.props.bestSellersHome && data.tag === "best_sellers" && count <= 4) {
-            array.push(data);
-          }
-          if (this.props.allProductsHome && count <= 3) {
-            array.push(data);
-          }
-          // Home page end
-          if (this.props.searchResults) {
-            array.push(data);
-          }
-          if (JSON.stringify(array[0]) === JSON.stringify({ img: "" })) {
-            array.shift();
-          }
-          count++;
         });
         this.setState({ dataProduct: array });
       });
@@ -77,7 +74,7 @@ class CatagoryProduct extends React.Component {
     localStorage.setItem('products', JSON.stringify(cartItems))
   }
 
-  
+
 
   render() {
     const {
@@ -87,6 +84,7 @@ class CatagoryProduct extends React.Component {
       contact,
       franchise,
       searchResults,
+      displayNumber,
     } = this.props;
 
     const cardEnvi = this
@@ -97,21 +95,16 @@ class CatagoryProduct extends React.Component {
         <div className="column-best-sellers">
 
           <div className="card-best-sellers">
-            <Link to="/product-details" className="link-no-underline">
+            <Link to={"/product-details/" + item.id} className="link-no-underline">
               <img src={imgUrl[nameImg]}></img>
               <p className="product-name">{item.name}</p>
               <p className="product-price">฿{item.price}</p>
-              <input
+              {/* <input
                 type="number"
                 className="input-product-quantity"
                 defaultValue="1"
                 min="1"
-              ></input>
-              {/* <Link to="/cart">
-                <button type="button" className="btn-add-to-cart">
-                  Add to Cart
-                </button>
-              </Link> */}
+              ></input> */}
             </Link>
             <button onClick={() => cardEnvi.addToCart(item)} type="button" className="btn-add-to-cart" >
               Add to Cart

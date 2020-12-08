@@ -19,7 +19,7 @@ class AdminEditProducts extends React.Component {
         img: { a: "" },
         inventory: 0,
         price: 0,
-        tag: null,
+        tag: "all_products",
         visibility: true,
         img_order: [],
       },
@@ -136,29 +136,45 @@ class AdminEditProducts extends React.Component {
   getImgUrl = async (path) => {
     return await storageRef.child(path).getDownloadURL();
   };
+  onChangePrice = (e) => {
+    const re = /^([0-9]*[.])?[0-9]+$/;
+    if (e.target.value === "" || re.test(e.target.value)) {
+      let newDataProduct = this.state.dataProduct;
+      newDataProduct.price = parseFloat(e.target.value);
+      this.setState({ dataProduct: newDataProduct });
+    }
+  };
+  onChangeInv = (e) => {
+    const re = /^([0-9]*[.])?[0-9]+$/;
+    if (e.target.value === "" || re.test(e.target.value)) {
+      let newDataProduct = this.state.dataProduct;
+      newDataProduct.inventory = parseFloat(e.target.value);
+      this.setState({ dataProduct: newDataProduct });
+    }
+  };
 
   render() {
     const onDeleteImg = async (item) => {
       const cf = window.confirm("Delete this picture?");
       if (cf) {
         console.log(item);
-        const deleteImgRef = storageRef.child(uploadImge + item);
-        deleteImgRef
-          .delete()
-          .then((result) => {
-            console.log("delete " + item + " success");
-            var array = this.state.dataProduct; // make a separate copy of the array
-            delete array.img[item];
-            for (var i = 0; i < array.img_order.length; i++) {
-              if (array.img_order[i] === item) {
-                array.img_order.splice(i, 1);
-              }
-            }
-            this.setState({ dataProduct: array });
-          })
-          .catch((err) => {
-            console.log("delete " + item + " fail");
-          });
+        // const deleteImgRef = storageRef.child(uploadImge + item);
+        // deleteImgRef
+        //   .delete()
+        //   .then((result) => {
+        //     console.log("delete " + item + " success");
+        var array = this.state.dataProduct; // make a separate copy of the array
+        delete array.img[item];
+        for (var i = 0; i < array.img_order.length; i++) {
+          if (array.img_order[i] === item) {
+            array.img_order.splice(i, 1);
+          }
+        }
+        this.setState({ dataProduct: array });
+        // })
+        // .catch((err) => {
+        //   console.log("delete " + item + " fail");
+        // });
       }
     };
     const handleSaveChange = (event) => {
@@ -344,9 +360,9 @@ class AdminEditProducts extends React.Component {
                   Price
                   <input
                     name="price"
-                    type="number"
-                    defaultValue={this.state.dataProduct.price}
-                    min="0"
+                    type="text"
+                    value={this.state.dataProduct.price}
+                    onChange={this.onChangePrice}
                   />
                 </label>
                 <label htmlFor="vis">Visibility</label>
@@ -363,8 +379,8 @@ class AdminEditProducts extends React.Component {
                   <input
                     name="inv"
                     type="number"
-                    defaultValue={this.state.dataProduct.inventory}
-                    min="0"
+                    value={this.state.dataProduct.inventory}
+                    onChange={this.onChangeInv}
                   />
                 </label>
               </div>

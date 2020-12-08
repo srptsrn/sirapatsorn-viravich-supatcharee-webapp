@@ -33,6 +33,9 @@ class Cart extends React.Component {
       total += cart.count * cart.price;
     }
     const envi = this
+    const handlePayMent = () => {
+      window.location.href = "/payment";
+    }
     return (
       <div className="app-cart">
         <NavBar></NavBar>
@@ -89,7 +92,7 @@ class Cart extends React.Component {
                     <br />
                 <div class="total-value">฿{total}</div>
                   </div>
-                  <button class="button-payment">Payment</button>
+                  <button class="button-payment" onClick={handlePayMent}>Payment</button>
                 </div>
               </div>
             ) : (
