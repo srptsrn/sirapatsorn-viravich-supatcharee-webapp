@@ -63,6 +63,20 @@ const SearchResults = () => {
     setSearch(event.target.value);
   };
 
+  const addToCart = (data) => {
+    const cartItems = this.state.cartItems;
+    let alreadyInCart = false;
+    cartItems.forEach((value) => {
+      if (value.id === data.id) {
+        value.count++;
+        alreadyInCart = true;
+      }
+    });
+    if (!alreadyInCart) {
+      cartItems.push({ ...data, count: 1 })
+    }
+    localStorage.setItem('products', cartItems)
+  }
   return (
     <div className="app-search-results">
       <NavBar searchResults></NavBar>
@@ -84,7 +98,6 @@ const SearchResults = () => {
       </div>
       <div className="row-search-results">
         {searchResults.map((value, index) => {
-          console.log("value is" + value)
           return (
             <div className="column-search-results">
               <Link to="/product-details" className="link-no-underline">
@@ -98,13 +111,13 @@ const SearchResults = () => {
                     defaultValue="1"
                     min="1"
                   ></input>
+
+                  <button onClick={addToCart(value)} type="button" className="btn-add-to-cart">
+                    Add to Cart{" "}
+                  </button>
+
                   <Link to="/cart">
-                    <button type="button" className="btn-add-to-cart">
-                      Add to Cart{" "}
-                    </button>
-                  </Link>
-                  <Link to="/cart">
-                    <button type="button" className="btn-buy-now">
+                    <button onClick={addToCart(value)} type="button" className="btn-buy-now">
                       Buy now
                     </button>
                   </Link>

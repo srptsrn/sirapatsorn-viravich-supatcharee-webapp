@@ -10,11 +10,12 @@ class AdminProducts extends React.Component {
     super(props);
     this.state = {
       dataProduct: [{ img: {}, img_order: [] }],
+      originDataProduct: [{ img: {}, img_order: [] }],
+      originDataProductFilter: [{ img: {}, img_order: [] }],
     };
   }
   componentDidMount() {
     let array = [];
-    // อ่านข้อมูล
     connector
       .collection("products")
       .get()
@@ -29,9 +30,47 @@ class AdminProducts extends React.Component {
           }
           console.log(array);
         });
-        this.setState({ dataProduct: array });
+        this.setState({ dataProduct: array, originDataProduct: array });
       });
   }
+  handleSelectCollection = (value) => {
+    if (value === "best-sell") {
+      const getDataProduct = this.state.originDataProduct;
+      let bestSellProduct = [];
+      getDataProduct.forEach((data) => {
+        if (data.tag === "best_sellers") {
+          bestSellProduct.push(data);
+        }
+      });
+      this.setState({
+        dataProduct: bestSellProduct,
+        originDataProduct: getDataProduct,
+      });
+    }
+  };
+
+  handleSelectFilter = (value) => {
+    if (value === "all-product") {
+      this.setState({ dataProduct: this.state.originDataProduct });
+    } else {
+      const getDataProduct = this.state.originDataProduct;
+      let filterProduct = [];
+      getDataProduct.forEach((data) => {
+        if (value === "in-stock" && parseInt(data.inventory) > 0) {
+          filterProduct.push(data);
+        } else if (value === "out-stock" && parseInt(data.inventory) === 0) {
+          filterProduct.push(data);
+        } else if (value === "show" && data.visibility !== false) {
+          filterProduct.push(data);
+        } else if (value === "hide" && data.visibility === false) {
+          filterProduct.push(data);
+        }
+        this.setState({
+          dataProduct: filterProduct,
+        });
+      });
+    }
+  };
   render() {
     const changeVis = (index, selectItem) => {
       var vis = selectItem.visibility;
@@ -104,27 +143,38 @@ class AdminProducts extends React.Component {
       const imgUrl = item.img;
       const nameImg = item.img_order[0];
       return (
-        <tr
-          key={i}
-        >
-          <td onClick={() => {
-            editProduct(item.id);
-          }}>
+        <tr key={i}>
+          <td
+            onClick={() => {
+              editProduct(item.id);
+            }}
+          >
             <Link>
               <img className="table-img-product" src={imgUrl[nameImg]}></img>
             </Link>
           </td>
-          <td className="name-product-list-table-display-product" onClick={() => {
-            editProduct(item.id);
-          }}>
+          <td
+            className="name-product-list-table-display-product"
+            onClick={() => {
+              editProduct(item.id);
+            }}
+          >
             <Link>{item.name}</Link>
           </td>
-          <td onClick={() => {
-            editProduct(item.id);
-          }}>{item.price}</td>
-          <td onClick={() => {
-            editProduct(item.id);
-          }}>{item.inventory}</td>
+          <td
+            onClick={() => {
+              editProduct(item.id);
+            }}
+          >
+            {item.price}
+          </td>
+          <td
+            onClick={() => {
+              editProduct(item.id);
+            }}
+          >
+            {item.inventory}
+          </td>
           <td className="action-edit-product">
             <div
               className="visibility"
@@ -153,7 +203,7 @@ class AdminProducts extends React.Component {
     });
     const handleNewProduct = () => {
       window.location.href = "/admin/products/new-product";
-    }
+    };
     return (
       <div className="app-admin">
         <AdminNavBar products></AdminNavBar>
@@ -172,6 +222,7 @@ class AdminProducts extends React.Component {
                 <select
                   name="collection_select_product"
                   id="colection_select_product"
+                  onChange={(e) => this.handleSelectCollection(e.target.value)}
                 >
                   <option value="all-product">All products</option>
                   <option value="best-sell">Best sellers</option>
@@ -179,7 +230,11 @@ class AdminProducts extends React.Component {
               </div>
               <div>
                 <label htmlFor="filter_select_product">Filter by</label>
-                <select name="filter_select_product" id="filter_select_product">
+                <select
+                  name="filter_select_product"
+                  id="filter_select_product"
+                  onChange={(e) => this.handleSelectFilter(e.target.value)}
+                >
                   <option value="all-product">All</option>
                   <option value="in-stock">In stock</option>
                   <option value="out-stock">Out of stock</option>

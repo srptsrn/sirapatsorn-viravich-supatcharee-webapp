@@ -9,7 +9,7 @@ class AdminNavigationBar extends React.Component {
     super(props);
 
     this.state = {
-      visibleAdmin: false
+      visibleAdmin: false,
     };
     this.toggleMenu = this.toggleMenu.bind(this);
   }
@@ -22,11 +22,11 @@ class AdminNavigationBar extends React.Component {
   }
   nameAdmin() {
     const user = firebase.auth().currentUser;
-    if(user) {
+    if (user) {
       console.log(user.displayName);
-      return user.displayName
+      return user.displayName;
     } else {
-      return ''
+      return "";
     }
   }
   render() {
@@ -67,7 +67,7 @@ class AdminNavigationBar extends React.Component {
                   Orders
                 </button>
               </Link>
-              <Link to="/admin/signup">
+              {/* <Link to="/admin/signup">
                 <button
                   id="signup-nav"
                   className={signup ? "select-admin-nav" : ""}
@@ -82,7 +82,7 @@ class AdminNavigationBar extends React.Component {
                 >
                   My account
                 </button>
-              </Link>
+              </Link> */}
             </div>
           </div>
           <Link>
@@ -91,7 +91,10 @@ class AdminNavigationBar extends React.Component {
             <Link className="my-account" to="/admin/account">My account</Link> */}
             <button
               className="log-out"
-              onClick={() => firebase.auth().signOut()}
+              onClick={() => {
+                firebase.auth().signOut();
+                window.location.href = "/login";
+              }}
             >
               Log out
             </button>
@@ -114,7 +117,7 @@ class AdminNavigationBar extends React.Component {
           <Link to="/admin">Edit Banner</Link>
           <Link to="/admin/products">Edit products</Link>
           <Link to="/admin/orders">Orders</Link>
-          <Link to="/">Log out</Link>
+          <Link to="/login" >Log out</Link>
         </div>
       </div>
     );

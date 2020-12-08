@@ -21,7 +21,7 @@ const Login = ({ history }) => {
     [history]
   );
 
-  const { currentUser } = useContext(AuthContext);
+  // const { currentUser } = useContext(AuthContext);
 
   const handleResetPW = () => {
     const email = prompt("Enter email for reset password:");
@@ -35,9 +35,9 @@ const Login = ({ history }) => {
         console.log("Error resetting password");
       });
   };
-  if (currentUser) {
-    return <Redirect to="/admin" />;
-  }
+  // if (currentUser) {
+  //   return <Redirect to="/admin" />;
+  // }
 
   return (
     <div className="app-login">
@@ -54,7 +54,6 @@ const Login = ({ history }) => {
               name="email"
               type="email"
               placeholder="Email"
-              defaultValue="supatcharee_chaiya@kkumail.com"
             />
           </label>
           <label>
@@ -63,7 +62,6 @@ const Login = ({ history }) => {
               name="password"
               type="password"
               placeholder="Password"
-              defaultValue="123456"
             />
           </label>
           <button type="submit">Log in</button>

@@ -45,6 +45,12 @@ span {
   border-bottom: 1.4px solid rgb(161, 161, 161);
 }
 .btn-cf-payment {
-    background-color: #0639c1;
-    color: white;
+  background-color: #0639c1;
+  color: white;
+}
+@media screen and (max-width: 520px) {
+  .btn-cf-payment,
+  .btn-cc-payment {
+    margin: -30px 20px 0 20px;
   }
+}

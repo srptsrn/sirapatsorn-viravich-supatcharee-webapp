@@ -1,7 +1,8 @@
 import { render } from "@testing-library/react";
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/styleNav.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import { CounterProvider } from "../components/CounterProvider.js";
 
 class NavigationBar extends React.Component {
   constructor(props) {
@@ -25,6 +26,8 @@ class NavigationBar extends React.Component {
     });
     console.log(this.state.visible);
   }
+
+
   render() {
     const handleKeyDown = (event) => {
       if (event.key === "Enter") {
@@ -40,6 +43,9 @@ class NavigationBar extends React.Component {
       franchise,
       searchResults,
     } = this.props;
+
+    const cartItems = JSON.parse(localStorage.getItem('products'));
+
     return (
       <div>
         <nav>
@@ -55,9 +61,6 @@ class NavigationBar extends React.Component {
             <Link to="/all-products" className={allProducts ? "on-page" : ""}>
               All Products
             </Link>
-            {/* <Link to="/" className={about ? "on-page" : ""}>
-              About
-            </Link> */}
             <Link to="/franchise" className={franchise ? "on-page" : ""}>
               News
             </Link>
@@ -76,11 +79,10 @@ class NavigationBar extends React.Component {
                 onKeyDown={handleKeyDown}
               />
             </div>
-          
             <Link to="/cart" className="cart-nav">
               <div className="cart-icon"></div>
               <div id="cart-amount">
-                <p>3</p>
+                <p>{cartItems && cartItems.length > 0 ? cartItems.length : 0}</p>
               </div>
             </Link>
           </div>
@@ -116,7 +118,7 @@ class NavigationBar extends React.Component {
               About
             </Link> */}
             <Link to="/franchise" className={franchise ? "on-page" : ""}>
-              Join with us
+            News
             </Link>
             <Link to="/contact" className={contact ? "on-page" : ""}>
               Contact
