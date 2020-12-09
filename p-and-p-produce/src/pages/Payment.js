@@ -52,7 +52,7 @@ class Payment extends React.Component {
         .catch((error) => console.error(error));
     };
     const clickConfirmOrder = () => {
-      const cf = window.confirm(
+      const cf = window.confirm (
         "Please check the information is correct before you click the Confirm."
       );
       if (cf) {
@@ -119,7 +119,7 @@ class Payment extends React.Component {
           <div className="fill-out-detail-info-customer">
             <h2>Shipping address</h2>
           </div>
-          <form className="form-contact" onSubmit={handleSubmitOrder}>
+          <form className="form-contact" onSubmit = {handleSubmitOrder}>
             <div>
               <div>
                 <label htmlFor="firstName">First Name</label>
@@ -164,10 +164,10 @@ class Payment extends React.Component {
             ></button>
           </form>
           <div className="btn-payment">
-            <button className="btn-cf-payment" onClick={clickConfirmOrder}>
+            <button className="btn-cf-payment" onClick = {clickConfirmOrder}>
               Confirm order
             </button>
-            <button className="btn-cc-payment" onClick={clickCancelOrder}>
+            <button className="btn-cc-payment" onClick = {clickCancelOrder}>
               Cancel
             </button>
           </div>
